@@ -24,6 +24,33 @@ const Nav = () => {
     "no",
     "ro",
   ]);
+  const [languages, setLanguage] = useState([
+    "gb",
+    "pk",
+    "us",
+    "pt",
+    "es",
+    "sv",
+    "ta",
+    "el",
+    "de",
+    "fr",
+    "en",
+    "nl",
+    "zh",
+    "ar",
+    "he",
+    "hi",
+    "it",
+    "no",
+    "ro",
+    "ie",
+    "eg",
+    "ph",
+    "se",
+    "tw",
+    "us",
+  ]);
   const [lang, showLang] = useState(false);
   const [ctry, showCountry] = useState(false);
 
