@@ -3,7 +3,11 @@ import Newscard from "./Newscard";
 import img_1 from "../assets/Screenshot 2023-11-11 101540.png";
 import img_2 from "../assets/Screenshot 2023-11-11 143329.png";
 import tier from "../assets/3-tier.png";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaArrowRight,
+
+} from "react-icons/fa";
 const News = () => {
   const [post, setPost] = useState([
     {
@@ -102,7 +106,7 @@ const News = () => {
   return (
     <>
       <section className="bg-slate-200">
-        <h1 className="text-sky-400 text-center text-4xl max-sm:text-2xl ">
+        <h1 className="text-sky-400 text-center text-4xl max-sm:text-2xl  font-bold">
           {" "}
           News around the world
         </h1>
