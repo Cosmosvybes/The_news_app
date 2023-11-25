@@ -6,10 +6,10 @@ const Nav = () => {
   return (
     <>
       <header
-        className="h-28 bg-slate-300  z-10 sticky top-0 flex
+        className="h-28 bg-sky-500  z-10 sticky top-0 flex
            justify-around items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
-        <h1 className="text-sky-500  rounded-sm px-1 py-">Logo</h1>
+        <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
         <a
           href="#"
           className="text-slate-950 rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden"
@@ -23,7 +23,7 @@ const Nav = () => {
           className="hidden max-sm:inline"
           onClick={() => setOpenBar(!openBar)}
         >
-          {!openBar && <FaBars className=" text-sky-400 text-2xl" />}
+          {!openBar && <FaBars className=" text-slate-100 text-2xl" />}
         </button>
 
         <div
@@ -47,7 +47,7 @@ const Nav = () => {
             Filter by{" "}
           </p>
           <select
-            className="border border-gray-50 rounded-md"
+            className="border border-gray-50 rounded-md px-4 py-1"
             style={{ display: openBar ? "block" : "none" }}
           >
             <option>Entertainment</option>
