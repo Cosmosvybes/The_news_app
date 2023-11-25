@@ -126,11 +126,11 @@ const News = () => {
         <div className="pg-btns flex  justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 mx-4 my-6 ">
           <FaArrowLeft
             onClick={prevPost}
-            className="border border-sky-600 px-3 py-1 w-20 text-4xl hover:bg-sky-500 hover:text-white rounded-md m-1"
+            className="border border-sky-600 bg-slate-700 px-3 py-1 w-20 text-4xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
           />{" "}
           <FaArrowRight
             onClick={nextPost}
-            className="border border-sky-600 px-3 py-1 w-20 text-4xl hover:bg-sky-500 hover:text-white rounded-md m-1"
+            className="border border-sky-600 bg-slate-700 px-3 py-1 w-20 text-4xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
           />
           {/* {pageNumbers.map((number) => (
             <div className="px-0" key={number}>
