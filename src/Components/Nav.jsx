@@ -92,12 +92,19 @@ const Nav = () => {
         >
           {!openBar && <FaBars className=" text-slate-100 text-2xl" />}
         </button>
+        <a
+          className="text-white cursor-pointer hover:text-sky-700 underline py-2"
+          style={{ display: openBar ? "block" : "none" }}
+        >
+          {" "}
+          Top Headlines
+        </a>
 
         <div
           className="sidebtn absolute right-0 top-12 transition duration-200 w-full
              bg-sky-400 hidden
-         max-sm:flex flex-col justify-center items-center px-2  py-0 rounded-sm z-10"
-          style={{ height: openBar ? "230px" : "0px", transition: "0.5s" }}
+         max-sm:flex flex-col max-sm:justify-start items-center px-2  py-0 rounded-sm z-10"
+          style={{ height: openBar ? "260px" : "0px", transition: "0.5s" }}
         >
           <p
             className="text-slate-800"
@@ -108,7 +115,7 @@ const Nav = () => {
           </p>
           <select
             onChange={handleFilter}
-            className="border border-gray-50 rounded-sm px-4 py-1 w-44"
+            className="border border-gray-50 rounded-sm px-4 py-3 w-44"
             style={{ display: openBar ? "block" : "none" }}
             id="filter"
           >
@@ -120,43 +127,36 @@ const Nav = () => {
             style={{ display: openBar ? "block" : "none" }}
           >
             {lang && (
-              <select className="px-2 py-2 w-22">
+              <select className="px-2 py-3 w-22">
                 {languages.map((country) => (
                   <option key={country}>{country}</option>
                 ))}
               </select>
             )}
             {ctry && (
-              <select className="px-2 py-2 w-22">
+              <select className="px-2 py-3 w-22">
                 {countries.reverse().map((country) => (
                   <option key={country}>{country}</option>
                 ))}
               </select>
             )}
           </div>
-          <a
-            className="text-white cursor-pointer hover:text-sky-700 underline py-2"
-            style={{ display: openBar ? "block" : "none" }}
-          >
-            {" "}
-            Top Headlines
-          </a>
 
           <input
             style={{ display: openBar ? "block" : "none" }}
             type="text"
             placeholder="search news"
-            className=" rounded-sm px-1 w-44 outline-none py-1 border border-none m-2"
+            className=" rounded-sm px-2 w-44 outline-none py-1 border border-none m-2"
           />
           <input
             type="submit"
-            className="px-1 py-1 rounded-sm w-44 font-bold  bg-sky-950 text-white border border-none"
+            className="px-2 py-2 rounded-sm w-44 font-bold  bg-sky-950 text-white border border-none"
             style={{ display: openBar ? "block" : "none" }}
           />
 
           <FaCaretUp
             style={{ display: openBar ? "block" : "none" }}
-            className="absolute  top-56 text-center text-2xl text-sky-600"
+            className="absolute  top-64 text-center text-2xl text-sky-600"
             onClick={() => setOpenBar(!openBar)}
           />
         </div>

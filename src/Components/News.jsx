@@ -1,74 +1,108 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Newscard from "./Newscard";
 import img_1 from "../assets/Screenshot 2023-11-11 101540.png";
 import img_2 from "../assets/Screenshot 2023-11-11 143329.png";
 import tier from "../assets/3-tier.png";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-
-} from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 const News = () => {
   const [post, setPost] = useState([
     {
       id: 1,
-      newsImg: [img_2, img_1, tier],
+      newsImg: img_2,
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
       headline: "Covid news",
       publishedAt: "2023-11-25 10:03:00",
+      title: "Web 3",
+      source: { url: "#", name: "Phone Arena" },
     },
     {
       id: 2,
-      newsImg: [img_2, img_1],
+      newsImg: img_2,
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
       headline: "Employemnt news",
       publishedAt: "2023-11-25 12:03:00",
+      title: "Web 2",
+      source: { url: "#", name: "Phone Arena" },
     },
     {
       id: 3,
-      newsImg: [img_2, img_1],
+      newsImg: img_2,
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
       headline: "Election",
       publishedAt: "2023-11-25 11:03:00",
+      title: "Web 1",
+      source: { url: "#", name: "Phone Arena" },
     },
     {
       id: 4,
-      newsImg: [img_2, img_1],
+      newsImg: img_2,
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
       headline: "Tsunami news",
       publishedAt: "2023-11-25 15:03:12",
+      title: "Web 5",
+      source: { url: "#", name: "Phone Arena" },
     },
     {
       id: 6,
-      newsImg: [img_2, img_1],
+      newsImg: img_2,
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
       headline: "News Around the world",
       publishedAt: "2023-11-25 14:03:12",
+      title: "Web 3",
+      source: { url: "#", name: "Phone Arena" },
     },
     {
       id: 7,
-      newsImg: [img_2, img_1],
+      newsImg: img_1,
       headline: "Keke napep",
       publishedAt: "2023-11-25 14:50:12",
+      title: "Web 9",
+      source: { url: "#", name: "Phone Arena" },
     },
     {
       id: 19,
-      newsImg: [img_2, img_1],
+      newsImg: img_2,
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
       headline: "News for the locals",
       publishedAt: "2023-11-25 11:43:00",
+      title: "Web 11",
+      source: { url: "#", name: "Phone Arena" },
     },
     {
       id: 134,
-      newsImg: [img_2, img_1],
+      title: "Web 23",
+      newsImg: img_2,
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
       headline: "The news",
       publishedAt: "2023-11-25 12:01:00",
+      source: { url: "#", name: "Phone Arena" },
     },
     {
       id: 37,
-      newsImg: [img_2, img_1],
+      title: "Web i33",
+      newsImg: img_2,
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
       headline: "Everywhere Good",
       publishedAt: "2023-11-25 15:33:00",
+      source: { url: "#", name: "Phone Arena" },
     },
     {
       id: 132,
-      newsImg: [img_2, img_1],
+      title: "Web 134",
+      newsImg: img_2,
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
       headline: "Shocking news",
       publishedAt: "2023-11-25 15:03:00",
+      source: { url: "#", name: "Phone Arena" },
     },
   ]);
 
@@ -84,10 +118,23 @@ const News = () => {
   //   pageNumbers.push(i);
   // }
 
-  const paginate = (number) => {
-    setPageNumber(number);
-    setActive(number);
-  };
+  // const paginate = (number) => {
+  //   setPageNumber(number);
+  //   setActive(number);
+  // };
+  const apiKey = "67a01c9e936b42440e55e5deedd2b567";
+  const category = "general";
+  useEffect(() => {
+    const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=uk&max=10&apikey=${apiKey}`;
+    const fetchNews = async () => {
+      const news = await fetch(url);
+      const newsData = await news.json();
+      // setPost(newsData.articles);
+      // console.log(newsData.articles);
+    };
+    fetchNews();
+  }, []);
+
   let [count, setCount] = useState(1);
 
   const nextPost = () => {
@@ -114,10 +161,11 @@ const News = () => {
           {postsToShow.map((news) => (
             <div className="div-container flex justify-around" key={news.id}>
               <Newscard
-                body={news}
+                body={news.content}
+                url={news.source.url}
                 newsImg={news.newsImg}
-                headline={news.headline}
-                sourceName={"Phone Arena"}
+                headline={news.title}
+                sourceName={news.source.url}
                 publishedAt={news.publishedAt}
               />
             </div>
