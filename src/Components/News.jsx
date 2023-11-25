@@ -6,28 +6,79 @@ import tier from "../assets/3-tier.png";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 const News = () => {
   const [post, setPost] = useState([
-    { id: 1, newsImg: [img_2, img_1, tier], headline: "Covid news" },
-    { id: 2, newsImg: [img_2, img_1], headline: "Employemnt news" },
-    { id: 3, newsImg: [img_2, img_1], headline: "Election" },
-    { id: 4, newsImg: [img_2, img_1], headline: "Tsunami news" },
-    { id: 6, newsImg: [img_2, img_1], headline: "News Around the world" },
-    { id: 7, newsImg: [img_2, img_1], headline: "Keke napep" },
-    { id: 19, newsImg: [img_2, img_1], headline: "News for the locals" },
-    { id: 134, newsImg: [img_2, img_1], headline: "The news" },
-    { id: 37, newsImg: [img_2, img_1], headline: "Everywhere Good" },
-    { id: 132, newsImg: [img_2, img_1], headline: "Shocking news" },
+    {
+      id: 1,
+      newsImg: [img_2, img_1, tier],
+      headline: "Covid news",
+      publishedAt: "2023-11-25 10:03:00",
+    },
+    {
+      id: 2,
+      newsImg: [img_2, img_1],
+      headline: "Employemnt news",
+      publishedAt: "2023-11-25 12:03:00",
+    },
+    {
+      id: 3,
+      newsImg: [img_2, img_1],
+      headline: "Election",
+      publishedAt: "2023-11-25 11:03:00",
+    },
+    {
+      id: 4,
+      newsImg: [img_2, img_1],
+      headline: "Tsunami news",
+      publishedAt: "2023-11-25 15:03:12",
+    },
+    {
+      id: 6,
+      newsImg: [img_2, img_1],
+      headline: "News Around the world",
+      publishedAt: "2023-11-25 14:03:12",
+    },
+    {
+      id: 7,
+      newsImg: [img_2, img_1],
+      headline: "Keke napep",
+      publishedAt: "2023-11-25 14:50:12",
+    },
+    {
+      id: 19,
+      newsImg: [img_2, img_1],
+      headline: "News for the locals",
+      publishedAt: "2023-11-25 11:43:00",
+    },
+    {
+      id: 134,
+      newsImg: [img_2, img_1],
+      headline: "The news",
+      publishedAt: "2023-11-25 12:01:00",
+    },
+    {
+      id: 37,
+      newsImg: [img_2, img_1],
+      headline: "Everywhere Good",
+      publishedAt: "2023-11-25 15:33:00",
+    },
+    {
+      id: 132,
+      newsImg: [img_2, img_1],
+      headline: "Shocking news",
+      publishedAt: "2023-11-25 15:03:00",
+    },
   ]);
 
   const [pageNumber, setPageNumber] = useState(1);
   const [postPerPage] = useState(1);
-  const [active, setActive] = useState(1);
+  // const [active, setActive] = useState(1);
   const lastPageIndex = postPerPage * pageNumber;
   const firstPageIndex = lastPageIndex - postPerPage;
   const postsToShow = post.reverse().slice(firstPageIndex, lastPageIndex + 2);
-  const pageNumbers = [];
-  for (let i = 1; i < Math.ceil(post.length / postPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  // const [publishingTime, setPublishingTime]= useState("")
+  // const pageNumbers = [];
+  // for (let i = 1; i < Math.ceil(post.length / postPerPage); i++) {
+  //   pageNumbers.push(i);
+  // }
 
   const paginate = (number) => {
     setPageNumber(number);
@@ -38,14 +89,12 @@ const News = () => {
   const nextPost = () => {
     if (post.length > count) {
       setCount((count += 1));
-      console.log(count);
       setPageNumber(count);
     }
   };
   const prevPost = () => {
     if (count > 1) {
       setCount((count -= 1));
-      console.log(count);
       setPageNumber(count);
     }
   };
@@ -64,6 +113,8 @@ const News = () => {
                 body={news}
                 newsImg={news.newsImg}
                 headline={news.headline}
+                sourceName={"Phone Arena"}
+                publishedAt={news.publishedAt}
               />
             </div>
           ))}
