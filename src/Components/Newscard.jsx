@@ -80,11 +80,11 @@ const Newscard = ({
           {" "}
           <FaArrowCircleLeft
             onClick={navigatePrevPhoto}
-            className="border border-sky-300 text-sky-500  px-1 py-1 hover: m-2 rounded-md hover:text-slate-300 text-4xl"
+            className="border border-sky-300 text-sky-700  px-1 py-1 hover: m-2 rounded-md hover:text-slate-300 text-4xl"
           />
           <FaArrowCircleRight
             onClick={navigateNextPhoto}
-            className="border border-sky-300 text-sky-500  px-1 py-1 hover: m-2 rounded-md hover:text-slate-300 text-4xl"
+            className="border border-sky-300 text-sky-700  px-1 py-1 hover: m-2 rounded-md hover:text-slate-300 text-4xl"
           />
         </div>
 
@@ -101,8 +101,8 @@ const Newscard = ({
         </strong>
         <div className="btns flex justify-start border-sky-300 px-0 py-1">
           {" "}
-          <FaLink className="border border-sky-300 text-slate-50 bg-sky-500 px-1 py-1 hover:bg-sky-500 m-2 rounded-md hover:text-slate-300 text-4xl text-sl" />
-          <FaShareAlt className="border border-sky-300 text-slate-50 bg-sky-500 px-1 py-1 hover:bg-sky-500 m-2 rounded-md hover:text-slate-300 text-4xl" />
+          <FaLink className="border border-sky-300 text-slate-700 bg-sky-500 px-1 py-1 hover:bg-sky-500 m-2 rounded-md hover:text-slate-300 text-4xl text-sl" />
+          <FaShareAlt className="border border-sky-300 text-slate-700 bg-sky-500 px-1 py-1 hover:bg-sky-500 m-2 rounded-md hover:text-slate-300 text-4xl" />
         </div>
       </div>
     </>

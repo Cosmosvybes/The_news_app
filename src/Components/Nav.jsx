@@ -73,7 +73,7 @@ const Nav = () => {
   return (
     <>
       <header
-        className="h-28 bg-sky-500  z-10 sticky top-0 flex
+        className="h-28 bg-sky-700  z-10 sticky top-0 flex
            justify-around items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
         <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
@@ -132,7 +132,7 @@ const Nav = () => {
                   <option key={country}>{country}</option>
                 ))}
               </select>
-           )}
+            )}
           </div>
           <a
             className="text-white cursor-pointer hover:text-sky-700 underline py-2"
@@ -163,10 +163,10 @@ const Nav = () => {
 
         <div
           className="left-side absolute left-0 h-32 w-9 
-           border border-slate-700 top-96 flex flex-col justify-around items-center px-2 py-2 rounded-md -z-40"
+         top-96 flex flex-col justify-around items-center px-2 py-2 rounded-md -z-40"
         >
-          <FaTwitter className="text-sky-600" />
-          <FaFacebook className="text-sky-600" />
+          <FaTwitter className="text-sky-700 text-xl" />
+          <FaFacebook className="text-sky-700 text-xl" />
         </div>
       </header>
     </>
