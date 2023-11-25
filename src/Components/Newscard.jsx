@@ -45,7 +45,7 @@ const Newscard = ({ headline, body, source, newsImg }) => {
           </p>
           {firstPhoto.map((img) => (
             <div className="flex" key={img}>
-              <img src={img} alt="image" className="transition duration-100" />
+              <img src={img} alt="image" className="transition duration-100 px-1 py-1" />
             </div>
           ))}
         </div>

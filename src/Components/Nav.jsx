@@ -7,7 +7,7 @@ const Nav = () => {
     <>
       <header
         className="h-28 bg-slate-300  z-10 sticky top-0 flex
-           justify-around items-center px-40 max-sm:px-2 max-sm:justify-between max-sm:h-12"
+           justify-around items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
         <h1 className="text-sky-500  rounded-sm px-1 py-">Logo</h1>
         <a

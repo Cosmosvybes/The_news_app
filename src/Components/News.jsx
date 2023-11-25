@@ -3,6 +3,7 @@ import Newscard from "./Newscard";
 import img_1 from "../assets/Screenshot 2023-11-11 101540.png";
 import img_2 from "../assets/Screenshot 2023-11-11 143329.png";
 import tier from "../assets/3-tier.png";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 const News = () => {
   const [post, setPost] = useState([
     { id: 1, newsImg: [img_2, img_1, tier], headline: "Covid news" },
@@ -18,7 +19,7 @@ const News = () => {
   ]);
 
   const [pageNumber, setPageNumber] = useState(1);
-  const [postPerPage] = useState(4);
+  const [postPerPage] = useState(1);
   const [active, setActive] = useState(1);
   const lastPageIndex = postPerPage * pageNumber;
   const firstPageIndex = lastPageIndex - postPerPage;
@@ -31,6 +32,22 @@ const News = () => {
   const paginate = (number) => {
     setPageNumber(number);
     setActive(number);
+  };
+  let [count, setCount] = useState(1);
+
+  const nextPost = () => {
+    if (post.length > count) {
+      setCount((count += 1));
+      console.log(count);
+      setPageNumber(count);
+    }
+  };
+  const prevPost = () => {
+    if (count > 1) {
+      setCount((count -= 1));
+      console.log(count);
+      setPageNumber(count);
+    }
   };
 
   return (
@@ -51,8 +68,16 @@ const News = () => {
             </div>
           ))}
         </div>
-        <div className="pg-btns flex justify-center items-center">
-          {pageNumbers.map((number) => (
+        <div className="pg-btns flex  items-center max-sm:flex justify-center max-sm:px-1">
+          <FaArrowLeft
+            onClick={prevPost}
+            className="border border-sky-600 px-1 py-1 w-10 text-2xl hover:bg-sky-500 hover:text-white rounded-md m-1"
+          />{" "}
+          <FaArrowRight
+            onClick={nextPost}
+            className="border border-sky-600 px-1 py-1 w-10 text-2xl hover:bg-sky-500 hover:text-white rounded-md m-1"
+          />
+          {/* {pageNumbers.map((number) => (
             <div className="px-0" key={number}>
               <button
                 onClick={() => paginate(number)}
@@ -62,7 +87,7 @@ const News = () => {
                 {number}
               </button>
             </div>
-          ))}
+          ))} */}
         </div>
       </section>
     </>
