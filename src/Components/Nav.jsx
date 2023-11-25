@@ -93,7 +93,7 @@ const Nav = () => {
           {!openBar && <FaBars className=" text-slate-100 text-2xl" />}
         </button>
         <a
-          className="text-white cursor-pointer hover:text-sky-700 underline py-2"
+          className="text-white cursor-pointer hover:text-slate-200 underline py-2"
           style={{ display: openBar ? "block" : "none" }}
         >
           {" "}
@@ -104,7 +104,7 @@ const Nav = () => {
           className="sidebtn absolute right-0 top-12 transition duration-200 w-full
              bg-sky-400 hidden
          max-sm:flex flex-col max-sm:justify-start items-center px-2  py-0 rounded-sm z-10"
-          style={{ height: openBar ? "260px" : "0px", transition: "0.5s" }}
+          style={{ height: openBar ? "220px" : "0px", transition: "0.5s" }}
         >
           <p
             className="text-slate-800"
@@ -156,7 +156,7 @@ const Nav = () => {
 
           <FaCaretUp
             style={{ display: openBar ? "block" : "none" }}
-            className="absolute  top-64 text-center text-2xl text-sky-600"
+            className="absolute  top-48 text-center text-4xl text-sky-700 shadow shadow-slate-200 z-10"
             onClick={() => setOpenBar(!openBar)}
           />
         </div>
