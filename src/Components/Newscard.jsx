@@ -52,7 +52,7 @@ const Newscard = ({
       <div
         className="card h-auto w-82 flex flex-col  justify-between items-start
        border border-slate-400 px-4 py-4 max-sm:px-0 
-       max-sm:py-0   max-sm:items-start relative rounded-md "
+       max-sm:py-0   max-sm:items-start relative rounded-md shadow shadow-slate-800"
       >
         <div className="flex  w-auto h-92 flex-col relative ">
           <img
@@ -74,7 +74,7 @@ const Newscard = ({
             </div>
           ))} */}
         </div>
-        <h1 className="py-2 px-1 text-2xl font-bold text-sky-700">
+        <h1 className="py-2 px-1 text-xl font-bold text-sky-700">
           {headline}
         </h1>
         <h3 className="py-2 px-1 font-bold text-slate-600">

@@ -155,7 +155,7 @@ const News = () => {
       <section className="bg-slate-200">
         <h1 className="text-sky-700 text-left px-2 text-4xl max-sm:text-2xl  font-bold">
           {" "}
-          News around the world
+          News around the Globe
         </h1>
         <div className="news-container grid grid-cols-3 gap-2  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-200 relative">
           {postsToShow.map((news) => (
