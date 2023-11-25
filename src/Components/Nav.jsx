@@ -49,7 +49,6 @@ const Nav = () => {
     "ph",
     "se",
     "tw",
-    "us",
   ]);
   const [lang, showLang] = useState(false);
   const [ctry, showCountry] = useState(false);
@@ -60,7 +59,7 @@ const Nav = () => {
     switch (filterVal) {
       case "language":
         showLang(true);
-        showLang(false);
+        showCountry(false);
         break;
       case "country":
         showCountry(true);
@@ -114,15 +113,15 @@ const Nav = () => {
             id="filter"
           >
             <option>language</option>
-            <option> country</option>
+            <option>country</option>
           </select>
           <div
-            className="hidden max-sm:flex justify-center flex-col w-44 m-1 "
+            className="hidden max-sm:flex justify-center  w-44 m-1 "
             style={{ display: openBar ? "block" : "none" }}
           >
             {lang && (
               <select className="px-2 py-2 w-22">
-                {countries.map((country) => (
+                {languages.map((country) => (
                   <option key={country}>{country}</option>
                 ))}
               </select>
@@ -133,7 +132,7 @@ const Nav = () => {
                   <option key={country}>{country}</option>
                 ))}
               </select>
-            )}
+           )}
           </div>
           <a
             className="text-white cursor-pointer hover:text-sky-700 underline py-2"
