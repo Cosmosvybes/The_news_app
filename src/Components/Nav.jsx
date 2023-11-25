@@ -162,10 +162,10 @@ const Nav = () => {
         </div>
 
         <div
-          className="left-side absolute left-0 h-32 w-9 
-         top-96 flex flex-col justify-around items-center px-2 py-2 rounded-md -z-40"
+          className="left-side absolute right-0 h-32 w-auto 
+         top-0 flex justify-between items-center px-2 py-2  -z-40"
         >
-          <FaTwitter className="text-sky-700 text-xl" />
+          <FaTwitter className="text-sky-700 text-xl m-5" />
           <FaFacebook className="text-sky-700 text-xl" />
         </div>
       </header>

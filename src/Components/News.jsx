@@ -106,7 +106,7 @@ const News = () => {
   return (
     <>
       <section className="bg-slate-200">
-        <h1 className="text-sky-700 text-center text-4xl max-sm:text-2xl  font-bold">
+        <h1 className="text-sky-700 text-left px-2 text-4xl max-sm:text-2xl  font-bold">
           {" "}
           News around the world
         </h1>

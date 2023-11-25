@@ -54,7 +54,7 @@ const Newscard = ({
        border border-slate-400 px-4 py-4 max-sm:px-0 
        max-sm:py-0   max-sm:items-start relative rounded-md "
       >
-        <div className="flex  w-auto h-auto flex-col relative ">
+        <div className="flex  w-auto h-92 flex-col relative ">
           <p className="px-1 absolute right-0 font-extrabold text-sky-400 top-2 ">
             {" "}
             {slideNumber} / {newsImg.length}
@@ -80,11 +80,11 @@ const Newscard = ({
           {" "}
           <FaArrowCircleLeft
             onClick={navigatePrevPhoto}
-            className="border border-sky-300 text-sky-700  px-1 py-1 hover: m-2 rounded-md hover:text-slate-300 text-4xl"
+            className=" text-sky-700  hover: m-2 rounded-md hover:text-slate-300 text-2xl"
           />
           <FaArrowCircleRight
             onClick={navigateNextPhoto}
-            className="border border-sky-300 text-sky-700  px-1 py-1 hover: m-2 rounded-md hover:text-slate-300 text-4xl"
+            className=" text-sky-700   hover: m-2 rounded-md hover:text-slate-300 text-2xl"
           />
         </div>
 
@@ -101,8 +101,8 @@ const Newscard = ({
         </strong>
         <div className="btns flex justify-start border-sky-300 px-0 py-1">
           {" "}
-          <FaLink className="border border-sky-300 text-slate-700 bg-sky-500 px-1 py-1 hover:bg-sky-500 m-2 rounded-md hover:text-slate-300 text-4xl text-sl" />
-          <FaShareAlt className="border border-sky-300 text-slate-700 bg-sky-500 px-1 py-1 hover:bg-sky-500 m-2 rounded-md hover:text-slate-300 text-4xl" />
+          <FaLink className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-2xl text-sl" />
+          <FaShareAlt className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-2xl" />
         </div>
       </div>
     </>
