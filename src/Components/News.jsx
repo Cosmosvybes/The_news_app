@@ -3,107 +3,10 @@ import Newscard from "./Newscard";
 import img_1 from "../assets/Screenshot 2023-11-11 101540.png";
 import img_2 from "../assets/Screenshot 2023-11-11 143329.png";
 import tier from "../assets/3-tier.png";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaHandPointer, FaArrowRight } from "react-icons/fa";
 const News = () => {
   const [post, setPost] = useState([
-    {
-      id: 1,
-      newsImg: img_2,
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
-      headline: "Covid news",
-      publishedAt: "2023-11-25 10:03:00",
-      title: "Web 3",
-      source: { url: "#", name: "Phone Arena" },
-    },
-    {
-      id: 2,
-      newsImg: img_2,
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
-      headline: "Employemnt news",
-      publishedAt: "2023-11-25 12:03:00",
-      title: "Web 2",
-      source: { url: "#", name: "Phone Arena" },
-    },
-    {
-      id: 3,
-      newsImg: img_2,
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
-      headline: "Election",
-      publishedAt: "2023-11-25 11:03:00",
-      title: "Web 1",
-      source: { url: "#", name: "Phone Arena" },
-    },
-    {
-      id: 4,
-      newsImg: img_2,
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
-      headline: "Tsunami news",
-      publishedAt: "2023-11-25 15:03:12",
-      title: "Web 5",
-      source: { url: "#", name: "Phone Arena" },
-    },
-    {
-      id: 6,
-      newsImg: img_2,
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
-      headline: "News Around the world",
-      publishedAt: "2023-11-25 14:03:12",
-      title: "Web 3",
-      source: { url: "#", name: "Phone Arena" },
-    },
-    {
-      id: 7,
-      newsImg: img_1,
-      headline: "Keke napep",
-      publishedAt: "2023-11-25 14:50:12",
-      title: "Web 9",
-      source: { url: "#", name: "Phone Arena" },
-    },
-    {
-      id: 19,
-      newsImg: img_2,
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
-      headline: "News for the locals",
-      publishedAt: "2023-11-25 11:43:00",
-      title: "Web 11",
-      source: { url: "#", name: "Phone Arena" },
-    },
-    {
-      id: 134,
-      title: "Web 23",
-      newsImg: img_2,
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
-      headline: "The news",
-      publishedAt: "2023-11-25 12:01:00",
-      source: { url: "#", name: "Phone Arena" },
-    },
-    {
-      id: 37,
-      title: "Web i33",
-      newsImg: img_2,
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
-      headline: "Everywhere Good",
-      publishedAt: "2023-11-25 15:33:00",
-      source: { url: "#", name: "Phone Arena" },
-    },
-    {
-      id: 132,
-      title: "Web 134",
-      newsImg: img_2,
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quo sit amet earum velit eligendi quia cupiditate sint, pariatur quis sapiente! Deleniti illo ducimus alias fugiat quibusdam? Explicabo, iusto nulla!",
-      headline: "Shocking news",
-      publishedAt: "2023-11-25 15:03:00",
-      source: { url: "#", name: "Phone Arena" },
-    },
+ 
   ]);
 
   const [pageNumber, setPageNumber] = useState(1);
@@ -129,8 +32,8 @@ const News = () => {
     const fetchNews = async () => {
       const news = await fetch(url);
       const newsData = await news.json();
-      // setPost(newsData.articles);
-      // console.log(newsData.articles);
+      setPost(newsData.articles);
+      console.log(newsData.articles);
     };
     fetchNews();
   }, []);
@@ -159,13 +62,13 @@ const News = () => {
         </h1>
         <div className="news-container grid grid-cols-3 gap-2  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-200 relative">
           {postsToShow.map((news) => (
-            <div className="div-container flex justify-around" key={news.id}>
-              <Newscard
+            <div className="div-container flex justify-around" key={news.title}>
+              <Newscard desc={news.description}
                 body={news.content}
                 url={news.source.url}
-                newsImg={news.newsImg}
+                newsImg={news.image}
                 headline={news.title}
-                sourceName={news.source.url}
+                sourceName={news.source.name}
                 publishedAt={news.publishedAt}
               />
             </div>

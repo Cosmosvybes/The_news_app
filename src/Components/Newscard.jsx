@@ -4,6 +4,7 @@ import {
   FaArrowCircleLeft,
   FaArrowCircleRight,
   FaLink,
+  FaMousePointer,
 } from "react-icons/fa";
 const Newscard = ({
   headline,
@@ -12,6 +13,7 @@ const Newscard = ({
   sourceName,
   sourceUrl,
   newsImg,
+  desc,
   publishedAt,
 }) => {
   const [slideNumber, setSlideNumber] = useState(1);
@@ -74,13 +76,9 @@ const Newscard = ({
             </div>
           ))} */}
         </div>
-        <h1 className="py-2 px-1 text-xl font-bold text-sky-700">
-          {headline}
-        </h1>
-        <h3 className="py-2 px-1 font-bold text-slate-600">
-          Desc: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Sapiente!
-        </h3>
+        <h1 className="py-2 px-1 text-xl font-bold text-sky-700">{headline}</h1>
+        <h3 className="py-2 px-1 font-bold text-slate-600">{desc}</h3>
+
         {/* <div className="flex justify-between absolute top-28 max-sm:top-20  max-md:top-20 px-4  w-full  max-sm:px-2">
           {" "}
           <FaArrowCircleLeft
@@ -94,6 +92,14 @@ const Newscard = ({
         </div> */}
 
         <p className="px-2 text-slate-950">{body}</p>
+        <div className="btns flex justify-start border-sky-300 px-0 py-1">
+          {" "}
+          <FaMousePointer
+            onClick={() => window.open(url)}
+            className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl"
+          />
+          {/* <FaShareAlt className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl" /> */}
+        </div>
         <strong className="text-slate-700 px-2">
           Source {":"} {sourceName}{" "}
         </strong>
@@ -103,11 +109,6 @@ const Newscard = ({
         <strong className="text-slate-700 px-2">
           Published at {":"} {getTimeDifference(publishedAt)} {" minutes ago. "}
         </strong>
-        <div className="btns flex justify-start border-sky-300 px-0 py-1">
-          {" "}
-          <FaLink className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl" />
-          <FaShareAlt className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl" />
-        </div>
       </div>
     </>
   );
