@@ -5,11 +5,10 @@ import img_2 from "../assets/Screenshot 2023-11-11 143329.png";
 import tier from "../assets/3-tier.png";
 import { FaArrowLeft, FaHandPointer, FaArrowRight } from "react-icons/fa";
 const News = () => {
-  const [post, setPost] = useState([
- 
-  ]);
+  const [post, setPost] = useState([]);
 
   const [pageNumber, setPageNumber] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
   const [postPerPage] = useState(1);
   // const [active, setActive] = useState(1);
   const lastPageIndex = postPerPage * pageNumber;
@@ -30,9 +29,11 @@ const News = () => {
   useEffect(() => {
     const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=uk&max=10&apikey=${apiKey}`;
     const fetchNews = async () => {
+      setIsLoading(true);
       const news = await fetch(url);
       const newsData = await news.json();
       setPost(newsData.articles);
+      setIsLoading(false);
       console.log(newsData.articles);
     };
     fetchNews();
@@ -60,19 +61,29 @@ const News = () => {
           {" "}
           News around the Globe
         </h1>
-        <div className="news-container grid grid-cols-3 gap-2  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-200 relative">
-          {postsToShow.map((news) => (
-            <div className="div-container flex justify-around" key={news.title}>
-              <Newscard desc={news.description}
-                body={news.content}
-                url={news.source.url}
-                newsImg={news.image}
-                headline={news.title}
-                sourceName={news.source.name}
-                publishedAt={news.publishedAt}
-              />
+        <div className="news-container border  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-200 relative">
+          {isLoading ? (
+            <p>Loading... </p>
+          ) : (
+            <div className=" grid grid-cols-2 gap-2 max-sm:grid-cols-1">
+              {postsToShow.map((news) => (
+                <div
+                  className="div-container flex justify-around "
+                  key={news.title}
+                >
+                  <Newscard
+                    desc={news.description}
+                    body={news.content}
+                    url={news.source.url}
+                    newsImg={news.image}
+                    headline={news.title}
+                    sourceName={news.source.name}
+                    publishedAt={news.publishedAt}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          )}
         </div>
         <div className="pg-btns flex  justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 mx-4 my-6 ">
           <FaArrowLeft

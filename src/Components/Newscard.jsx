@@ -53,15 +53,15 @@ const Newscard = ({
     <>
       <div
         className="card h-auto w-82 flex flex-col  justify-between items-start
-       border border-slate-400 px-4 py-4 max-sm:px-0 
-       max-sm:py-0   max-sm:items-start relative rounded-md "
+       border-gray-300 px-4 py-4 max-sm:px-0 
+       max-sm:py-0  border-2 max-sm:items-start relative rounded-md m-1"
       >
         <div className="flex  w-auto h-92 flex-col relative ">
           <a href={newsImg}>
             <img
               src={newsImg}
               alt="image"
-              className="transition duration-100 px-1 py-1"
+              className="transition duration-100 "
             />
           </a>
 
