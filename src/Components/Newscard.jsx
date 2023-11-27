@@ -57,11 +57,14 @@ const Newscard = ({
        max-sm:py-0   max-sm:items-start relative rounded-md "
       >
         <div className="flex  w-auto h-92 flex-col relative ">
-          <img
-            src={newsImg}
-            alt="image"
-            className="transition duration-100 px-1 py-1"
-          />
+          <a href={newsImg}>
+            <img
+              src={newsImg}
+              alt="image"
+              className="transition duration-100 px-1 py-1"
+            />
+          </a>
+
           {/* <p className="px-1 absolute right-0 font-extrabold text-sky-400 top-2 ">
             {" "}
             {slideNumber} / {newsImg.length}
@@ -113,6 +116,5 @@ const Newscard = ({
     </>
   );
 };
-
 
 export default Newscard;
