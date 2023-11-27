@@ -54,7 +54,7 @@ const Newscard = ({
       <div
         className="card h-auto w-82 flex flex-col  justify-between items-start
        border border-slate-400 px-4 py-4 max-sm:px-0 
-       max-sm:py-0   max-sm:items-start relative rounded-md shadow shadow-slate-800"
+       max-sm:py-0   max-sm:items-start relative rounded-md "
       >
         <div className="flex  w-auto h-92 flex-col relative ">
           <img
@@ -113,5 +113,6 @@ const Newscard = ({
     </>
   );
 };
+
 
 export default Newscard;
