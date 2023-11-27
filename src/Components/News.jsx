@@ -3,7 +3,7 @@ import Newscard from "./Newscard";
 import img_1 from "../assets/Screenshot 2023-11-11 101540.png";
 import img_2 from "../assets/Screenshot 2023-11-11 143329.png";
 import tier from "../assets/3-tier.png";
-import { FaArrowLeft, FaHandPointer, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 const News = () => {
   const [post, setPost] = useState([]);
 
@@ -13,7 +13,8 @@ const News = () => {
   // const [active, setActive] = useState(1);
   const lastPageIndex = postPerPage * pageNumber;
   const firstPageIndex = lastPageIndex - postPerPage;
-  const postsToShow = post.reverse().slice(firstPageIndex, lastPageIndex + 2);
+  const postsToShow = post.slice(firstPageIndex, lastPageIndex + 2);
+  const [response, setResponse] = useState("");
   // const [publishingTime, setPublishingTime]= useState("")
   // const pageNumbers = [];
   // for (let i = 1; i < Math.ceil(post.length / postPerPage); i++) {
@@ -27,14 +28,22 @@ const News = () => {
   const apiKey = "67a01c9e936b42440e55e5deedd2b567";
   const category = "general";
   useEffect(() => {
-    const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=uk&max=10&apikey=${apiKey}`;
+    const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${apiKey}`;
     const fetchNews = async () => {
       setIsLoading(true);
-      const news = await fetch(url);
-      const newsData = await news.json();
-      setPost(newsData.articles);
-      setIsLoading(false);
-      console.log(newsData.articles);
+      setResponse("loading...");
+      try {
+        const news = await fetch(url);
+        const newsData = await news.json();
+        if (!news.ok) {
+          throw new Error("internal error, failed to get news headlines");
+        }
+        setPost(newsData.articles);
+        setIsLoading(false);
+      } catch (error) {
+        setResponse(error.message);
+        // console.log(error.message);
+      }
     };
     fetchNews();
   }, []);
@@ -63,10 +72,10 @@ const News = () => {
         </h1>
         <div className="news-container border  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-200 relative">
           {isLoading ? (
-            <p>Loading... </p>
+            <p>{response} </p>
           ) : (
             <div className=" grid grid-cols-2 gap-2 max-sm:grid-cols-1">
-              {postsToShow.map((news) => (
+              {postsToShow?.map((news) => (
                 <div
                   className="div-container flex justify-around "
                   key={news.title}
