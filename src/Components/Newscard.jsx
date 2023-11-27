@@ -61,7 +61,7 @@ const Newscard = ({
             <img
               src={newsImg}
               alt="image"
-              className="transition duration-100 "
+              className="transition duration-100  border border-inherit"
             />
           </a>
 
@@ -94,13 +94,18 @@ const Newscard = ({
           />
         </div> */}
 
-        <p className="px-2 text-slate-950">{body}</p>
-        <div className="btns flex justify-start border-sky-300 px-0 py-1">
-          {" "}
-          <FaMousePointer
+        <p className="px-2 text-gray-800">{body}</p>
+        <div className="btns flex justify-center border-sky-300 px-0 py-1">
+          <button
+            onClick={() => window.open(url)}
+            className="w-full py-1 text-sky-700 font-bold border border-none px-1"
+          >
+            Read more
+          </button>{" "}
+          {/* <FaMousePointer
             onClick={() => window.open(url)}
             className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl"
-          />
+          /> */}
           {/* <FaShareAlt className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl" /> */}
         </div>
         <strong className="text-slate-700 px-2">
