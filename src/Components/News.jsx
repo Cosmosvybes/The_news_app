@@ -31,7 +31,7 @@ const News = () => {
     const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${apiKey}`;
     const fetchNews = async () => {
       setIsLoading(true);
-      setResponse("loading...");
+      setResponse("loading");
       try {
         const news = await fetch(url);
         const newsData = await news.json();
@@ -65,8 +65,8 @@ const News = () => {
 
   return (
     <>
-      <section className="bg-slate-200">
-        <h1 className="text-sky-700 text-left px-2 text-4xl max-sm:text-2xl  font-bold">
+      <section className="bg-white">
+        <h1 className="text-sky-700 text-left px-2 text-4xl max-sm:text-2xl inline  font-bold">
           {" "}
           News around the Globe
         </h1>
@@ -97,11 +97,11 @@ const News = () => {
         <div className="pg-btns flex  justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 mx-4 my-6 ">
           <FaArrowLeft
             onClick={prevPost}
-            className="border border-sky-600 bg-slate-700 px-3 py-1 w-20 text-4xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
+            className=" bg-slate-700 px-3 py-1 w-20 text-4xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
           />{" "}
           <FaArrowRight
             onClick={nextPost}
-            className="border border-sky-600 bg-slate-700 px-3 py-1 w-20 text-4xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
+            className=" bg-slate-700 px-3 py-1 w-20 text-4xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
           />
           {/* {pageNumbers.map((number) => (
             <div className="px-0" key={number}>

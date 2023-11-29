@@ -79,8 +79,8 @@ const Newscard = ({
             </div>
           ))} */}
         </div>
-        <h1 className="py-2 px-1 text-xl font-bold text-sky-700">{headline}</h1>
-        <h3 className="py-2 px-1 font-bold text-slate-600">{desc}</h3>
+        <h1 className="py-2 px-1 text-4xl font-bold text-black">{headline}</h1>
+        <h3 className="py-2 px-1 font-bold text-black">{desc}</h3>
 
         {/* <div className="flex justify-between absolute top-28 max-sm:top-20  max-md:top-20 px-4  w-full  max-sm:px-2">
           {" "}
@@ -94,7 +94,7 @@ const Newscard = ({
           />
         </div> */}
 
-        <p className="px-2 text-gray-800">{body}</p>
+        <p className="px-2 text-black">{body}</p>
         <div className="btns flex justify-center border-sky-300 px-0 py-1">
           <button
             onClick={() => window.open(url)}
@@ -108,13 +108,13 @@ const Newscard = ({
           /> */}
           {/* <FaShareAlt className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl" /> */}
         </div>
-        <strong className="text-slate-700 px-2">
+        <strong className="text-black px-2">
           Source {":"} {sourceName}{" "}
         </strong>
-        <a className="text-slate-700 px-2" href={url}>
+        <a className="text-black px-2" href={url}>
           url {":"} {url}{" "}
         </a>
-        <strong className="text-slate-700 px-2">
+        <strong className="text-black px-2">
           Published at {":"} {getTimeDifference(publishedAt)} {" minutes ago. "}
         </strong>
       </div>
