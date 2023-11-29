@@ -70,11 +70,12 @@ const News = () => {
           {" "}
           News around the Globe
         </h1>
-        <div className="news-container border  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-200 relative">
+        <div className="news-container  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-100 relative">
           {isLoading ? (
             <p>{response} </p>
           ) : (
-            <div className=" grid grid-cols-2 gap-2 max-sm:grid-cols-1">
+              
+            <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
               {postsToShow?.map((news) => (
                 <div
                   className="div-container flex justify-around "
