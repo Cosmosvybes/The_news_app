@@ -95,7 +95,7 @@ const Newscard = ({
         </div> */}
 
         <p className="px-2 text-black">{body}</p>
-        <div className="btns flex justify-center border-sky-300 px-0 py-1">
+        <div className="btns flex justify-center border-sky-300 py-1 px-2">
           <button
             onClick={() => window.open(url)}
             className="w-full py-1 text-sky-700 font-bold border border-none px-1"
