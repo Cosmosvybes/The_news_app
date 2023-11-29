@@ -186,7 +186,7 @@ const Nav = () => {
         </div>
         {showFeedBack && (
           <div
-            className="flex h-28 transition items-center justify-center duration-500 bg-gray-100 rounded-md absolute left-10  top-72"
+            className="flex h-28 transition items-center max-sm:w-36 justify-center duration-500 bg-gray-100 rounded-md absolute left-10  top-72"
             style={{
               width: showFeedBack ? "300px" : "0px",
               transition: "0.9s",
