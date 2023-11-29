@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import "./Nav.css";
-import { FaBars, FaCaretUp, FaTwitter, FaFacebook } from "react-icons/fa";
+import {
+  FaBars,
+  FaCaretUp,
+  FaTwitter,
+  FaFacebook,
+  FaTimes,
+} from "react-icons/fa";
 const Nav = () => {
   const [openBar, setOpenBar] = useState(false);
   const [countries, setCountry] = useState([
@@ -69,6 +75,7 @@ const Nav = () => {
         return;
     }
   };
+  const [showFeedBack, setSHowFeedBack] = useState(false);
 
   return (
     <>
@@ -162,12 +169,40 @@ const Nav = () => {
         </div>
 
         <div
-          className="left-side absolute right-0 h-32 w-auto 
-         top-0 flex justify-between items-center px-2 py-2  -z-40"
+          className="left-side absolute right-0 h-36 w-auto 
+         top-44 flex justify-between items-center py-2 -z-40"
         >
-          <FaTwitter className="text-sky-700 text-xl m-5" />
-          <FaFacebook className="text-sky-700 text-xl" />
+          {!showFeedBack && (
+            <button
+              onClick={() => setSHowFeedBack(!showFeedBack)}
+              className="bg-red-500 text-white font-bold px-2 py-1"
+            >
+              {" "}
+              feedback
+            </button>
+          )}
+          {/* <FaTwitter className="text-sky-700 text-xl m-5" />
+          <FaFacebook className="text-sky-700 text-xl" /> */}
         </div>
+        {showFeedBack && (
+          <div
+            className="flex h-28 transition items-center justify-center duration-500 bg-gray-100 rounded-md absolute left-10  top-72"
+            style={{
+              width: showFeedBack ? "300px" : "0px",
+              transition: "0.9s",
+            }}
+          >
+            <button className="px-1 py-1">😣</button>
+            <button className="px-1 py-1">😍</button>
+            <button className="px-1 py-1">😁</button>
+            <button className="px-1 py-1">😡</button>
+
+            <FaTimes
+              onClick={() => setSHowFeedBack(!showFeedBack)}
+              className="absolute top-4 bg-gray-600 rounded-lg text-white px-1 py-1 right-2"
+            />
+          </div>
+        )}
       </header>
     </>
   );
