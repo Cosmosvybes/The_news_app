@@ -70,28 +70,84 @@ const News = () => {
           {" "}
           News around the Globe
         </h1>
+
         <div className="news-container  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-100 relative">
           {isLoading ? (
             <p>{response} </p>
           ) : (
-              
-            <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
-              {postsToShow?.map((news) => (
-                <div
-                  className="div-container flex justify-around "
-                  key={news.title}
-                >
-                  <Newscard
-                    desc={news.description}
-                    body={news.content}
-                    url={news.source.url}
-                    newsImg={news.image}
-                    headline={news.title}
-                    sourceName={news.source.name}
-                    publishedAt={news.publishedAt}
-                  />
+            <div className="relative">
+              <div className="h-44 relative block">
+                {postsToShow.slice(1).map((post) => {
+                  <a href={post.image}>
+                    <img
+                      src={post.image}
+                      alt="image"
+                      className="transition duration-100  border border-inherit w-full"
+                    />
+                  </a>;
+                })}
+
+                <h1 className="py-2 px-1 text-3xl font-bold text-black">
+                  {headline}
+                </h1>
+                <h3 className="py-2 px-1 font-bold text-black">{desc}</h3>
+
+                {/* <div className="flex justify-between absolute top-28 max-sm:top-20  max-md:top-20 px-4  w-full  max-sm:px-2">
+          {" "}
+          <FaArrowCircleLeft
+            // onClick={navigatePrevPhoto}
+            className=" text-sky-700  hover: m-2 rounded-md hover:text-slate-300 text-2xl"
+          />
+          <FaArrowCircleRight
+            // onClick={navigateNextPhoto}
+            className=" text-sky-700   hover: m-2 rounded-md hover:text-slate-300 text-2xl"
+          />
+        </div> */}
+
+                <p className="px-2 text-black">{post.body}</p>
+                <div className="btns flex justify-center border-sky-300 py-1 px-2">
+                  <button
+                    onClick={() => window.open(post.source.url)}
+                    className="w-full py-1 text-sky-700 font-bold border border-none px-1"
+                  >
+                    Read more
+                  </button>{" "}
+                  {/* <FaMousePointer
+            onClick={() => window.open(url)}
+            className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl"
+          /> */}
+                  {/* <FaShareAlt className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl" /> */}
                 </div>
-              ))}
+                <strong className="text-black px-2">
+                  Source {":"} {post.source.url}{" "}
+                </strong>
+                <a className="text-black px-2" href={post.source.url}>
+                  url {":"} {post.source.url}{" "}
+                </a>
+                <strong className="text-black px-2 inline">
+                  <FaClock className="inline" />{" "}
+                  {getTimeDifference(post.publishedAt)} {" minutes ago. "}
+                </strong>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
+                {postsToShow?.map((news) => (
+                  <div
+                    className="div-container flex justify-around "
+                    key={news.title}
+                  >
+                    <Newscard
+                      desc={news.description}
+                      body={news.content}
+                      url={news.source.url}
+                      newsImg={news.image}
+                      headline={news.title}
+                      sourceName={news.source.name}
+                      publishedAt={news.publishedAt}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -104,17 +160,6 @@ const News = () => {
             onClick={nextPost}
             className=" bg-slate-700 px-3 py-1 w-20 text-4xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
           />
-          {/* {pageNumbers.map((number) => (
-            <div className="px-0" key={number}>
-              <button
-                onClick={() => paginate(number)}
-                style={{ background: number == active && "skyblue" }}
-                className="border border-sky-600 px-1 py-1 w-10 hover:bg-sky-500 hover:text-white rounded-md m-1"
-              >
-                {number}
-              </button>
-            </div>
-          ))} */}
         </div>
       </section>
     </>

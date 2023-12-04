@@ -4,6 +4,7 @@ import {
   FaArrowCircleLeft,
   FaArrowCircleRight,
   FaLink,
+  FaClock,
   FaMousePointer,
 } from "react-icons/fa";
 const Newscard = ({
@@ -52,16 +53,16 @@ const Newscard = ({
   return (
     <>
       <div
-        className="card h-auto w-82 flex flex-col  justify-between items-start
-       border-gray-300 px-4 py-4 max-sm:px-0 
-       max-sm:py-0  border-2 max-sm:items-start relative rounded-md m-1"
+        className="card h-auto  flex flex-col  justify-between items-start
+       border-gray-300 px-0 py-0 max-sm:px-0 
+       max-sm:py-0  border-2 max-sm:items-start relative rounded-sm m-1"
       >
-        <div className="flex  w-auto h-92 flex-col relative ">
+        <div className="flex  w-full h-92 flex-col relative ">
           <a href={newsImg}>
             <img
               src={newsImg}
               alt="image"
-              className="transition duration-100  border border-inherit"
+              className="transition duration-100  border border-inherit w-full"
             />
           </a>
 
@@ -79,7 +80,7 @@ const Newscard = ({
             </div>
           ))} */}
         </div>
-        <h1 className="py-2 px-1 text-4xl font-bold text-black">{headline}</h1>
+        <h1 className="py-2 px-1 text-3xl font-bold text-black">{headline}</h1>
         <h3 className="py-2 px-1 font-bold text-black">{desc}</h3>
 
         {/* <div className="flex justify-between absolute top-28 max-sm:top-20  max-md:top-20 px-4  w-full  max-sm:px-2">
@@ -114,8 +115,8 @@ const Newscard = ({
         <a className="text-black px-2" href={url}>
           url {":"} {url}{" "}
         </a>
-        <strong className="text-black px-2">
-          Published at {":"} {getTimeDifference(publishedAt)} {" minutes ago. "}
+        <strong className="text-black px-2 inline">
+       <FaClock className="inline"/> {getTimeDifference(publishedAt)} {" minutes ago. "}
         </strong>
       </div>
     </>
