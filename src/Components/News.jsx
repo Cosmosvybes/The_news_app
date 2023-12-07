@@ -78,7 +78,7 @@ const News = () => {
           ) : (
             <div className="relative">
               <div className="h-auto relative block">
-                {postsToShow.slice(0, 1).map((obj) => (
+                {postsToShow?.slice(0, 1).map((obj) => (
                   <Newscard
                     headline={obj.title}
                     desc={obj.description}

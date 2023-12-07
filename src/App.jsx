@@ -1,10 +1,9 @@
 import "./App.css";
-import { Nav, News } from "./Index";
+import { Nav } from "./Index";
 function App() {
   return (
     <>
       <Nav />
-      <News />
     </>
   );
 }
