@@ -3,7 +3,7 @@ import Newscard from "./Newscard";
 import img_1 from "../assets/Screenshot 2023-11-11 101540.png";
 import img_2 from "../assets/Screenshot 2023-11-11 143329.png";
 import tier from "../assets/3-tier.png";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaClock } from "react-icons/fa";
 const News = () => {
   const [post, setPost] = useState([]);
 
@@ -36,7 +36,7 @@ const News = () => {
         const news = await fetch(url);
         const newsData = await news.json();
         if (!news.ok) {
-          throw new Error("internal error, failed to get news headlines");
+          throw new Error("server error, failed to get news headlines");
         }
         setPost(newsData.articles);
         setIsLoading(false);
@@ -62,6 +62,7 @@ const News = () => {
       setPageNumber(count);
     }
   };
+  // console.log(postsToShow.slice(0,1))
 
   return (
     <>
@@ -76,58 +77,18 @@ const News = () => {
             <p>{response} </p>
           ) : (
             <div className="relative">
-              <div className="h-44 relative block">
-                {postsToShow.slice(1).map((post) => {
-                  <a href={post.image}>
-                    <img
-                      src={post.image}
-                      alt="image"
-                      className="transition duration-100  border border-inherit w-full"
-                    />
-                  </a>;
-                })}
-
-                <h1 className="py-2 px-1 text-3xl font-bold text-black">
-                  {headline}
-                </h1>
-                <h3 className="py-2 px-1 font-bold text-black">{desc}</h3>
-
-                {/* <div className="flex justify-between absolute top-28 max-sm:top-20  max-md:top-20 px-4  w-full  max-sm:px-2">
-          {" "}
-          <FaArrowCircleLeft
-            // onClick={navigatePrevPhoto}
-            className=" text-sky-700  hover: m-2 rounded-md hover:text-slate-300 text-2xl"
-          />
-          <FaArrowCircleRight
-            // onClick={navigateNextPhoto}
-            className=" text-sky-700   hover: m-2 rounded-md hover:text-slate-300 text-2xl"
-          />
-        </div> */}
-
-                <p className="px-2 text-black">{post.body}</p>
-                <div className="btns flex justify-center border-sky-300 py-1 px-2">
-                  <button
-                    onClick={() => window.open(post.source.url)}
-                    className="w-full py-1 text-sky-700 font-bold border border-none px-1"
-                  >
-                    Read more
-                  </button>{" "}
-                  {/* <FaMousePointer
-            onClick={() => window.open(url)}
-            className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl"
-          /> */}
-                  {/* <FaShareAlt className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl" /> */}
-                </div>
-                <strong className="text-black px-2">
-                  Source {":"} {post.source.url}{" "}
-                </strong>
-                <a className="text-black px-2" href={post.source.url}>
-                  url {":"} {post.source.url}{" "}
-                </a>
-                <strong className="text-black px-2 inline">
-                  <FaClock className="inline" />{" "}
-                  {getTimeDifference(post.publishedAt)} {" minutes ago. "}
-                </strong>
+              <div className="h-auto relative block">
+                {postsToShow.slice(0, 1).map((obj) => (
+                  <Newscard
+                    headline={obj.title}
+                    desc={obj.description}
+                    url={obj.source.url}
+                    newsImg={obj.image}
+                    body={obj.content}
+                    sourceName={obj.source.name}
+                    publishedAt={obj.publishedAt}
+                  />
+                ))}
               </div>
 
               <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
