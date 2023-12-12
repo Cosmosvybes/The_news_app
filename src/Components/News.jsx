@@ -13,7 +13,7 @@ const News = () => {
   // const [active, setActive] = useState(1);
   const lastPageIndex = postPerPage * pageNumber;
   const firstPageIndex = lastPageIndex - postPerPage;
-  const postsToShow = post.slice(firstPageIndex, lastPageIndex + 2);
+  const postsToShow = post.slice(firstPageIndex, lastPageIndex + 1);
   const [response, setResponse] = useState("");
   // const [publishingTime, setPublishingTime]= useState("")
   // const pageNumbers = [];
@@ -78,7 +78,7 @@ const News = () => {
           ) : (
             <div className="relative">
               <div className="h-auto relative block">
-                {postsToShow?.slice(0, 1).map((obj) => (
+                {postsToShow?.reverse().slice(0,1).map((obj) => (
                   <Newscard
                     headline={obj.title}
                     desc={obj.description}
@@ -92,7 +92,7 @@ const News = () => {
               </div>
 
               <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
-                {postsToShow?.map((news) => (
+                {postsToShow?.reverse().map((news) => (
                   <div
                     className="div-container flex justify-around "
                     key={news.title}
