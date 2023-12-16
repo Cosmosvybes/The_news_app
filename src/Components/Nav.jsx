@@ -98,17 +98,17 @@ const Nav = () => {
   return (
     <>
       <header
-        className="h-20 bg-sky-800  z-10 sticky top-0 flex
-           justify-between items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
+        className="h-28 bg-sky-700  z-10 sticky top-0 flex
+           justify-around items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
         <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
         <a
           href="#"
-          className=" rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 font-bold text-white hover:text-white max-sm:hidden"
+          className="text-slate-950 rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden"
         >
           All news
         </a>
-        <a className="text-white font-bold  rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden">
+        <a className="text-slate-950  rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden">
           Discussion
         </a>
         <button
@@ -118,7 +118,7 @@ const Nav = () => {
           {!openBar && <FaBars className=" text-slate-100 text-2xl" />}
         </button>
         <a
-          className="text-gray-200 cursor-pointer hover:text-slate-200 underline py-2"
+          className="text-white cursor-pointer hover:text-slate-200 underline py-2"
           style={{ display: openBar ? "block" : "none" }}
         >
           {" "}
@@ -131,8 +131,11 @@ const Nav = () => {
          max-sm:flex flex-col max-sm:justify-center items-center px-2  py-0 rounded-sm z-10"
           style={{ height: openBar ? "220px" : "0px", transition: "0.5s" }}
         >
-         
-      
+{/*          
+          <div
+            className="hidden max-sm:flex justify-center  w-44 m-1 "
+            style={{ display: openBar ? "block" : "none" }}
+          ></div> */}
 
           <input
             style={{ display: openBar ? "block" : "none" }}
@@ -154,13 +157,13 @@ const Nav = () => {
         </div>
 
         <div
-          className="left-side absolute left-0 h-36 w-auto 
-         top-52 flex justify-between items-center py-0 -z-40"
+          className="left-side absolute right-0 h-36 w-auto 
+         top-44 flex justify-between items-center py-2 -z-40"
         >
           {!showFeedBack && (
             <button
               onClick={() => setSHowFeedBack(!showFeedBack)}
-              className="bg-red-500 text-white font-bold px-1 py-0 rotate-90"
+              className="bg-red-500 text-white font-bold px-2 py-1"
             >
               {" "}
               feedback
@@ -169,8 +172,26 @@ const Nav = () => {
           {/* <FaTwitter className="text-sky-700 text-xl m-5" />
           <FaFacebook className="text-sky-700 text-xl" /> */}
         </div>
-      </header>
+        {showFeedBack && (
+          <div
+            className="flex h-28 transition items-center max-sm:w-36 justify-center duration-500 bg-gray-100 rounded-md absolute left-10  top-72"
+            style={{
+              width: showFeedBack ? "300px" : "0px",
+              transition: "0.9s",
+            }}
+          >
+            <button className="px-1 py-1">😣</button>
+            <button className="px-1 py-1">😍</button>
+            <button className="px-1 py-1">😁</button>
+            <button className="px-1 py-1">😡</button>
 
+            <FaTimes
+              onClick={() => setSHowFeedBack(!showFeedBack)}
+              className="absolute top-4 bg-gray-600 rounded-lg text-white px-1 py-1 right-2"
+            />
+          </div>
+        )}
+      </header>
       <News />
     </>
   );

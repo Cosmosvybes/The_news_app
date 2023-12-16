@@ -78,24 +78,21 @@ const News = () => {
           ) : (
             <div className="relative">
               <div className="h-auto relative block">
-                {post
-                  ?.reverse()
-                  .slice(0, 1)
-                  .map((obj) => (
-                    <Newscard
-                      headline={obj.title}
-                      desc={obj.description}
-                      url={obj.source.url}
-                      newsImg={obj.image}
-                      body={obj.content}
-                      sourceName={obj.source.name}
-                      publishedAt={obj.publishedAt}
-                    />
-                  ))}
+                {post?.slice(0, 1).map((obj) => (
+                  <Newscard
+                    headline={obj.title}
+                    desc={obj.description}
+                    url={obj.source.url}
+                    newsImg={obj.image}
+                    body={obj.content}
+                    sourceName={obj.source.name}
+                    publishedAt={obj.publishedAt}
+                  />
+                ))}
               </div>
 
               <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
-                {postsToShow?.reverse().map((news) => (
+                {postsToShow?.map((news) => (
                   <div
                     className="div-container flex justify-around "
                     key={news.title}
