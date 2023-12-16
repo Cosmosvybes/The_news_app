@@ -46,8 +46,8 @@ const Newscard = ({
     const currentTime = Date.now();
     const publishedTime = new Date(timePublished);
     const timeDiff = currentTime - publishedTime;
-    const minutes = Math.floor(timeDiff / (1000 * 60));
-    return minutes;
+    const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+    return hours;
   };
 
   return (
@@ -116,7 +116,8 @@ const Newscard = ({
           url {":"} {url}{" "}
         </a>
         <strong className="text-black px-2 inline">
-       <FaClock className="inline"/> {getTimeDifference(publishedAt)} {" minutes ago. "}
+          <FaClock className="inline" /> {getTimeDifference(publishedAt)}{" "}
+          {"Hr ago. "}
         </strong>
       </div>
     </>
