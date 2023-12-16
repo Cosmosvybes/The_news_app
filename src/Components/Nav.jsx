@@ -98,8 +98,8 @@ const Nav = () => {
   return (
     <>
       <header
-        className="h-28 bg-sky-700  z-10 sticky top-0 flex
-           justify-around items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
+        className="h-12 bg-sky-700  z-10 sticky top-0 flex
+           justify-between items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
         <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
         <a

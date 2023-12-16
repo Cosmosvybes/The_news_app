@@ -71,6 +71,29 @@ const News = () => {
           {" "}
           News around the Globe
         </h1>
+        <div className="flex flex-col">
+          <div className="flex justify-end  items-center px-1 py-1">
+            <p className="px-1"> Filter News By </p>
+            <FaFilter />
+          </div>{" "}
+          <div className="flex justify-end">
+            <select className="w-auto px-1">
+              <option>country</option>
+              <option>language</option>
+            </select>
+            {!true ? (
+              <select className="w-auto px-1">
+                <option>united kingdom</option>
+                <option>pakistan</option>
+              </select>
+            ) : (
+              <select className="w-auto px-1">
+                <option>bt</option>
+                <option>pk</option>
+              </select>
+            )}
+          </div>
+        </div>
 
         <div className="news-container  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-100 relative">
           {isLoading ? (
@@ -111,29 +134,6 @@ const News = () => {
               </div>
             </div>
           )}
-        </div>
-        <div className="flex flex-col">
-          <div className="flex justify-end  items-center px-1 py-1">
-            <p className="px-1"> Filter News By </p>
-            <FaFilter />
-          </div>{" "}
-          <div className="flex justify-end">
-            <select className="w-auto px-1">
-              <option>country</option>
-              <option>language</option>
-            </select>
-            {!true ? (
-              <select className="w-auto px-1">
-                <option>united kingdom</option>
-                <option>pakistan</option>
-              </select>
-            ) : (
-              <select className="w-auto px-1">
-                <option>bt</option>
-                <option>pk</option>
-              </select>
-            )}
-          </div>
         </div>
 
         <div className="pg-btns flex  justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 mx-4 my-6 ">
