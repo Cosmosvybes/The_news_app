@@ -73,7 +73,7 @@ const News = () => {
         <div className="flex justify-between max-sm:flex-col">
           <div className="flex-col">
             <div className="flex justify-start  items-center px-2 py-2">
-              <p className="px-1"> Filter By </p>
+              <p className="px-2"> Filter By </p>
               <FaFilter className="text-gray-400" />
             </div>
             <div className="flex max-sm:flex-col justify-start">
