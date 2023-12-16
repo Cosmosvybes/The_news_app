@@ -9,6 +9,9 @@ import {
   FaSignInAlt,
   FaRegistered,
   FaDollarSign,
+  FaBookReader,
+  FaUser,
+  FaQuestionCircle,
 } from "react-icons/fa";
 import News from "./News";
 const Nav = () => {
@@ -101,19 +104,31 @@ const Nav = () => {
   return (
     <>
       <header
-        className="h-12 bg-sky-700  z-10 sticky top-0 flex
-           justify-between items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
+        className="h-14 bg-sky-700  z-10 sticky top-0 flex
+           justify-between items-center px-4 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
-        <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
+        <h1 className="text-white rounded-sm px-1 py-">Logo</h1>
         <a
           href="#"
-          className="text-slate-950 rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden"
+          className="text-white font-bold rounded-sm px-1 py-1 cursor-pointer transition duration-200 hover:bg-sky-400 hover:text-white max-sm:hidden"
         >
-          All news
+          Headlines
+          {/* <FaBookReader className="inline" /> */}
         </a>
-        <a className="text-slate-950  rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden">
-          Discussion
+        <a className="text-white  font-bold rounded-sm px-1 py-1 cursor-pointer transition duration-200 hover:bg-sky-400 hover:text-white max-sm:hidden">
+          Earn <FaDollarSign className="inline" />
         </a>
+        <a className="text-white  font-bold rounded-sm px-1 py-1 cursor-pointer transition duration-200 hover:bg-sky-400 hover:text-white max-sm:hidden">
+          FAQs <FaQuestionCircle className="inline" />
+        </a>
+        <div className="flex w-56">
+          <button className="w-full max-sm:hidden m-1 bg-sky-300 py-1 text-white font-bold inline rounded-md hover:bg-sky-500">
+            sign in <FaSignInAlt className="inline" />
+          </button>
+          <button className="w-full max-sm:hidden m-1 bg-sky-300 py-1 text-white font-bold inline rounded-md hover:bg-sky-500">
+            sign up <FaUser className="inline" />
+          </button>
+        </div>
         <button
           className="hidden max-sm:inline"
           onClick={() => setOpenBar(!openBar)}
@@ -129,21 +144,24 @@ const Nav = () => {
         </a>
 
         <div
-          className="sidebtn absolute right-0 top-12 transition duration-200 w-full
+          className="sidebtn absolute right-0 top-12  w-full
              bg-sky-400 hidden
          max-sm:flex flex-col max-sm:justify-center items-center px-2  py-0 rounded-sm z-10"
-          style={{ height: openBar ? "220px" : "0px", transition: "0.5s" }}
+          style={{ height: openBar ? "220px" : "0px" }}
         >
           {openBar && (
             <div className="flex flex-col px-2 w-full rounded-sm">
               <button className="w-full bg-sky-300 py-2 text-white font-bold hover:bg-sky-500">
-                SIGN IN <FaSignInAlt className="inline" />
-              </button>
-              <button className="w-full bg-sky-300 py-2 text-white font-bold hover:bg-sky-500">
-                SIGN UP <FaRegistered className="inline" />
+                TOP HEADLINES <FaBookReader className="inline" />
               </button>
               <button className="w-full bg-sky-300 py-2 text-white font-bold hover:bg-sky-500">
                 EARN WITH US <FaDollarSign className="inline" />
+              </button>
+              <button className="w-full bg-sky-300 py-2 text-white font-bold hover:bg-sky-500">
+                SIGN IN <FaSignInAlt className="inline" />
+              </button>
+              <button className="w-full bg-sky-300 py-2 text-white font-bold hover:bg-sky-500">
+                SIGN UP <FaUser className="inline" />
               </button>
             </div>
           )}{" "}
@@ -155,7 +173,7 @@ const Nav = () => {
           /> */}
           <FaCaretUp
             style={{ display: openBar ? "block" : "none" }}
-            className="absolute  top-48 text-center text-4xl text-sky-700 shadow shadow-slate-200 z-10"
+            className="absolute  top-52 text-center text-4xl text-sky-500 shadow shadow-slate-400 z-10"
             onClick={() => setOpenBar(!openBar)}
           />
         </div>

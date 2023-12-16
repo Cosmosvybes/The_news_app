@@ -73,7 +73,7 @@ const News = () => {
         </h1>
         <div className="flex flex-col">
           <div className="flex justify-start  items-center px-1 py-1">
-            <p className="px-1"> Filter By </p>
+            <p className="px-1 font-bold"> Filter By </p>
             <FaFilter />
           </div>{" "}
           <div className="flex justify-start">
