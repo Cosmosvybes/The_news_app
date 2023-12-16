@@ -6,6 +6,9 @@ import {
   FaTwitter,
   FaFacebook,
   FaTimes,
+  FaSignInAlt,
+  FaRegistered,
+  FaDollarSign,
 } from "react-icons/fa";
 import News from "./News";
 const Nav = () => {
@@ -131,20 +134,25 @@ const Nav = () => {
          max-sm:flex flex-col max-sm:justify-center items-center px-2  py-0 rounded-sm z-10"
           style={{ height: openBar ? "220px" : "0px", transition: "0.5s" }}
         >
-
-
-          <input
-            style={{ display: openBar ? "block" : "none" }}
-            type="text"
-            placeholder="search news"
-            className=" rounded-md px-2 w-48 outline-none py-1 border border-none m-2"
-          />
-          <input
+          {openBar && (
+            <div className="flex flex-col px-2 w-full rounded-sm">
+              <button className="w-full bg-sky-300 py-2 text-white font-bold hover:bg-sky-500">
+                SIGN IN <FaSignInAlt className="inline" />
+              </button>
+              <button className="w-full bg-sky-300 py-2 text-white font-bold hover:bg-sky-500">
+                SIGN UP <FaRegistered className="inline" />
+              </button>
+              <button className="w-full bg-sky-300 py-2 text-white font-bold hover:bg-sky-500">
+                EARN WITH US <FaDollarSign className="inline" />
+              </button>
+            </div>
+          )}{" "}
+          {/* <input
             type="submit"
+            value="earn with us"
             className="px-2 py-1 rounded-md w-48 font-bold  hover:bg-sky-800 bg-sky-950 text-white border border-none"
             style={{ display: openBar ? "block" : "none" }}
-          />
-
+          /> */}
           <FaCaretUp
             style={{ display: openBar ? "block" : "none" }}
             className="absolute  top-48 text-center text-4xl text-sky-700 shadow shadow-slate-200 z-10"
@@ -152,7 +160,6 @@ const Nav = () => {
           />
         </div>
 
-        
         <div
           className="left-side absolute right-0 h-36 w-auto 
          top-44 flex justify-between items-center py-2 -z-40"
@@ -166,8 +173,6 @@ const Nav = () => {
               feedback
             </button>
           )}
-          {/* <FaTwitter className="text-sky-700 text-xl m-5" />
-          <FaFacebook className="text-sky-700 text-xl" /> */}
         </div>
         {showFeedBack && (
           <div

@@ -67,16 +67,16 @@ const News = () => {
   return (
     <>
       <section className="bg-white">
-        <h1 className="text-sky-700 px-2 text-5xl  max-sm:text-2xl block text-center">
+        <h1 className="text-sky-700 px-2 text-5xl  max-sm:text-2xl block text-left">
           {" "}
           News around the Globe
         </h1>
         <div className="flex flex-col">
-          <div className="flex justify-end  items-center px-1 py-1">
-            <p className="px-1"> Filter News By </p>
+          <div className="flex justify-start  items-center px-1 py-1">
+            <p className="px-1"> Filter By </p>
             <FaFilter />
           </div>{" "}
-          <div className="flex justify-end">
+          <div className="flex justify-start">
             <select className="w-auto px-1">
               <option>country</option>
               <option>language</option>
