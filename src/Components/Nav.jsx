@@ -128,52 +128,14 @@ const Nav = () => {
         <div
           className="sidebtn absolute right-0 top-12 transition duration-200 w-full
              bg-sky-400 hidden
-         max-sm:flex flex-col max-sm:justify-start items-center px-2  py-0 rounded-sm z-10"
+         max-sm:flex flex-col max-sm:justify-center items-center px-2  py-0 rounded-sm z-10"
           style={{ height: openBar ? "220px" : "0px", transition: "0.5s" }}
         >
-          <p
-            className="text-slate-800"
-            style={{ display: openBar ? "block" : "none" }}
-          >
-            {" "}
-            Filter by{" "}
-          </p>
-          <select
-            onChange={handleFilter}
-            className="border border-gray-50 rounded-md px-4 py-1 w-48"
-            style={{ display: openBar ? "block" : "none" }}
-            id="filter"
-          >
-            <option>language</option>
-            <option>country</option>
-          </select>
+{/*          
           <div
             className="hidden max-sm:flex justify-center  w-44 m-1 "
             style={{ display: openBar ? "block" : "none" }}
-          >
-            {lang && (
-              <select
-                onChange={filterByLang}
-                id="languages"
-                className="px-2 py-1 w-24 rounded-md"
-              >
-                {languages.map((country) => (
-                  <option key={country}>{country}</option>
-                ))}
-              </select>
-            )}
-            {ctry && (
-              <select
-                onChange={filterByCountry}
-                id="countries"
-                className="px-2 py-1 w-24 rounded-md"
-              >
-                {countries.reverse().map((country) => (
-                  <option key={country}>{country}</option>
-                ))}
-              </select>
-            )}
-          </div>
+          ></div> */}
 
           <input
             style={{ display: openBar ? "block" : "none" }}
