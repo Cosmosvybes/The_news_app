@@ -98,17 +98,17 @@ const Nav = () => {
   return (
     <>
       <header
-        className="h-28 bg-sky-700  z-10 sticky top-0 flex
+        className="h-14 bg-sky-700  z-10 sticky top-0 flex
            justify-around items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
         <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
         <a
           href="#"
-          className="text-slate-950 rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden"
+          className="text-white rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden"
         >
           All news
         </a>
-        <a className="text-slate-950  rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden">
+        <a className="text-white  rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden">
           Discussion
         </a>
         <button
