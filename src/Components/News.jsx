@@ -77,12 +77,12 @@ const News = () => {
             <FaFilter />
           </div>{" "}
           <div className="flex justify-end">
-            <select className="w-auto px-2">
+            <select className="w-auto px-2 py-1">
               <option>country</option>
               <option>language</option>
             </select>
             {!true ? (
-              <select className="w-auto px-2">
+              <select className="w-auto px-2 py-1">
                 <option>united kingdom</option>
                 <option>pakistan</option>
               </select>

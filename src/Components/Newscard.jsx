@@ -117,7 +117,7 @@ const Newscard = ({
         </a>
         <strong className="text-black px-2 inline">
           <FaClock className="inline" /> {getTimeDifference(publishedAt)}{" "}
-          {" hours ago. "}
+          {"Hr ago. "}
         </strong>
       </div>
     </>
