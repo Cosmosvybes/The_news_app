@@ -116,22 +116,22 @@ const News = () => {
           )}
         </div>
         <div className="flex flex-col">
-          <div className="flex justify-start  items-center px-1 py-1">
+          <div className="flex justify-end  items-center px-1 py-1">
             <p className="px-1"> Filter News By </p>
             <FaFilter />
           </div>{" "}
-          <div className="flex">
-            <select className="w-28 px-1">
+          <div className="flex justify-end">
+            <select className="w-auto px-1">
               <option>country</option>
               <option>language</option>
             </select>
             {!true ? (
-              <select className="w-28 px-1">
+              <select className="w-auto px-1">
                 <option>united kingdom</option>
                 <option>pakistan</option>
               </select>
             ) : (
-              <select className="w-28 px-1">
+              <select className="w-auto px-1">
                 <option>bt</option>
                 <option>pk</option>
               </select>

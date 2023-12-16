@@ -154,8 +154,8 @@ const Nav = () => {
         </div>
 
         <div
-          className="left-side absolute right-0 h-36 w-auto 
-         top-44 flex justify-between items-center py-0 -z-40"
+          className="left-side absolute left-0 h-36 w-auto 
+         top-52 flex justify-between items-center py-0 -z-40"
         >
           {!showFeedBack && (
             <button
