@@ -3,7 +3,7 @@ import Newscard from "./Newscard";
 import img_1 from "../assets/Screenshot 2023-11-11 101540.png";
 import img_2 from "../assets/Screenshot 2023-11-11 143329.png";
 import tier from "../assets/3-tier.png";
-import { FaArrowLeft, FaArrowRight, FaClock } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaClock, FaFilter } from "react-icons/fa";
 const News = () => {
   const [post, setPost] = useState([]);
 
@@ -67,28 +67,31 @@ const News = () => {
   return (
     <>
       <section className="bg-white">
-        <h1 className="text-sky-700 text-left px-2 text-4xl max-sm:text-2xl inline  font-bold">
+        <h1 className="text-sky-700 px-2 text-5xl  max-sm:text-2xl block text-center">
           {" "}
           News around the Globe
         </h1>
 
         <div className="news-container  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-100 relative">
           {isLoading ? (
-            <p>{response} </p>
+            <p className="text-center">{response} </p>
           ) : (
             <div className="relative">
               <div className="h-auto relative block">
-                {postsToShow?.reverse().slice(0,1).map((obj) => (
-                  <Newscard
-                    headline={obj.title}
-                    desc={obj.description}
-                    url={obj.source.url}
-                    newsImg={obj.image}
-                    body={obj.content}
-                    sourceName={obj.source.name}
-                    publishedAt={obj.publishedAt}
-                  />
-                ))}
+                {post
+                  ?.reverse()
+                  .slice(0, 1)
+                  .map((obj) => (
+                    <Newscard
+                      headline={obj.title}
+                      desc={obj.description}
+                      url={obj.source.url}
+                      newsImg={obj.image}
+                      body={obj.content}
+                      sourceName={obj.source.name}
+                      publishedAt={obj.publishedAt}
+                    />
+                  ))}
               </div>
 
               <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
@@ -112,14 +115,38 @@ const News = () => {
             </div>
           )}
         </div>
+        <div className="flex flex-col">
+          <div className="flex justify-start  items-center px-1 py-1">
+            <p className="px-1"> Filter News By </p>
+            <FaFilter />
+          </div>{" "}
+          <div className="flex">
+            <select className="w-28 px-1">
+              <option>country</option>
+              <option>language</option>
+            </select>
+            {!true ? (
+              <select className="w-28 px-1">
+                <option>united kingdom</option>
+                <option>pakistan</option>
+              </select>
+            ) : (
+              <select className="w-28 px-1">
+                <option>bt</option>
+                <option>pk</option>
+              </select>
+            )}
+          </div>
+        </div>
+
         <div className="pg-btns flex  justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 mx-4 my-6 ">
           <FaArrowLeft
             onClick={prevPost}
-            className=" bg-slate-700 px-3 py-1 w-20 text-4xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
+            className=" bg-slate-700 px-3 py-1 w-20 text-2xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
           />{" "}
           <FaArrowRight
             onClick={nextPost}
-            className=" bg-slate-700 px-3 py-1 w-20 text-4xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
+            className=" bg-slate-700 px-3 py-1 w-20 text-2xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
           />
         </div>
       </section>
