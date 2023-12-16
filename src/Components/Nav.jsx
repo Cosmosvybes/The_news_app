@@ -131,11 +131,7 @@ const Nav = () => {
          max-sm:flex flex-col max-sm:justify-center items-center px-2  py-0 rounded-sm z-10"
           style={{ height: openBar ? "220px" : "0px", transition: "0.5s" }}
         >
-{/*          
-          <div
-            className="hidden max-sm:flex justify-center  w-44 m-1 "
-            style={{ display: openBar ? "block" : "none" }}
-          ></div> */}
+
 
           <input
             style={{ display: openBar ? "block" : "none" }}
