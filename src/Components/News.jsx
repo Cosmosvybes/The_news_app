@@ -74,21 +74,21 @@ const News = () => {
           <div className="flex-col">
             <div className="flex justify-start  items-center px-2 py-2">
               <p className="px-1"> Filter By </p>
-              <FaFilter />
+              <FaFilter className="text-gray-400" />
             </div>
             <div className="flex max-sm:flex-col justify-start">
-              <div className="flex justify-start">
-                <select className="w-auto px-2 py-1">
+              <div className="flex justify-start m-1 px-3">
+                <select className="border border-gray-300 px-3 py-1">
                   <option>country</option>
                   <option>language</option>
                 </select>
                 {!true ? (
-                  <select className="w-auto px-2 py-1">
+                  <select className="border border-gray-300 px-2 py-1">
                     <option>united kingdom</option>
                     <option>pakistan</option>
                   </select>
                 ) : (
-                  <select className="w-auto px-2">
+                  <select className="border border-gray-300 px-2">
                     <option>bt</option>
                     <option>pk</option>
                   </select>
@@ -101,11 +101,11 @@ const News = () => {
             <input
               type="text"
               placeholder="search for news"
-              className="w-44 max-sm:w-full max-sm:py-1 px-1 border border-gray-200 "
+              className="w-44 max-sm:w-full max-sm:py-1 px-1 border-2 m-0.5 border-gray-200 "
             />
             <input
               type="submit"
-              className="w-28 max-sm:inline max-sm:w-full border hover:bg-sky-300 max-sm:py-2 bg-sky-400 text-white font-bold "
+              className="w-28 max-sm:inline max-sm:w-full border-2 m-0.5 hover:bg-sky-300 max-sm:py-2 bg-sky-400 text-white font-bold "
             />
           </div>
         </div>
