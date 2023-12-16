@@ -107,16 +107,18 @@ const Nav = () => {
         className="h-14 bg-sky-700  z-10 sticky top-0 flex
            justify-between items-center px-4 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
-        <h1 className="text-white rounded-sm px-1 py-">Logo</h1>
+        <h1 className="text-white rounded-sm px-1 py-1">Logo</h1>
         <a
           href="#"
           className="text-white font-bold rounded-sm px-1 py-1 cursor-pointer transition duration-200 hover:bg-sky-400 hover:text-white max-sm:hidden"
-        >
-          Headlines
-          {/* <FaBookReader className="inline" /> */}
-        </a>
+        ></a>
+
         <a className="text-white  font-bold rounded-sm px-1 py-1 cursor-pointer transition duration-200 hover:bg-sky-400 hover:text-white max-sm:hidden">
           Earn <FaDollarSign className="inline" />
+        </a>
+
+        <a className="text-white  rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden">
+          Discussion
         </a>
         <a className="text-white  font-bold rounded-sm px-1 py-1 cursor-pointer transition duration-200 hover:bg-sky-400 hover:text-white max-sm:hidden">
           FAQs <FaQuestionCircle className="inline" />
