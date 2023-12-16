@@ -68,26 +68,25 @@ const News = () => {
     <>
       <section className="bg-white">
         <h1 className="text-sky-700 px-2 text-5xl  max-sm:text-2xl block text-left">
-          {" "}
           News around the Globe
         </h1>
         <div className="flex flex-col">
-          <div className="flex justify-start  items-center px-1 py-1">
+          <div className="flex justify-start  items-center px-1 py-1 m-1">
             <p className="px-1 font-bold"> Filter By </p>
             <FaFilter />
           </div>{" "}
           <div className="flex justify-start">
-            <select className="w-auto px-1">
+            <select className="w-auto px-2 m-0.5">
               <option>country</option>
               <option>language</option>
             </select>
             {!true ? (
-              <select className="w-auto px-1">
+              <select className="w-auto px-2 m-0.5">
                 <option>united kingdom</option>
                 <option>pakistan</option>
               </select>
             ) : (
-              <select className="w-auto px-1">
+              <select className="w-auto px-2 m-0.5">
                 <option>bt</option>
                 <option>pk</option>
               </select>
