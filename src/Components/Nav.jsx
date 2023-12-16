@@ -152,6 +152,7 @@ const Nav = () => {
           />
         </div>
 
+        
         <div
           className="left-side absolute right-0 h-36 w-auto 
          top-44 flex justify-between items-center py-2 -z-40"
