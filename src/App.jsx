@@ -1,9 +1,10 @@
 import "./App.css";
-import { Nav } from "./Index";
+import { Footer, Nav } from "./Index";
 function App() {
   return (
     <>
       <Nav />
+      <Footer />
     </>
   );
 }
