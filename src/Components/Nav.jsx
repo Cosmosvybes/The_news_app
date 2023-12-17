@@ -13,6 +13,8 @@ import {
   FaInbox,
 } from "react-icons/fa";
 import News from "./News";
+import Footer from "./Footer";
+import { Link } from "react-router-dom";
 const Nav = () => {
   const [openBar, setOpenBar] = useState(false);
   const [countries, setCountry] = useState([
@@ -116,13 +118,25 @@ const Nav = () => {
         <a className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden">
           Sports
         </a>
-        <a className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden">
+        <Link
+          to="/earn"
+          className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
+        >
+          Earn
+        </Link>
+        {/* <a className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden">
           Opinions/Discussion
-        </a>
+        </a> */}
         <div className="flex">
-          <a className="text-white cursor-pointer px-1 py-1  hover:bg-sky-900 hover:text-white max-sm:hidden">
+          <Link
+            to="/signin" 
+            className="text-white cursor-pointer px-1 py-1  hover:bg-sky-900 hover:text-white max-sm:hidden"
+          >
+            Sign in
+          </Link>
+          {/* <a className="text-white cursor-pointer px-1 py-1  hover:bg-sky-900 hover:text-white max-sm:hidden">
             Sign in <FaSignInAlt className="inline" />
-          </a>
+          </a> */}
           <a className="text-white bg-sky-400 px-1 py-1 cursor-pointer hover:bg-sky-500 hover:text-white max-sm:hidden">
             Register <FaUser className="inline" />
           </a>
@@ -220,6 +234,7 @@ const Nav = () => {
         )}
       </header>
       <News />
+      <Footer />
     </>
   );
 };
