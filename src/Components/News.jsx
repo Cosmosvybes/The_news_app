@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import Newscard from "./Newscard";
 
 import { FaArrowLeft, FaArrowRight, FaClock, FaFilter } from "react-icons/fa";
+import Footer from "./Footer";
 const News = () => {
   const [post, setPost] = useState([]);
 
-  
   const [pageNumber, setPageNumber] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-  const [postPerPage] = useState(3);
+  const [postPerPage] = useState(4);
   // const [active, setActive] = useState(1);
   const lastPageIndex = postPerPage * pageNumber;
   const firstPageIndex = lastPageIndex - postPerPage;
@@ -65,7 +65,7 @@ const News = () => {
 
   return (
     <>
-      <section className="bg-white">
+      <section className="bg-white ">
         <h1 className="text-sky-700 px-4 text-5xl  max-sm:text-2xl block text-left">
           {" "}
           News around the Globe
@@ -165,6 +165,7 @@ const News = () => {
           />
         </div>
       </section>
+      <Footer />
     </>
   );
 };

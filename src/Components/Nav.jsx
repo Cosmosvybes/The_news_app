@@ -109,12 +109,12 @@ const Nav = () => {
            justify-between items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
         <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
-        <a
-          href="#"
-          className="text-white rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
+        <Link
+          to="/headlines"
+          className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
         >
-          Top Headlines
-        </a>
+          Headlines News
+        </Link>
         <a className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden">
           Sports
         </a>
@@ -129,7 +129,7 @@ const Nav = () => {
         </a> */}
         <div className="flex">
           <Link
-            to="/signin" 
+            to="/signin"
             className="text-white cursor-pointer px-1 py-1  hover:bg-sky-900 hover:text-white max-sm:hidden"
           >
             Sign in
@@ -137,9 +137,12 @@ const Nav = () => {
           {/* <a className="text-white cursor-pointer px-1 py-1  hover:bg-sky-900 hover:text-white max-sm:hidden">
             Sign in <FaSignInAlt className="inline" />
           </a> */}
-          <a className="text-white bg-sky-400 px-1 py-1 cursor-pointer hover:bg-sky-500 hover:text-white max-sm:hidden">
-            Register <FaUser className="inline" />
-          </a>
+          <Link
+            to="/signup"
+            className="text-white cursor-pointer px-1 py-1 bg-sky-400  hover:bg-sky-900 hover:text-white max-sm:hidden"
+          >
+            Sign up
+          </Link>
         </div>
         <button
           className="hidden max-sm:inline"
@@ -233,8 +236,6 @@ const Nav = () => {
           </div>
         )}
       </header>
-      <News />
-      <Footer />
     </>
   );
 };
