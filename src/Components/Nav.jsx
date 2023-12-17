@@ -10,6 +10,7 @@ import {
   FaSignInAlt,
   FaHackerNews,
   FaUser,
+  FaInbox,
 } from "react-icons/fa";
 import News from "./News";
 const Nav = () => {
@@ -103,17 +104,20 @@ const Nav = () => {
     <>
       <header
         className="h-14 bg-sky-700  z-10 sticky top-0 flex
-           justify-around items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
+           justify-between items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
         <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
         <a
           href="#"
           className="text-white rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
         >
-          All news
+          Top Headlines
         </a>
         <a className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden">
-          Discussion
+          Sports
+        </a>
+        <a className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden">
+          Opinions/Discussion
         </a>
         <div className="flex">
           <a className="text-white cursor-pointer px-1 py-1  hover:bg-sky-900 hover:text-white max-sm:hidden">
@@ -148,10 +152,11 @@ const Nav = () => {
             style={{ display: openBar ? "block" : "none" }}
           >
             <button className="inline w-full hover:bg-sky-800 bg-sky-700 px-1 py-2 text-white font-bold">
-              HEADLINES <FaHackerNews className="inline" />
+              OPINION
+              <FaInbox className="inline" />
             </button>
             <button className="inline w-full hover:bg-sky-800  bg-sky-700 px-1 py-2 text-white font-bold">
-              EARN WITH US <FaDollarSign className="inline" />
+              EARN <FaDollarSign className="inline" />
             </button>
             <button className="inline w-full hover:bg-sky-800   bg-sky-700 px-1 py-2 text-white font-bold">
               SIGN IN <FaSignInAlt className="inline" />
