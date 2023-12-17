@@ -150,13 +150,13 @@ const Nav = () => {
         >
           {!openBar && <FaBars className=" text-slate-100 text-2xl" />}
         </button>
-        <a
+        <Link to="/headlines"
           className="text-white cursor-pointer hover:text-slate-200 underline py-2"
           style={{ display: openBar ? "block" : "none" }}
         >
           {" "}
           Top Headlines
-        </a>
+        </Link>
 
         <div
           className="sidebtn absolute right-0 top-12 transition duration-200 w-full
@@ -165,22 +165,33 @@ const Nav = () => {
           style={{ height: openBar ? "220px" : "0px" }}
         >
           <div
-            className="hidden max-sm:flex justify-center  w-full m-1 "
+            className="hidden max-sm:flex justify-center  max-sm:flex-col w-full m-1 "
             style={{ display: openBar ? "block" : "none" }}
           >
-            <button className="inline w-full hover:bg-sky-800 bg-sky-700 px-1 py-2 text-white font-bold">
-              OPINION
-              <FaInbox className="inline" />
-            </button>
-            <button className="inline w-full hover:bg-sky-800  bg-sky-700 px-1 py-2 text-white font-bold">
-              EARN <FaDollarSign className="inline" />
-            </button>
-            <button className="inline w-full hover:bg-sky-800   bg-sky-700 px-1 py-2 text-white font-bold">
-              SIGN IN <FaSignInAlt className="inline" />
-            </button>
-            <button className="inline w-full  hover:bg-green-800   px-1 py-2 text-white font-bold bg-green-500">
-              REGISTER <FaUser className="inline" />
-            </button>
+            <Link
+              to="/discussion"
+              className="block w-full hover:bg-sky-800 bg-sky-700 px-1 py-2 text-white font-bold"
+            >
+              OPINION/DISCUSSION
+            </Link>
+            <Link
+              to="/earn"
+              className="block w-full hover:bg-sky-800  bg-sky-700 px-1 py-2 text-white font-bold"
+            >
+              EARN
+            </Link>
+            <Link
+              to="/signin"
+              className="block w-full hover:bg-sky-800   bg-sky-700 px-1 py-2 text-white font-bold"
+            >
+              SIGN IN
+            </Link>
+            <Link
+              to="/signup"
+              className="block w-full  hover:bg-green-800   px-1 py-2 text-white font-bold bg-green-500"
+            >
+              REGISTER
+            </Link>
           </div>
 
           {/* <input

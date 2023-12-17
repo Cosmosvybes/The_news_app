@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Earn, Footer, Nav, News, Signin, Signup } from "./Index";
+import { Discussion, Earn, Footer, Nav, News, Signin, Signup } from "./Index";
 function App() {
   return (
     <>
@@ -12,6 +12,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/headlines" element={<News />} />
+        <Route path="/discussion" element={<Discussion />} />
       </Routes>
     </>
   );

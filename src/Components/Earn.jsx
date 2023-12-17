@@ -1,11 +1,13 @@
 import React from "react";
+import Footer from "./Footer";
 
 const Earn = () => {
   return (
     <>
-      <div className="h-screen">
+      <div className="">
         <h1> Earn</h1>
       </div>
+      <Footer />
     </>
   );
 };

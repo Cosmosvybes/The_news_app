@@ -53,7 +53,7 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <footer className="text-slate-800 px-2">
+      <footer className="text-slate-800 px-2 font-bold">
         The news &copy; {new Date().getFullYear()} All rights reserved.
       </footer>
     </>
