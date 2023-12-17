@@ -6,6 +6,10 @@ import {
   FaTwitter,
   FaFacebook,
   FaTimes,
+  FaDollarSign,
+  FaSignInAlt,
+  FaHackerNews,
+  FaUser,
 } from "react-icons/fa";
 import News from "./News";
 const Nav = () => {
@@ -104,13 +108,21 @@ const Nav = () => {
         <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
         <a
           href="#"
-          className="text-white rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden"
+          className="text-white rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
         >
           All news
         </a>
-        <a className="text-white  rounded-sm px-1 py-1 hover:border border-white hover:bg-sky-400 hover:text-white max-sm:hidden">
+        <a className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden">
           Discussion
         </a>
+        <div className="flex">
+          <a className="text-white cursor-pointer px-1 py-1  hover:bg-sky-900 hover:text-white max-sm:hidden">
+            Sign in <FaSignInAlt className="inline" />
+          </a>
+          <a className="text-white bg-sky-400 px-1 py-1 cursor-pointer hover:bg-sky-500 hover:text-white max-sm:hidden">
+            Register <FaUser className="inline" />
+          </a>
+        </div>
         <button
           className="hidden max-sm:inline"
           onClick={() => setOpenBar(!openBar)}
@@ -131,13 +143,25 @@ const Nav = () => {
          max-sm:flex flex-col max-sm:justify-center items-center px-2  py-0 rounded-sm z-10"
           style={{ height: openBar ? "220px" : "0px" }}
         >
-{/*          
           <div
-            className="hidden max-sm:flex justify-center  w-44 m-1 "
+            className="hidden max-sm:flex justify-center  w-full m-1 "
             style={{ display: openBar ? "block" : "none" }}
-          ></div> */}
+          >
+            <button className="inline w-full hover:bg-sky-800 bg-sky-700 px-1 py-2 text-white font-bold">
+              HEADLINES <FaHackerNews className="inline" />
+            </button>
+            <button className="inline w-full hover:bg-sky-800  bg-sky-700 px-1 py-2 text-white font-bold">
+              EARN WITH US <FaDollarSign className="inline" />
+            </button>
+            <button className="inline w-full hover:bg-sky-800   bg-sky-700 px-1 py-2 text-white font-bold">
+              SIGN IN <FaSignInAlt className="inline" />
+            </button>
+            <button className="inline w-full  hover:bg-green-800   px-1 py-2 text-white font-bold bg-green-500">
+              REGISTER <FaUser className="inline" />
+            </button>
+          </div>
 
-          <input
+          {/* <input
             style={{ display: openBar ? "block" : "none" }}
             type="text"
             placeholder="search news"
@@ -147,7 +171,7 @@ const Nav = () => {
             type="submit"
             className="px-2 py-1 rounded-md w-48 font-bold  hover:bg-sky-800 bg-sky-950 text-white border border-none"
             style={{ display: openBar ? "block" : "none" }}
-          />
+          /> */}
 
           <FaCaretUp
             style={{ display: openBar ? "block" : "none" }}

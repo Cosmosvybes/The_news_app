@@ -5,6 +5,7 @@ import { FaArrowLeft, FaArrowRight, FaClock, FaFilter } from "react-icons/fa";
 const News = () => {
   const [post, setPost] = useState([]);
 
+  
   const [pageNumber, setPageNumber] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [postPerPage] = useState(3);
