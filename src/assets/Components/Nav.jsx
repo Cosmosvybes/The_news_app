@@ -130,7 +130,7 @@ const Nav = () => {
         <div className="flex">
           <Link
             to="/signin"
-            className="text-white cursor-pointer px-1 py-1  hover:bg-sky-900 hover:text-white max-sm:hidden"
+            className="text-white cursor-pointer px-1 py-1 bg-sky-900 shadow shadow-slate-400  hover:bg-sky-400 hover:text-white max-sm:hidden"
           >
             Sign in
           </Link>
@@ -139,7 +139,7 @@ const Nav = () => {
           </a> */}
           <Link
             to="/signup"
-            className="text-white cursor-pointer px-1 py-1 bg-sky-400  hover:bg-sky-900 hover:text-white max-sm:hidden"
+            className="text-white cursor-pointer px-1 py-1 bg-sky-600 shadow shadow-slate-400  hover:bg-sky-400 hover:text-white max-sm:hidden"
           >
             Sign up
           </Link>
@@ -150,7 +150,8 @@ const Nav = () => {
         >
           {!openBar && <FaBars className=" text-slate-100 text-2xl" />}
         </button>
-        <Link to="/headlines"
+        <Link
+          to="/headlines"
           className="text-white cursor-pointer hover:text-slate-200 underline py-2"
           style={{ display: openBar ? "block" : "none" }}
         >
