@@ -11,6 +11,7 @@ import {
   FaHackerNews,
   FaUser,
   FaInbox,
+  FaPlus,
 } from "react-icons/fa";
 import News from "./News";
 import Footer from "./Footer";
@@ -115,9 +116,12 @@ const Nav = () => {
         >
           Headlines News
         </Link>
-        <a className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden">
+        <Link
+          to="/"
+          className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
+        >
           Sports
-        </a>
+        </Link>
         <Link
           to="/earn"
           className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
@@ -215,24 +219,23 @@ const Nav = () => {
         </div>
 
         <div
-          className="left-side absolute right-0 h-36 w-auto 
+          className="left-side absolute right-2 h-36 w-auto 
          top-44 flex justify-between items-center py-2 -z-40"
         >
           {!showFeedBack && (
             <button
               onClick={() => setSHowFeedBack(!showFeedBack)}
-              className="bg-red-500 text-white font-bold px-2 py-1"
+              className="bg-sky-500 rounded-full h-18 text-white font-bold px-2 py-1"
             >
-              {" "}
-              feedback
+              <FaPlus className="text-white text-2xl"/>
             </button>
           )}
         </div>
         {showFeedBack && (
           <div
-            className="flex h-28 transition items-center max-sm:w-36 justify-center duration-500 bg-gray-100 rounded-md absolute left-10  top-72"
+            className="flex h-28 transition items-center max-sm:w-3 justify-center duration-500 bg-gray-100 rounded-md absolute left-10  top-72"
             style={{
-              width: showFeedBack ? "300px" : "0px",
+              width: showFeedBack ? "200px" : "0px",
               transition: "0.9s",
             }}
           >
