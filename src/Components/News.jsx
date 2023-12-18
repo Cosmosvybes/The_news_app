@@ -157,11 +157,11 @@ const News = () => {
         <div className="pg-btns flex  bg-sky-100 w-full justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 ">
           <FaArrowLeft
             onClick={prevPost}
-            className=" bg-slate-900 px-3 py-1 w-20 text-2xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
+            className=" border border-sky-400 px-1 text-sky-400 py-2 w-20 text-4xl hover:bg-slate-500 hover:text-white  m-1"
           />{" "}
           <FaArrowRight
             onClick={nextPost}
-            className=" bg-slate-900 px-3 py-1 w-20 text-2xl text-white hover:bg-slate-500 hover:text-white rounded-md m-1"
+            className=" border border-sky-400 px-1 text-sky-400 py-2 w-20 text-4xl hover:bg-slate-500 hover:text-white  m-1"
           />
         </div>
       </section>

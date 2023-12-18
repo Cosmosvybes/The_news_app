@@ -1,8 +1,11 @@
 import React from "react";
 import {
+  FaEnvelope,
   FaFacebook,
+  FaInbox,
   FaInstagram,
   FaLinkedin,
+  FaPhone,
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
@@ -13,12 +16,8 @@ const Footer = () => {
       <div className="flex h-auto bg-slate-950 justify-around px-2 py-2 max-sm:flex-col max-sm:h-auto">
         <div className="flex m-1  max-sm:w-auto flex-col">
           <h1 className="underline text-white font-bold">Quick Links </h1>
-          <button className="text-left  text-white ">
-            Help center
-          </button>
-          <button className="text-left  text-white ">
-            How to earn
-          </button>
+          <button className="text-left  text-white ">Help center</button>
+          <button className="text-left  text-white ">How to earn</button>
           <button className="text-left  text-white ">
             Become an Affiliate
           </button>
@@ -43,13 +42,13 @@ const Footer = () => {
         <div className="flex flex-col  max-sm:w-auto">
           <h1 className="underline text-white font-bold ">Contact us </h1>
           <button className="text-left  text-white ">
-            +234(8140242752)
+            <FaPhone className="inline"/> +234(8140242752)
           </button>
           <button className="text-left  text-white ">
-            +234(9075848475)
+            <FaPhone className="inline"/> +234(9075848475)
           </button>
           <button className="text-left  text-white ">
-            support@thenews.com
+            <FaEnvelope className="inline" /> support@thenews.com
           </button>
         </div>
       </div>

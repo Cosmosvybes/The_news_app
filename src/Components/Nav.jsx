@@ -226,7 +226,7 @@ const Nav = () => {
 
         <div
           className="left-side absolute right-5 h-36 w-auto 
-         flex justify-between items-center py-2 -z-40 top-80"
+         flex justify-between items-center py-2 -z-40 top-96"
         >
           {!showFeedBack && (
             <button
