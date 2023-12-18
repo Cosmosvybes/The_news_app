@@ -36,17 +36,17 @@ const Post = () => {
         </div>
 
         <div className="flex px-10 justify-around items-center">
-          <div className="flex justify-start items-center">
-            <FaComment />
+          <div className="flex justify-start text-gray-600 items-center">
+            <FaComment className="text-gray-600" />
             {"12"}
           </div>
-          <div className="flex justify-start items-center">
+          <div className="flex text-sky-600 justify-start items-center">
             <FaHeart />
             {"20"}
           </div>
-          <div className="flex justify-start items-center">
+          <div className="flex text-yellow-500 justify-start items-center">
             {" "}
-            <FaFire />
+            <FaFire  />
             {"4"}
           </div>
         </div>

@@ -219,15 +219,15 @@ const Nav = () => {
         </div>
 
         <div
-          className="left-side absolute right-2 h-36 w-auto 
-         top-44 flex justify-between items-center py-2 -z-40"
+          className="left-side absolute right-5 h-36 w-auto 
+         flex justify-between items-center py-2 -z-40 top-80"
         >
           {!showFeedBack && (
             <button
               onClick={() => setSHowFeedBack(!showFeedBack)}
               className="bg-sky-500 rounded-full h-18 text-white font-bold px-2 py-1"
             >
-              <FaPlus className="text-white text-2xl"/>
+              <FaPlus className="text-white text-4xl"/>
             </button>
           )}
         </div>
