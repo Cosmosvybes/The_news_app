@@ -7,7 +7,7 @@ const Discussion = () => {
   return (
     <>
       <div className=" h-auto relative py-1">
-        <h1 className="text-sky-700 text-4xl max-sm:text-2xl">
+        <h1 className="text-sky-700 text-4xl max-sm:text-2xl font-bold">
           {" "}
           Discussion and Opinions.{" "}
         </h1>

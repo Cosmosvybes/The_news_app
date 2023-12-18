@@ -128,6 +128,12 @@ const Nav = () => {
         >
           Earn
         </Link>
+        <Link
+          to="/discussion"
+          className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
+        >
+          Discussion and Opinions
+        </Link>
         {/* <a className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden">
           Opinions/Discussion
         </a> */}
@@ -227,7 +233,7 @@ const Nav = () => {
               onClick={() => setSHowFeedBack(!showFeedBack)}
               className="bg-sky-500 rounded-full h-18 text-white font-bold px-2 py-1"
             >
-              <FaPlus className="text-white text-4xl"/>
+              <FaPlus className="text-white text-4xl" />
             </button>
           )}
         </div>

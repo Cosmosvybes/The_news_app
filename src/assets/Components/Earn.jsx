@@ -13,29 +13,35 @@ const Earn = () => {
           Monetize every words coming out of your head!
         </h2>
 
-        <div className="flex px-5 justify-between items-center max-sm:flex-col h-72 max-sm:h-auto py-1 max-sm:px-2 ">
-          <div className="flex justify-start items-center flex-col px-2 w-72 border py-2 border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-md shadow shadow-gray-600">
+        <div className="flex px-5 justify-between items-center max-sm:flex-col h-72 max-sm:h-auto py-1 max-sm:px-0 ">
+          <div className="flex justify-start items-center flex-col px-2 w-72 border py-3 border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm shadow shadow-gray-400">
             <FaUser className="text-sky-500 text-4xl" />
             <h1 className="text-2xl text-sky-500 font-bold"> Sign up</h1>
-            <p className="text-slate-900"> Set a new account</p>
+            <p className="text-slate-900"> Set up a new account</p>
           </div>
-          <div className="flex justify-start items-center flex-col px-2 w-72 border border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-md shadow shadow-gray-600">
+          <div className="flex justify-start items-center flex-col px-2 py-3 w-72 border border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm shadow shadow-gray-400">
             <FaSignInAlt className="text-4xl text-sky-500 font-bold" />
             <h1 className="text-2xl text-sky-500 font-bold">
               {" "}
               Sign in your account
             </h1>
-            <p className="text-slate-900 text-center"> ign in to you account</p>
+            <p className="text-slate-900 text-center">
+              {" "}
+              Sign in to you account
+            </p>
           </div>
-          <div className="flex justify-start items-center flex-col px-2 w-72 border border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-md shadow shadow-gray-600">
+          <div className="flex justify-start items-center flex-col py-3 px-2 w-72 border border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm shadow shadow-gray-400">
             <FaUserEdit className="text-4xl text-sky-500 font-bold" />
-            <h1 className="text-2xl text-sky-500 font-bold"> Create Post</h1>
+            <h1 className="text-2xl text-sky-500 font-bold">
+              {" "}
+              Create engaging topics
+            </h1>
             <p className="text-slate-900 text-center">
               {" "}
               Create and engaging discussion.
             </p>
           </div>
-          <div className="flex justify-start items-center flex-col px-2 w-72 border border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-md shadow shadow-gray-600">
+          <div className="flex justify-start items-center flex-col py-3 px-2 w-72 border border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm shadow shadow-gray-400">
             <FaHeart className="text-4xl text-sky-500 font-bold" />
             <h1 className="text-2xl text-sky-500 font-bold"> Get 20 Likes</h1>
             <p className="text-slate-900 text-center">
@@ -55,7 +61,7 @@ const Earn = () => {
           {" "}
           Start your earning journey with us now.
         </h2>
-        <Link className=" bg-sky-500 text-white font-bold w-auto rounded-md px-2 py-2 m-1 text-center">
+        <Link className=" bg-sky-500 text-white font-bold w-auto rounded-sm px-2 py-2 m-1 text-center">
           Start earning now
         </Link>
       </div>
