@@ -11,11 +11,11 @@ const Discussion = () => {
           {" "}
           Discussion and Opinions.{" "}
         </h1>
-      
+
         <div className="grid grid-cols-3 gap-1 max-sm:grid-cols-1">
           {[1, 2, 3, 4, 5, 6].map((post) => (
             <div className="">
-              <Post />
+              <Post isLiked={false} />
             </div>
           ))}
         </div>

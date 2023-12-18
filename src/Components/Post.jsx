@@ -1,4 +1,5 @@
-import React from "react";
+import { is } from "express/lib/request";
+import React, { useState } from "react";
 import {
   FaAtom,
   FaComment,
@@ -8,7 +9,19 @@ import {
   FaServer,
 } from "react-icons/fa";
 
-const Post = () => {
+const Post = ({ isLiked }) => {
+  let [likes, setLikes] = useState(23);
+  const [fire, setFires] = useState(2);
+
+//   const likePost = () => {
+//     isLiked = !isLiked;
+//     if (isLiked) {
+//       console.log("post liked");
+//     } else {
+//       console.log("unliked");
+//     }
+//   };
+
   return (
     <>
       <div className="flex flex-start flex-col border border-gray-500 h-auto py-1 rounded-sm  max-sm:w-full">
@@ -17,7 +30,9 @@ const Post = () => {
             <div className="w-10 h-10 rounded-full px-1 flex justify-start items-center">
               <img width="40px" height="40px" />
             </div>
-            <p className="text-slate-900 text-sm">{"User Name"}</p>
+            <p className="text-slate-900 text-sm font-bold px-1">
+              {"User Name"}
+            </p>
             <FaAtom className="text-sm text-sky-800" />
             <p className="text-gray-400 text-sm ">{"@username"}</p>
           </div>
@@ -41,13 +56,13 @@ const Post = () => {
             {"12"}
           </div>
           <div className="flex text-sky-600 justify-start items-center">
-            <FaHeart />
-            {"20"}
+            <FaHeart onClick={likePost} />
+            {likes}
           </div>
           <div className="flex text-yellow-500 justify-start items-center">
             {" "}
-            <FaFire  />
-            {"4"}
+            <FaFire />
+            {fire}
           </div>
         </div>
       </div>
