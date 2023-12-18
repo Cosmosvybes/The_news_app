@@ -8,7 +8,8 @@ import {
   FaServer,
 } from "react-icons/fa";
 
-const Post = ({ id, posts, likes }) => {
+const Post = ({ id, posts, likes, firenumber }) => {
+  const [fireNumber, setFireNumber] = useState(firenumber);
   const [numberOfLikes, setLikes] = useState(likes);
 
   // like post func
@@ -29,6 +30,26 @@ const Post = ({ id, posts, likes }) => {
           getPost.isLiked = true;
           console.log(getPost.likers, getPost.likes);
           setLikes(getPost.likes);
+        })();
+  };
+
+  const firePost = (id) => {
+    const getPost = posts.find((post) => post.id == id);
+    let userFired = getPost.fireMakers.find((user) => user == "Ayomide");
+    
+    return userFired
+      ? (() => {
+          let userIndex = getPost.fireMakers.indexOf("Ayomide");
+          getPost.fireMakers.splice(userIndex, 1);
+          getPost.isLiked = false;
+          getPost.fire -= 1;
+          setFireNumber(getPost.fire);
+        })()
+      : (() => {
+          getPost.fireMakers.push("Ayomide");
+          getPost.fire += 1;
+          getPost.isLiked = true;
+          setFireNumber(getPost.fire);
         })();
   };
 
@@ -71,8 +92,8 @@ const Post = ({ id, posts, likes }) => {
           </div>
           <div className="flex text-yellow-500 justify-start items-center">
             {" "}
-            <FaFire />
-            {15}
+            <FaFire onClick={() => firePost(id)} />
+            {fireNumber}
           </div>
         </div>
       </div>

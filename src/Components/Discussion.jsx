@@ -5,12 +5,12 @@ import { FaPlus } from "react-icons/fa";
 
 const Discussion = () => {
   const [posts, setPosts] = useState([
-    { id: 1, isLiked: false, likers: [], likes: 0 },
-    { id: 2, isLiked: false, likers: [], likes: 0 },
-    { id: 3, isLiked: false, likers: [], likes: 0 },
-    { id: 4, isLiked: false, likers: [], likes: 0 },
-    { id: 5, isLiked: false, likers: [], likes: 0 },
-    { id: 6, isLiked: false, likers: [], likes: 0 },
+    { id: 1, isLiked: false, likers: [], likes: 0, fire: 0, fireMakers: [] },
+    { id: 2, isLiked: false, likers: [], likes: 0, fire: 0, fireMakers: [] },
+    { id: 3, isLiked: false, likers: [], likes: 0, fire: 0, fireMakers: [] },
+    { id: 4, isLiked: false, likers: [], likes: 0, fire: 0, fireMakers: [] },
+    { id: 5, isLiked: false, likers: [], likes: 0, fire: 0, fireMakers: [] },
+    { id: 6, isLiked: false, likers: [], likes: 0, fire: 0, fireMakers: [] },
   ]);
   return (
     <>
@@ -23,7 +23,12 @@ const Discussion = () => {
         <div className="grid grid-cols-3 gap-1 max-sm:grid-cols-1">
           {posts.map((post) => (
             <div className="" key={post.id}>
-              <Post id={post.id} posts={posts} likes={post.likes} />
+              <Post
+                id={post.id}
+                posts={posts}
+                likes={post.likes}
+                firenumber={post.fire}
+              />
             </div>
           ))}
         </div>
