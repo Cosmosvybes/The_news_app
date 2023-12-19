@@ -87,10 +87,7 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
         {!openComment && (
           <div className="flex px-10 py-1 justify-between items-center">
             <div className="flex justify-start text-gray-600 items-center">
-              <FaComment
-                onClick={handleCommentSection}
-                className="text-gray-600"
-              />
+              <FaComment className="text-slate-400" />
               {"12"}
             </div>
             <div
@@ -135,7 +132,7 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
       </div>
       {openComment && (
         <div className="comments w-full flex flex-col px-10 py-2 h-auto  border-b-2 border-slate-400">
-          {[1, 2, 3,5,6].map((comment) => {
+          {[1, 2, 3, 5, 6].map((comment) => {
             return (
               <div
                 className="flex flex-col justify-between bg-gray-100 px-1 py-1 rounded-md m-0.5"

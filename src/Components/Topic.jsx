@@ -101,14 +101,15 @@ const Topic = () => {
   return (
     <>
       <div className="">
-        <div className="relative py-2 bg-slate-100 px-3">
+        <div className="relative py-2 bg-slate-100 px-3 flex flex-start items-center ">
           <FaArrowAltCircleLeft
             onClick={() => history.back()}
             className="text-sky-500 text-2xl"
           />
+          <h1 className="text-sky-500 text-2xl px-2">Post</h1>
         </div>
         <div className="bg-slate-100 flex justify-center">
-          <div className="flex w-full  h-auto  justify-center max-sm:flex-col">
+          <div className="flex w-full  h-auto max-sm:flex-col">
             <Post
               commentOpen={true}
               post={postDetails.post}
