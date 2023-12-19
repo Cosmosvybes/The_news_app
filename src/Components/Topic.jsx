@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 import Footer from "./Footer";
 import Post from "./Post";
-import { FaPlus } from "react-icons/fa";
 
-const Discussion = () => {
+const Topic = () => {
+  const [postDetails, setPostDetails] = useState({
+    username: "",
+    post: "",
+    comments: [],
+    likes: 0,
+    fire: 0,
+  });
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -27,7 +35,7 @@ const Discussion = () => {
       post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
             reprehenderit sequi eos assumenda nemo est veritatis commodi
             doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus.`,
+            iste accus.`,
     },
     {
       id: 3,
@@ -39,7 +47,7 @@ const Discussion = () => {
       post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
             reprehenderit sequi eos assumenda nemo est veritatis commodi
             doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus recusandae.`,
+            iste`,
     },
     {
       id: 4,
@@ -60,10 +68,10 @@ const Discussion = () => {
       likes: 0,
       fire: 0,
       fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
+      post: `Loripsum dolor sit amet, consectetur adipisicing elit. Velit
             reprehenderit sequi eos assumenda nemo est veritatis commodi
             doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus`,
+            iste accusame.`,
     },
     {
       id: 6,
@@ -72,33 +80,42 @@ const Discussion = () => {
       likes: 0,
       fire: 0,
       fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
+      post: `Lorem ipsum dolorVelit
             reprehenderit sequi eos assumenda nemo est veritatis commodi
             doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
             iste accusamus totam minus recusandae.`,
     },
   ]);
+  const { id } = useParams();
+
+  const getPost = (id) => {
+    let getPost = posts.find((post) => post.id == id);
+    return getPost;
+    // setPostDetails({ username: getPost.post });
+  };
+  useEffect(() => {
+    const post = getPost(id);
+    setPostDetails({ post: post?.post });
+  }, []);
 
   return (
     <>
-      <div className=" h-auto relative py-1">
-        {/* <h1 className="text-sky-700 text-4xl px-4 max-sm:text-2xl font-bold">
-          {" "}
-          Discussion and Opinions.{" "}
-        </h1> */}
-
-        <div className="grid grid-cols-3 gap-1 max-sm:grid-cols-1">
-          {posts.map((post) => (
-            <div className="" key={post.id}>
-              <Post
-                id={post.id}
-                posts={posts}
-                likes={post.likes}
-                post={post.post}
-                firenumber={post.fire}
-              />
-            </div>
-          ))}
+      <div className="">
+        <div className="relative py-2 bg-slate-100 px-3">
+          <FaArrowAltCircleLeft
+            onClick={() => history.back()}
+            className="text-sky-500 text-2xl"
+          />
+        </div>
+        <div className="bg-slate-100 flex justify-center">
+          <div className="flex w-full  h-auto  justify-center max-sm:flex-col">
+            <Post
+              commentOpen={true}
+              post={postDetails.post}
+              firenumber={postDetails.fire}
+              likes={postDetails.likes}
+            />
+          </div>
         </div>
       </div>
       <Footer />
@@ -106,4 +123,4 @@ const Discussion = () => {
   );
 };
 
-export default Discussion;
+export default Topic;

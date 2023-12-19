@@ -6,4 +6,5 @@ export { default as Signin } from "./Components/Signin";
 export { default as Signup } from "./Components/Signup";
 export { default as Dashboard } from "./Components/Dashboard";
 export { default as Opinion } from "./Components/Opinion";
+export { default as Topic } from "./Components/Topic";
 export { default as Discussion } from "./Components/Discussion";

@@ -6,12 +6,11 @@ import {
   FaEllipsisV,
   FaFire,
   FaHeart,
-  FaIdBadge,
-  FaServer,
   FaTag,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const Post = ({ id, posts, likes, firenumber }) => {
+const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
   const [fireNumber, setFireNumber] = useState(firenumber);
   const [numberOfLikes, setLikes] = useState(likes);
 
@@ -55,14 +54,14 @@ const Post = ({ id, posts, likes, firenumber }) => {
           setFireNumber(getPost.fire);
         })();
   };
-  const [openComment, setOpenComment] = useState(false);
+  const [openComment, setOpenComment] = useState(commentOpen);
   const handleCommentSection = () => {
     setOpenComment(true);
   };
 
   return (
     <>
-      <div className="flex flex-start flex-col  h-auto py-1 px-2 rounded-sm  max-sm:w-full">
+      <div className="flex flex-center flex-col  h-auto py-1 px-2 rounded-sm  max-sm:w-full">
         <div className="flex justify-between items-center">
           <div className="flex justify-start items-center">
             <div className="w-10 h-10 rounded-full border border-gray-500 py-1 px-1 flex justify-start items-center">
@@ -80,12 +79,9 @@ const Post = ({ id, posts, likes, firenumber }) => {
 
         {/* //post body */}
         <div className="flex px-10  h-auto">
-          <p className="text-slate-900 text-sm text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus recusandae.
-          </p>
+          <Link to={`/post/${id}`}>
+            <p className="text-slate-900 text-sm text-justify">{post}</p>
+          </Link>
         </div>
 
         {!openComment && (
@@ -119,10 +115,10 @@ const Post = ({ id, posts, likes, firenumber }) => {
           </div>
         )}
         {openComment && (
-          <div className="grid h-14 gap-1 grid-cols-2 max-sm:grid-cols-1 max-sm:h-auto px-10 ">
+          <div className="grid h-auto gap-1 grid-cols-1 max-sm:grid-cols-1 max-sm:h-auto px-10 ">
             <textarea
               name=""
-              className="h-auto max-sm:h-14 border-2 border-gray-300 rounded-md "
+              className="h-24 max-sm:h-14 border-2 border-gray-300 rounded-md "
               id=""
               cols="30"
               rows="10"
@@ -139,7 +135,7 @@ const Post = ({ id, posts, likes, firenumber }) => {
       </div>
       {openComment && (
         <div className="comments w-full flex flex-col px-10 py-2 h-auto  border-b-2 border-slate-400">
-          {[1, 2, 3].map((comment) => {
+          {[1, 2, 3,5,6].map((comment) => {
             return (
               <div
                 className="flex flex-col justify-between bg-gray-100 px-1 py-1 rounded-md m-0.5"

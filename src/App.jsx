@@ -1,6 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Discussion, Earn, Footer, Nav, News, Signin, Signup } from "./Index";
+import {
+  Discussion,
+  Earn,
+  Footer,
+  Nav,
+  News,
+  Signin,
+  Signup,
+  Topic,
+} from "./Index";
 function App() {
   return (
     <>
@@ -8,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<News />} />
         <Route path="/earn" element={<Earn />} />
+        <Route path="/post/:id" element={<Topic />} />
         <Route path="/dashboard" element={<Signup />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
