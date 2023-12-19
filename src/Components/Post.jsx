@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import {
   FaAtom,
+  FaBookmark,
   FaComment,
   FaEllipsisV,
   FaFire,
   FaHeart,
+  FaIdBadge,
   FaServer,
+  FaTag,
 } from "react-icons/fa";
 
 const Post = ({ id, posts, likes, firenumber }) => {
@@ -72,7 +75,7 @@ const Post = ({ id, posts, likes, firenumber }) => {
             <p className="text-gray-400 text-sm ">{"@username"}</p>
           </div>
 
-          <FaEllipsisV className="text-sky-400 text-sm " />
+          <FaEllipsisV className="text-slate-400 text-sm " />
         </div>
 
         {/* //post body */}
@@ -94,14 +97,24 @@ const Post = ({ id, posts, likes, firenumber }) => {
               />
               {"12"}
             </div>
-            <div className="flex text-sky-600 justify-start items-center">
-              <FaHeart onClick={() => likePost(id)} />
+            <div
+              onClick={() => likePost(id)}
+              className="flex text-sky-600 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full"
+            >
+              <FaHeart />
               {numberOfLikes}
             </div>
-            <div className="flex text-yellow-500 justify-start items-center">
+            <div
+              onClick={() => firePost(id)}
+              className="flex text-yellow-600 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full"
+            >
               {" "}
-              <FaFire onClick={() => firePost(id)} />
+              <FaFire />
               {fireNumber}
+            </div>
+            <div className="flex text-slate-400 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full">
+              {" "}
+              <FaTag />
             </div>
           </div>
         )}
@@ -125,7 +138,7 @@ const Post = ({ id, posts, likes, firenumber }) => {
         )}
       </div>
       {openComment && (
-        <div className="comments w-full flex flex-col px-10 py-2 h-auto ">
+        <div className="comments w-full flex flex-col px-10 py-2 h-auto  border-b-2 border-slate-400">
           {[1, 2, 3].map((comment) => {
             return (
               <div
