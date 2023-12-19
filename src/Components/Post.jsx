@@ -36,7 +36,7 @@ const Post = ({ id, posts, likes, firenumber }) => {
   const firePost = (id) => {
     const getPost = posts.find((post) => post.id == id);
     let userFired = getPost.fireMakers.find((user) => user == "Ayomide");
-    
+
     return userFired
       ? (() => {
           let userIndex = getPost.fireMakers.indexOf("Ayomide");
@@ -51,6 +51,10 @@ const Post = ({ id, posts, likes, firenumber }) => {
           getPost.isLiked = true;
           setFireNumber(getPost.fire);
         })();
+  };
+  const [openComment, setOpenComment] = useState(false);
+  const handleCommentSection = () => {
+    setOpenComment(true);
   };
 
   return (
@@ -83,7 +87,10 @@ const Post = ({ id, posts, likes, firenumber }) => {
 
         <div className="flex px-10 py-1 justify-between items-center">
           <div className="flex justify-start text-gray-600 items-center">
-            <FaComment className="text-gray-600" />
+            <FaComment
+              onClick={handleCommentSection}
+              className="text-gray-600"
+            />
             {"12"}
           </div>
           <div className="flex text-sky-600 justify-start items-center">
@@ -96,7 +103,42 @@ const Post = ({ id, posts, likes, firenumber }) => {
             {fireNumber}
           </div>
         </div>
+        {openComment && (
+          <div className="grid h-14 gap-1 grid-cols-2 max-sm:grid-cols-1 max-sm:h-auto px-10 ">
+            <textarea
+              name=""
+              className="h-auto max-sm:h-14 border-2 border-gray-300 rounded-md "
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+            <button className="bg-sky-500 w-18 py-2 rounded-md font-extrabold px-2  text-white max-sm:text-sm">
+              {" "}
+              comment
+            </button>
+          </div>
+        )}
       </div>
+      {openComment && (
+        <div className="comments w-full flex flex-col px-10 py-2 h-auto ">
+          {[1, 2, 3].map((comment) => {
+            return (
+              <div
+                className="flex flex-col justify-between bg-gray-100 px-1 py-1 rounded-md m-0.5"
+                key={comment}
+              >
+                <div className="relative flex justify-start items-center">
+                  <img width={"10px"} height={"10px"} alt="image" />
+                  <p className="text-gray-500  max-sm:text-sm">{"Username"}</p>
+                </div>
+                <p className="text-gray-600 max-sm:text-sm">
+                  {"The reponse from the mr ABsc "}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 };
