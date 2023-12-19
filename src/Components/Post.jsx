@@ -140,9 +140,9 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
               >
                 <div className="relative flex justify-start items-center">
                   <img width={"10px"} height={"10px"} alt="image" />
-                  <p className="text-gray-500  max-sm:text-sm">{"Username"}</p>
+                  <p className="text-slate-900 px-1 max-sm:text-sm">{"Username"}</p>
                 </div>
-                <p className="text-gray-600 max-sm:text-sm">
+                <p className="text-slate-900 max-sm:text-sm">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>

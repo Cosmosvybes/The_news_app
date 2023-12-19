@@ -106,7 +106,7 @@ const Nav = () => {
   return (
     <>
       <header
-        className="h-14 bg-sky-700  z-10 sticky top-0 flex
+        className="h-14 bg-sky-500  z-10 sticky top-0 flex
            justify-between items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
         <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
@@ -181,25 +181,25 @@ const Nav = () => {
           >
             <Link
               to="/discussion"
-              className="block w-full hover:bg-sky-800 bg-sky-700 px-1 py-2 text-white font-bold"
+              className="block w-full hover:bg-sky-800 bg-sky-700 px-3 py-2 text-white font-extrabold"
             >
               OPINION/DISCUSSION
             </Link>
             <Link
               to="/earn"
-              className="block w-full hover:bg-sky-800  bg-sky-700 px-1 py-2 text-white font-bold"
+              className="block w-full hover:bg-sky-800  bg-sky-700 px-3 py-2 text-white font-extrabold"
             >
               EARN
             </Link>
             <Link
               to="/signin"
-              className="block w-full hover:bg-sky-800   bg-sky-700 px-1 py-2 text-white font-bold"
+              className="block w-full hover:bg-sky-800   bg-sky-700 px-3 py-2 text-white font-extrabold"
             >
               SIGN IN
             </Link>
             <Link
               to="/signup"
-              className="block w-full  hover:bg-green-800   px-1 py-2 text-white font-bold bg-green-500"
+              className="block w-full  hover:bg-green-800   px-3 py-2 text-white font-extrabold bg-green-500"
             >
               REGISTER
             </Link>
@@ -213,7 +213,7 @@ const Nav = () => {
           />
           <input
             type="submit"
-            className="px-2 py-1 rounded-md w-48 font-bold  hover:bg-sky-800 bg-sky-950 text-white border border-none"
+            className="px-2 py-1 rounded-md w-48font-extrabold  hover:bg-sky-800 bg-sky-950 text-white border border-none"
             style={{ display: openBar ? "block" : "none" }}
           /> */}
 
@@ -231,7 +231,7 @@ const Nav = () => {
           {!showFeedBack && (
             <button
               onClick={() => setSHowFeedBack(!showFeedBack)}
-              className="bg-sky-500 rounded-full h-18 text-white font-bold px-2 py-1"
+              className="bg-sky-500 rounded-md h-18 text-whitefont-extrabold px-2 py-1"
             >
               <FaPlus className="text-white text-4xl" />
             </button>
