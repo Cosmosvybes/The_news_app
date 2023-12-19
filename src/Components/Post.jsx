@@ -85,24 +85,26 @@ const Post = ({ id, posts, likes, firenumber }) => {
           </p>
         </div>
 
-        <div className="flex px-10 py-1 justify-between items-center">
-          <div className="flex justify-start text-gray-600 items-center">
-            <FaComment
-              onClick={handleCommentSection}
-              className="text-gray-600"
-            />
-            {"12"}
+        {!openComment && (
+          <div className="flex px-10 py-1 justify-between items-center">
+            <div className="flex justify-start text-gray-600 items-center">
+              <FaComment
+                onClick={handleCommentSection}
+                className="text-gray-600"
+              />
+              {"12"}
+            </div>
+            <div className="flex text-sky-600 justify-start items-center">
+              <FaHeart onClick={() => likePost(id)} />
+              {numberOfLikes}
+            </div>
+            <div className="flex text-yellow-500 justify-start items-center">
+              {" "}
+              <FaFire onClick={() => firePost(id)} />
+              {fireNumber}
+            </div>
           </div>
-          <div className="flex text-sky-600 justify-start items-center">
-            <FaHeart onClick={() => likePost(id)} />
-            {numberOfLikes}
-          </div>
-          <div className="flex text-yellow-500 justify-start items-center">
-            {" "}
-            <FaFire onClick={() => firePost(id)} />
-            {fireNumber}
-          </div>
-        </div>
+        )}
         {openComment && (
           <div className="grid h-14 gap-1 grid-cols-2 max-sm:grid-cols-1 max-sm:h-auto px-10 ">
             <textarea
@@ -112,7 +114,10 @@ const Post = ({ id, posts, likes, firenumber }) => {
               cols="30"
               rows="10"
             ></textarea>
-            <button className="bg-sky-500 w-18 py-2 rounded-md font-extrabold px-2  text-white max-sm:text-sm">
+            <button
+              onClick={() => setOpenComment(!openComment)}
+              className="bg-sky-500 w-18 py-2 rounded-md font-extrabold px-2  text-white max-sm:text-sm"
+            >
               {" "}
               comment
             </button>
