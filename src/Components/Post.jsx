@@ -79,7 +79,7 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
         </div>
 
         {/* //post body */}
-        <div className="flex px-10  h-auto">
+        <div className="flex px-1  h-auto">
           <Link to={`/post/${id}`}>
             <p className="text-slate-900 text-sm text-justify">{post}</p>
           </Link>
@@ -118,7 +118,7 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
           </div>
         )}
         {openComment && (
-          <div className="grid h-auto gap-1 grid-cols-1 max-sm:grid-cols-1  max-sm:h-auto px-10 ">
+          <div className="grid h-auto gap-1 grid-cols-1 max-sm:grid-cols-1  max-sm:h-auto px-1 ">
             <textarea
               name=""
               className="h-24 max-sm:h-14 border-2 border-gray-300 rounded-md "
