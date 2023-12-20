@@ -257,12 +257,12 @@ const Nav = () => {
         {showFeedBack && (
           <div className="absolute">
             <div
-              className="post-form rounded-md px-3 flex flex-col  h-auto transition  max-sm:left-3 max-md:left-40 max-md:w-96   max-sm:w-auto  justify-start py-10 duration-500  bg-slate-900 max-md:top-36  border-4 border-sky-500   absolute  top-44  max-sm:top-44"
-              style={{  transition: "0.9s" }}
+              className="post-form rounded-md flex flex-col h-auto transition  max-sm:left-3 max-md:left-40 max-md:w-96 px-2.5 max-sm:w-auto  justify-start py-10 duration-500  bg-gray-100 max-md:top-36  border border-sky-400    absolute  top-44  max-sm:top-44"
+              style={{ transition: "0.9s" }}
             >
-              <p className="  text-gray-400 font-bold ">
+              <p className="  text-slat-900 font-bold  inline ">
                 {" "}
-                Got some interesting takes ?
+                Share your opinion today!
               </p>
 
               <div className="flex justify-start flex-col items-center">
@@ -271,15 +271,20 @@ const Nav = () => {
                   id=""
                   cols="30"
                   rows="10 "
-                  className="h-44 w-full r bg-gray-200 rounded-md" placeholder="Write your mind..."
-                  style={{ height: "auto", padding:"0.5rem 1rem", marginBottom: "1rem" }}
+                  className="h-44 w-full outline outline-sky-300 bg-gray-200 border-2 border-sky-400 rounded-md"
+                  placeholder="Write your mind..."
+                  style={{
+                    height: "auto",
+                    padding: "0.5rem 1rem",
+                    marginBottom: "1rem",
+                  }}
                 ></textarea>
               </div>
               {/* <div className="flex justify-center m-1  ">
               
             </div> */}
 
-              <div className=" w-full  flex justify-between items-center px-10  max-sm:px-10 max-md:px-20  h-10  m-1">
+              <div className=" w-full flex justify-between items-center px-10  max-sm:px-10 max-md:px-20  h-10  m-1">
                 <input
                   type="file"
                   id="imageFile"
@@ -293,12 +298,12 @@ const Nav = () => {
 
                 <button className="bg-sky-500  rounded-md border-2 w-36 py-2  border-white font-bold text-white">
                   {" "}
-                  Tell us{" "}
+                 Caprack
                 </button>
               </div>
               <FaTimes
                 onClick={() => setSHowFeedBack(!showFeedBack)}
-                className="absolute top-4  bg-gray-600 rounded-lg text-xl text-sky-600 right-2"
+                className="absolute top-4   rounded-lg text-xl text-sky-400 right-2"
               />
             </div>
           </div>
