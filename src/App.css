@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Josefin+Slab:wght@700&family=Lato:wght@700&family=Lora:ital,wght@1,600&family=Nunito:wght@200&family=Poppins:ital,wght@0,100;0,200;0,800;1,100&family=Sulphur+Point:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,11 +7,5 @@
 *,
 html,
 p {
-  font-family: "Josefin Sans", sans-serif;
-  font-family: "Josefin Slab", serif;
-  font-family: "Lato", sans-serif;
-  font-family: "Lora", serif;
-  font-family: "Nunito", sans-serif;
-  font-family: "Poppins", sans-serif;
-  font-family: "Sulphur Point", sans-serif;
+  font-family: "Comfortaa", sans-serif;
 }
