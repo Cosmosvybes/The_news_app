@@ -257,7 +257,7 @@ const Nav = () => {
         {showFeedBack && (
           <div className="absolute">
             <div
-              className="post-form px-2 flex flex-col  h-auto transition  max-sm:left-2 max-md:left-40 max-md:w-96   max-sm:w-auto  justify-start py-10 duration-500  bg-slate-900 max-md:top-36  border-4 border-sky-500 rounded-sm  absolute  top-44  max-sm:top-44"
+              className="post-form rounded-md px-3 flex flex-col  h-auto transition  max-sm:left-3 max-md:left-40 max-md:w-96   max-sm:w-auto  justify-start py-10 duration-500  bg-slate-900 max-md:top-36  border-4 border-sky-500   absolute  top-44  max-sm:top-44"
               style={{  transition: "0.9s" }}
             >
               <p className="  text-gray-400 font-bold ">
@@ -271,15 +271,15 @@ const Nav = () => {
                   id=""
                   cols="30"
                   rows="10 "
-                  className="h-44 w-full r bg-gray-200 rounded-md"
-                  style={{ height: "auto", marginBottom: "1rem" }}
+                  className="h-44 w-full r bg-gray-200 rounded-md" placeholder="Write your mind..."
+                  style={{ height: "auto", padding:"0.5rem 1rem", marginBottom: "1rem" }}
                 ></textarea>
               </div>
               {/* <div className="flex justify-center m-1  ">
               
             </div> */}
 
-              <div className=" w-full flex justify-between items-center px-10  max-sm:px-10 max-md:px-20  h-10  m-1">
+              <div className=" w-full  flex justify-between items-center px-10  max-sm:px-10 max-md:px-20  h-10  m-1">
                 <input
                   type="file"
                   id="imageFile"
