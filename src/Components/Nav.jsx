@@ -109,7 +109,7 @@ const Nav = () => {
         className="h-14 bg-sky-500  z-10 sticky top-0 flex
            justify-between items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
-        <div className="flex justify-start bg-white rounded-md">
+        <div className="flex justify-start bg-white rounded-md border-2 shadow shadow-gray-200 z-10 border-dotted border-red-600">
           {" "}
           <h1 className="text-red-600  inline rounded-sm px-1  font-extrabold">
             Cap <span className="text-sky-500">Racks</span>

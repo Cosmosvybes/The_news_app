@@ -13,7 +13,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <div className="flex h-auto px-10 bg-slate-950 justify-around  py-2 max-sm:flex-col max-sm:h-auto">
+      <div className="flex h-60 max-sm:py-2 bg-slate-950 items-center max-sm:items-start justify-between  max-sm:px-10 py-2 max-sm:flex-col max-sm:h-auto">
         <div className="flex m-1  max-sm:w-auto flex-col">
           <h1 className="underline text-white font-bold max-sm:text-sm">
             Quick Links{" "}
@@ -58,7 +58,7 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <footer className="text-slate-800 px-10 ">
+      <footer className="text-slate-800 max-sm:px-10 ">
         The news &copy; {new Date().getFullYear()} All rights reserved.
       </footer>
     </>
