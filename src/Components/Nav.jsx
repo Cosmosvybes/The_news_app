@@ -12,6 +12,8 @@ import {
   FaUser,
   FaInbox,
   FaPlus,
+  FaFileImage,
+  FaImages,
 } from "react-icons/fa";
 import News from "./News";
 import Footer from "./Footer";
@@ -106,8 +108,8 @@ const Nav = () => {
   return (
     <>
       <header
-        className="h-14 bg-sky-500  z-10 sticky top-0 flex
-           justify-between items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
+        className="h-24 bg-sky-500  z-10 sticky top-0 flex
+           justify-between items-center px-2 max-sm:px-3 max-sm:justify-between max-sm:h-14"
       >
         <div className="flex justify-start bg-white rounded-md border-2 shadow shadow-gray-200 z-10 border-dotted border-red-600">
           {" "}
@@ -243,7 +245,9 @@ const Nav = () => {
         >
           {!showFeedBack && (
             <button
-              onClick={() => setSHowFeedBack(!showFeedBack)}
+              onClick={() => {
+                return setSHowFeedBack(!showFeedBack);
+              }}
               className=" rounded-md h-18 text-sky-500 font-extrabold px-2 py-1"
             >
               <FaPlus className="text-sky-500 text-6xl" />
@@ -252,20 +256,49 @@ const Nav = () => {
         </div>
         {showFeedBack && (
           <div
-            className="flex h-28 transition items-center max-sm:w-3 justify-center duration-500 bg-gray-100 rounded-md absolute left-10  top-72"
+            className="post-form flex flex-col h-auto transition  max-sm:left-0 max-md:left-40 max-md:w-96   max-sm:w-80  justify-start py-10 duration-500  bg-slate-900 max-md:top-36  border-4 border-sky-500 rounded-sm  absolute    top-96 max-sm:top-44"
             style={{
-              width: showFeedBack ? "200px" : "0px",
               transition: "0.9s",
             }}
           >
-            <button className="px-1 py-1">😣</button>
-            <button className="px-1 py-1">😍</button>
-            <button className="px-1 py-1">😁</button>
-            <button className="px-1 py-1">😡</button>
+            <p className="text-center  text-gray-400 font-bold ">
+              {" "}
+              Got some interesting takes ?
+            </p>
 
+            <div className="flex justify-start flex-col items-center">
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10 "
+                className="h-44 rounded-md bg-gray-200"
+              ></textarea>
+            </div>
+            {/* <div className="flex justify-center m-1  ">
+              
+            </div> */}
+
+            <div className=" flex justify-between items-center px-10 max-sm:px-7 max-md:px-20  h-10  m-1">
+              <input
+                type="file"
+                id="imageFile"
+                className="hidden"
+                accept="*/*"
+              />
+              <label htmlFor="imageFile">
+                {" "}
+                <FaImages className="text-sky-500   text-2xl m-0.5" />{" "}
+              </label>
+
+              <button className="bg-sky-500 px-2 rounded-md border-2 w-36  border-white font-bold text-white">
+                {" "}
+                Tell us{" "}
+              </button>
+            </div>
             <FaTimes
               onClick={() => setSHowFeedBack(!showFeedBack)}
-              className="absolute top-4 bg-gray-600 rounded-lg text-white px-1 py-1 right-2"
+              className="absolute top-4 bg-gray-600 rounded-lg text-xl text-sky-600 right-2"
             />
           </div>
         )}
