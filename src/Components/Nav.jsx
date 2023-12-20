@@ -176,10 +176,12 @@ const Nav = () => {
         </Link>
 
         <div
-          className="sidebtn absolute right-0 top-12 transition duration-200 w-full
-             bg-sky-400 hidden
-         max-sm:flex flex-col max-sm:justify-center items-center px-2  py-0 rounded-sm z-10"
-          style={{ height: openBar ? "220px" : "0px" }}
+          className="sidebtn absolute right-0 top-12 transition  duration-200 w-full
+             hidden
+         max-sm:flex bg-gray-100 flex-col max-sm:justify-center items-center px-2  py-0 rounded-sm z-10"
+          style={{
+            height: openBar ? "220px" : "0px",
+          }}
         >
           <div
             className="hidden max-sm:flex justify-center  max-sm:flex-col w-full m-1 "
@@ -187,25 +189,26 @@ const Nav = () => {
           >
             <Link
               to="/discussion"
-              className="block w-full hover:bg-sky-800 bg-sky-700 px-3 py-2 text-white font-extrabold"
+              className="block w-full hover:bg-sky-500  font-extrabold  hover:text-white px-3 py-2 text-sky-500"
             >
-              OPINION/DISCUSSION
+              OPINIONs
             </Link>
             <Link
               to="/earn"
-              className="block w-full hover:bg-sky-800  bg-sky-700 px-3 py-2 text-white font-extrabold"
+              className="block w-full hover:bg-sky-500  font-extrabold hover:text-white  text-sky-500 px-3 py-2"
             >
               EARN
             </Link>
             <Link
               to="/signin"
-              className="block w-full hover:bg-sky-800   bg-sky-700 px-3 py-2 text-white font-extrabold"
+              className="block w-full hover:bg-sky-500  font-extrabold hover:text-white   px-3 py-2 text-sky-500"
             >
               SIGN IN
             </Link>
+
             <Link
               to="/signup"
-              className="block w-full  hover:bg-green-800   px-3 py-2 text-white font-extrabold bg-green-500"
+              className="block w-full  hover:bg-green-600 hover:text-white   px-3 py-2 text-green-500 font-extrabold"
             >
               REGISTER
             </Link>
