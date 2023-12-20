@@ -5,6 +5,13 @@ import Footer from "./Footer";
 import Post from "./Post";
 
 const Topic = () => {
+  const scrollTop = () => {
+    return window.scrollTo({ top: 0 });
+  };
+  useEffect(() => {
+    scrollTop();
+  }, []);
+  
   const [postDetails, setPostDetails] = useState({
     username: "",
     post: "",

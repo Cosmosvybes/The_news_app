@@ -66,11 +66,6 @@ const News = () => {
   return (
     <>
       <section className="bg-white ">
-        <h1 className="text-sky-700 px-4 text-5xl font-bold  max-sm:text-2xl block text-left">
-          {" "}
-          News around the Globe
-        </h1>
-
         <div className="flex justify-between max-sm:flex-col">
           <div className="flex-col">
             <div className="flex justify-start  items-center px-2 py-2">

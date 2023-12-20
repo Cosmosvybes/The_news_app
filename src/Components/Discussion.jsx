@@ -87,7 +87,7 @@ const Discussion = () => {
           Discussion and Opinions.{" "}
         </h1> */}
 
-        <div className="grid grid-cols-3 gap-1 max-sm:grid-cols-1">
+        <div className="grid grid-cols-2 gap-1 max-sm:grid-cols-1">
           {posts.map((post) => (
             <div className="" key={post.id}>
               <Post

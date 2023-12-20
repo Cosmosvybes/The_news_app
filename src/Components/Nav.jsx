@@ -109,7 +109,13 @@ const Nav = () => {
         className="h-14 bg-sky-500  z-10 sticky top-0 flex
            justify-between items-center px-40 max-sm:px-3 max-sm:justify-between max-sm:h-12"
       >
-        <h1 className="text-slate-100  rounded-sm px-1 py-">Logo</h1>
+        <div className="flex justify-start bg-white rounded-md">
+          {" "}
+          <h1 className="text-red-600  inline rounded-sm px-1  font-extrabold">
+            Cap <span className="text-sky-500">Racks</span>
+          </h1>
+        </div>
+
         <Link
           to="/headlines"
           className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
@@ -226,7 +232,7 @@ const Nav = () => {
 
         <div
           className="left-side absolute right-5 h-36 w-auto 
-         flex justify-between items-center py-2 -z-40 top-96"
+         flex justify-between items-center py-2 -z-40 bottom-32"
         >
           {!showFeedBack && (
             <button

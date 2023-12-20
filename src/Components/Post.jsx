@@ -3,6 +3,7 @@ import {
   FaAtom,
   FaBookmark,
   FaComment,
+  FaComments,
   FaEllipsisV,
   FaFire,
   FaHeart,
@@ -61,7 +62,7 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
 
   return (
     <>
-      <div className="flex flex-center flex-col  h-auto py-1 px-2 rounded-sm  max-sm:w-full">
+      <div className="flex flex-center flex-col   h-auto  px-2 rounded-sm  max-sm:w-full">
         <div className="flex justify-between items-center">
           <div className="flex justify-start items-center">
             <div className="w-10 h-10 rounded-full border border-gray-500 py-1 px-1 flex justify-start items-center">
@@ -87,32 +88,37 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
         {!openComment && (
           <div className="flex px-10 py-1 justify-between items-center">
             <div className="flex justify-start text-gray-600 items-center">
-              <FaComment className="text-slate-400" />
-              {"12"}
+              <FaComments className="text-sky-400 text-xl" />
+
+              <p className="text-sm px-0.5"> {12}</p>
             </div>
             <div
               onClick={() => likePost(id)}
-              className="flex text-sky-600 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full"
+              className="flex text-red-600 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full"
             >
-              <FaHeart />
-              {numberOfLikes}
+              <div className="flex items-center justify-start">
+                {" "}
+                <FaHeart className="text-xl" />
+                <p className="text-sm px-0.5 "> {numberOfLikes}</p>
+              </div>
             </div>
             <div
               onClick={() => firePost(id)}
               className="flex text-yellow-600 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full"
             >
-              {" "}
-              <FaFire />
-              {fireNumber}
+              <div className="flex justify-start text-gray-600 items-center">
+                <FaFire className="text-yellow-600 text-xl" />
+                <p className="text-sm px-0.5"> {fireNumber}</p>
+              </div>
             </div>
             <div className="flex text-slate-400 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full">
               {" "}
-              <FaTag />
+              <FaTag className="" />
             </div>
           </div>
         )}
         {openComment && (
-          <div className="grid h-auto gap-1 grid-cols-1 max-sm:grid-cols-1 max-sm:h-auto px-10 ">
+          <div className="grid h-auto gap-1 grid-cols-1 max-sm:grid-cols-1  max-sm:h-auto px-10 ">
             <textarea
               name=""
               className="h-24 max-sm:h-14 border-2 border-gray-300 rounded-md "
@@ -140,7 +146,9 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
               >
                 <div className="relative flex justify-start items-center">
                   <img width={"10px"} height={"10px"} alt="image" />
-                  <p className="text-slate-900 px-1 max-sm:text-sm">{"Username"}</p>
+                  <p className="text-slate-900 px-1 max-sm:text-sm">
+                    {"Username"}
+                  </p>
                 </div>
                 <p className="text-slate-900 max-sm:text-sm">
                   {"The reponse from the mr ABsc "}
