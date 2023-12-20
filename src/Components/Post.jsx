@@ -92,7 +92,7 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
             <div className="flex justify-start text-gray-600 items-center">
               <FaComments className="text-sky-400 text-xl" />
 
-              <p className="text-sm text-gray-300  text-gray-300 font-bold">
+              <p className="text-sm  text-gray-300 font-bold">
                 {" "}
                 {12}
               </p>
