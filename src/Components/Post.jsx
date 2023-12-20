@@ -81,7 +81,9 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
         {/* //post body */}
         <div className="flex px-1  h-auto">
           <Link to={`/post/${id}`}>
-            <p className="text-slate-900 text-sm text-justify font-bold">{post}</p>
+            <p className="text-slate-900 text-sm text-justify font-bold">
+              {post}
+            </p>
           </Link>
         </div>
 
@@ -90,16 +92,22 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
             <div className="flex justify-start text-gray-600 items-center">
               <FaComments className="text-sky-400 text-xl" />
 
-              <p className="text-sm px-0.5"> {12}</p>
+              <p className="text-smtext-gray-300  text-gray-300 font-bold">
+                {" "}
+                {12}
+              </p>
             </div>
             <div
               onClick={() => likePost(id)}
-              className="flex text-red-600 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full"
+              className="flex text-red-600 justify-start items-center  hover:bg-slate-200 px-1 py-1 rounded-full"
             >
               <div className="flex items-center justify-start">
                 {" "}
-                <FaHeart className="text-xl" />
-                <p className="text-sm px-0.5 "> {numberOfLikes}</p>
+                <FaHeart className="text-xl " />
+                <p className="text-sm  text-gray-300 font-bold ">
+                  {" "}
+                  {numberOfLikes}
+                </p>
               </div>
             </div>
             <div
@@ -108,7 +116,7 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
             >
               <div className="flex justify-start text-gray-600 items-center">
                 <FaFire className="text-yellow-600 text-xl" />
-                <p className="text-sm px-0.5"> {fireNumber}</p>
+                <p className="text-sm text-gray-300 font-bold"> {fireNumber}</p>
               </div>
             </div>
             <div className="flex text-slate-400 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full">
