@@ -255,51 +255,52 @@ const Nav = () => {
           )}
         </div>
         {showFeedBack && (
-          <div
-            className="post-form flex flex-col h-auto transition  max-sm:left-0 max-md:left-40 max-md:w-96   max-sm:w-80  justify-start py-10 duration-500  bg-slate-900 max-md:top-36  border-4 border-sky-500 rounded-sm  absolute    top-96 max-sm:top-44"
-            style={{
-              transition: "0.9s",
-            }}
-          >
-            <p className="text-center  text-gray-400 font-bold ">
-              {" "}
-              Got some interesting takes ?
-            </p>
+          <div className="absolute">
+            <div
+              className="post-form px-2 flex flex-col  h-auto transition  max-sm:left-2 max-md:left-40 max-md:w-96   max-sm:w-auto  justify-start py-10 duration-500  bg-slate-900 max-md:top-36  border-4 border-sky-500 rounded-sm  absolute  top-44  max-sm:top-44"
+              style={{  transition: "0.9s" }}
+            >
+              <p className="  text-gray-400 font-bold ">
+                {" "}
+                Got some interesting takes ?
+              </p>
 
-            <div className="flex justify-start flex-col items-center">
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="10 "
-                className="h-44 rounded-md bg-gray-200"
-              ></textarea>
-            </div>
-            {/* <div className="flex justify-center m-1  ">
+              <div className="flex justify-start flex-col items-center">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10 "
+                  className="h-44 w-full r bg-gray-200 rounded-md"
+                  style={{ height: "auto", marginBottom: "1rem" }}
+                ></textarea>
+              </div>
+              {/* <div className="flex justify-center m-1  ">
               
             </div> */}
 
-            <div className=" flex justify-between items-center px-10 max-sm:px-7 max-md:px-20  h-10  m-1">
-              <input
-                type="file"
-                id="imageFile"
-                className="hidden"
-                accept="*/*"
-              />
-              <label htmlFor="imageFile">
-                {" "}
-                <FaImages className="text-sky-500   text-2xl m-0.5" />{" "}
-              </label>
+              <div className=" w-full flex justify-between items-center px-10  max-sm:px-10 max-md:px-20  h-10  m-1">
+                <input
+                  type="file"
+                  id="imageFile"
+                  className="hidden"
+                  accept="*/*"
+                />
+                <label htmlFor="imageFile">
+                  {" "}
+                  <FaImages className="text-sky-500   text-4xl m-0.5" />{" "}
+                </label>
 
-              <button className="bg-sky-500 px-2 rounded-md border-2 w-36  border-white font-bold text-white">
-                {" "}
-                Tell us{" "}
-              </button>
+                <button className="bg-sky-500  rounded-md border-2 w-36 py-2  border-white font-bold text-white">
+                  {" "}
+                  Tell us{" "}
+                </button>
+              </div>
+              <FaTimes
+                onClick={() => setSHowFeedBack(!showFeedBack)}
+                className="absolute top-4  bg-gray-600 rounded-lg text-xl text-sky-600 right-2"
+              />
             </div>
-            <FaTimes
-              onClick={() => setSHowFeedBack(!showFeedBack)}
-              className="absolute top-4 bg-gray-600 rounded-lg text-xl text-sky-600 right-2"
-            />
           </div>
         )}
       </header>
