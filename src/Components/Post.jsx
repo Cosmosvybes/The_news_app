@@ -137,11 +137,11 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
         )}
       </div>
       {openComment && (
-        <div className="comments w-full flex flex-col px-10 py-2 h-auto  border-b-2 border-slate-400">
+        <div className="comments w-full flex flex-col px-2 py-2 h-auto  border-b-2 border-slate-400 ">
           {[1, 2, 3, 5, 6].map((comment) => {
             return (
               <div
-                className="flex flex-col justify-between bg-gray-100 px-1 py-1 rounded-md m-0.5"
+                className="flex flex-col justify-between bg-slate-200 px-1 py-2 m-0.2"
                 key={comment}
               >
                 <div className="relative flex justify-start items-center">

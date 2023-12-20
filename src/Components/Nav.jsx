@@ -188,18 +188,21 @@ const Nav = () => {
             style={{ display: openBar ? "block" : "none" }}
           >
             <Link
+              onClick={() => setOpenBar(!openBar)}
               to="/discussion"
               className="block w-full hover:bg-sky-500  font-extrabold  hover:text-white px-3 py-2 text-sky-500"
             >
               OPINIONs
             </Link>
             <Link
+              onClick={() => setOpenBar(!openBar)}
               to="/earn"
               className="block w-full hover:bg-sky-500  font-extrabold hover:text-white  text-sky-500 px-3 py-2"
             >
               EARN
             </Link>
             <Link
+              onClick={() => setOpenBar(!openBar)}
               to="/signin"
               className="block w-full hover:bg-sky-500  font-extrabold hover:text-white   px-3 py-2 text-sky-500"
             >
@@ -207,6 +210,7 @@ const Nav = () => {
             </Link>
 
             <Link
+              onClick={() => setOpenBar(!openBar)}
               to="/signup"
               className="block w-full  hover:bg-green-600 hover:text-white   px-3 py-2 text-green-500 font-extrabold"
             >
@@ -234,15 +238,15 @@ const Nav = () => {
         </div>
 
         <div
-          className="left-side absolute right-5 h-36 w-auto 
-         flex justify-between items-center py-2 -z-40 bottom-32"
+          className="left-side absolute right-3 h-36 w-auto 
+         flex justify-between items-center py-2 top-96 bottom-32"
         >
           {!showFeedBack && (
             <button
               onClick={() => setSHowFeedBack(!showFeedBack)}
-              className="bg-sky-500 rounded-md h-18 text-whitefont-extrabold px-2 py-1"
+              className=" rounded-md h-18 text-sky-500 font-extrabold px-2 py-1"
             >
-              <FaPlus className="text-white text-4xl" />
+              <FaPlus className="text-sky-500 text-6xl" />
             </button>
           )}
         </div>

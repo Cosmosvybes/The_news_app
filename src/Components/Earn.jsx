@@ -1,4 +1,10 @@
-import { FaHeart, FaSignInAlt, FaUser, FaUserEdit } from "react-icons/fa";
+import {
+  FaHeart,
+  FaSignInAlt,
+  FaUser,
+  FaUserEdit,
+  FaUserShield,
+} from "react-icons/fa";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 
@@ -9,12 +15,13 @@ const Earn = () => {
         <h1 className="text-sky-700 px-4 text-5xl font-bold max-sm:text-2xl block text-left">
           Earn with us
         </h1>
-        <h2 className="text-sky-600 px-4 text-2xl py-1  max-sm:text-sm block text-left">
+        <h2 className="text-sky-600 px-4 text-2xl py-1 font-bold  max-sm:text-sm block text-left">
           Monetize every words coming out of your head!
         </h2>
+        <p className="px-4 text-gray-600 underline ">Follow this steps</p>
 
         <div className="flex px-5 justify-between items-center max-sm:flex-col h-72 max-sm:h-auto py-1 max-sm:px-0 ">
-          <div className="flex justify-start items-center flex-col px-2 w-72 border py-3 border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm shadow shadow-gray-400">
+          <div className="flex justify-start items-center flex-col px-2 w-72 border py-3 border-x-gray-200 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm bg-gray-200">
             <FaUser className="text-sky-500 text-4xl" />
             <h1 className="text-2xl text-sky-500 font-bold"> Sign up</h1>
             <p className="text-slate-900 max-sm:text-sm">
@@ -22,7 +29,7 @@ const Earn = () => {
               Set up a new account
             </p>
           </div>
-          <div className="flex justify-start items-center flex-col px-2 py-3 w-72 border border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm shadow shadow-gray-400">
+          <div className="flex justify-start items-center flex-col px-2 py-3 w-72 border border-x-gray-200 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm bg-gray-200">
             <FaSignInAlt className="text-4xl text-sky-500 font-bold" />
             <h1 className="text-2xl text-sky-500 font-bold"> Sign in</h1>
             <p className="text-slate-900 text-center max-sm:text-sm">
@@ -30,17 +37,25 @@ const Earn = () => {
               Sign in to you account
             </p>
           </div>
-          <div className="flex justify-start items-center flex-col py-3 px-2 w-72 border border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm shadow shadow-gray-400">
+          <div className="flex justify-start items-center flex-col py-3 px-2 w-72 border border-x-gray-200 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm bg-gray-200">
+            <FaUserShield className="text-4xl text-sky-500 font-bold" />
+            <h1 className="text-2xl text-sky-500 font-bold"> Join Premium</h1>
+            <p className="text-slate-900 max-sm:text-sm text-center">
+              {" "}
+              Subscribe premium
+            </p>
+          </div>
+          <div className="flex justify-start items-center flex-col py-3 px-2 w-72 border border-x-gray-200 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm bg-gray-200">
             <FaUserEdit className="text-4xl text-sky-500 font-bold" />
             <h1 className="text-2xl text-sky-500 font-bold"> Create</h1>
             <p className="text-slate-900 max-sm:text-sm text-center">
               {" "}
-              Create and engaging discussion.
+              Create engaging discussion.
             </p>
           </div>
-          <div className="flex justify-start items-center flex-col py-3 px-2 w-72 border border-x-gray-500 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm shadow shadow-gray-400">
+          <div className="flex justify-start items-center flex-col py-3 px-2 w-72 border border-x-gray-200 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm bg-gray-200">
             <FaHeart className="text-4xl text-sky-500 font-bold" />
-            <h1 className="text-2xl text-sky-500 font-bold"> Get 20 Likes</h1>
+            <h1 className="text-2xl text-sky-500 font-bold"> Get 50 Likes</h1>
             <p className="text-slate-900 text-center max-sm:text-sm">
               {" "}
               Recieve up 50 likes on a post.
