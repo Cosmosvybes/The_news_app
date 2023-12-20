@@ -81,7 +81,7 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
         {/* //post body */}
         <div className="flex px-1  h-auto">
           <Link to={`/post/${id}`}>
-            <p className="text-slate-900 text-sm text-justify">{post}</p>
+            <p className="text-slate-900 text-sm text-justify font-bold">{post}</p>
           </Link>
         </div>
 
@@ -146,11 +146,11 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
               >
                 <div className="relative flex justify-start items-center">
                   <img width={"10px"} height={"10px"} alt="image" />
-                  <p className="text-slate-900 px-1 max-sm:text-sm">
+                  <p className="text-slate-900 px-1 max-sm:text-sm font-bold">
                     {"Username"}
                   </p>
                 </div>
-                <p className="text-slate-900 max-sm:text-sm">
+                <p className="text-slate-900 max-sm:text-sm font-bold">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>

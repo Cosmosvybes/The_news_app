@@ -113,7 +113,7 @@ const Topic = () => {
             onClick={() => history.back()}
             className="text-gray-400 text-2xl "
           />
-          <h1 className="text-sky-500 text-2xl px-2">Post</h1>
+          <h1 className="text-sky-500 text-2xl px-2 font-bold">Post</h1>
         </div>
         <div className="bg-slate-100 flex justify-center">
           <div className="flex w-full  h-auto max-sm:flex-col">
