@@ -4,8 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-html,
-p {
+*
+{
   font-family: "Comfortaa", sans-serif;
 }
