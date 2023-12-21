@@ -265,8 +265,7 @@ const Nav = () => {
             className="absolute  right-0   w-full py-3 px-4  flex justify-center items-center top-64"
           >
             <div
-              
-              className="post-form rounded-md flex flex-col bg-gray-200 h-auto transition  max-md:left-40 max-md:w-96  justify-start  "
+              className="post-form rounded-md flex flex-col bg-gray-200 h-auto transition  max-md:left-40 max-md:w-96  justify-start px-2  "
               style={{ transition: "0.9s" }}
               id="post-form"
             >
