@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import "./Nav.css";
 import {
@@ -104,8 +104,9 @@ const Nav = () => {
     const apiKey = "67a01c9e936b42440e55e5deedd2b567";
     const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=${argValue}&max=10&apikey=${apiKey}`;
   };
-
+  const postModal = useRef(null);
   const [showFeedBack, setSHowFeedBack] = useState(false);
+  useEffect(() => {}, []);
 
   return (
     <>
@@ -248,11 +249,7 @@ const Nav = () => {
           {!showFeedBack && (
             <button
               onClick={() => {
-                gsap.fromTo(
-                  "post-form",
-                  { opacity: 0, duration: 2 },
-                  { opacity: 1, duration: 2 }
-                );
+                gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
                 return setSHowFeedBack(!showFeedBack);
               }}
               className=" rounded-md h-18 text-sky-500 font-extrabold px-2 py-1"
@@ -263,14 +260,17 @@ const Nav = () => {
         </div>
         {showFeedBack && (
           <div
+            ref={postModal}
             id="modal"
-            className=" absolute border border-gray-400 right-0 bg-gray-200  w-full py-3  flex justify-center items-center top-64"
+            className="absolute  right-0   w-full py-3 px-4  flex justify-center items-center top-64"
           >
             <div
-              className="post-form rounded-md flex flex-col h-auto transition  max-md:left-40 max-md:w-96  justify-start  "
+              
+              className="post-form rounded-md flex flex-col bg-gray-200 h-auto transition  max-md:left-40 max-md:w-96  justify-start  "
               style={{ transition: "0.9s" }}
+              id="post-form"
             >
-              <p className="   font-bold  inline text-sky-600 py-2">
+              <p className="para font-bold  inline text-sky-600 py-2">
                 {" "}
                 Share your opinion today!
               </p>
@@ -311,8 +311,11 @@ const Nav = () => {
                 </button>
               </div>
               <FaTimes
-                onClick={() => setSHowFeedBack(!showFeedBack)}
-                className="absolute top-4   rounded-lg text-4xl text-sky-600 right-2"
+                onClick={() => {
+                  gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
+                  setSHowFeedBack(!showFeedBack);
+                }}
+                className="absolute top-4   rounded-lg text-4xl text-sky-600 right-5"
               />
             </div>
           </div>
