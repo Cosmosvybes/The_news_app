@@ -92,12 +92,12 @@ const Post = ({
             <div className="w-10 h-10 rounded-full border border-gray-500 py-1 px-1 flex justify-start items-center">
               <img width="40px" height="40px" className="" />
             </div>
-            <p className="text-slate-900 rounded-xl text-sm font-bold px-1">
+            <p className="text-slate-900 rounded-xl text-sm  px-1">
               {"User Name"}
             </p>
             <FaAtom className="text-sm text-sky-800" />
             <p className="text-gray-400 text-sm m-0.5">{"@username"}</p>
-            <p className="font-bold m-2  text-gray-500 flex justify-center items-center text-sm">
+            <p className=" m-2  text-gray-500 flex justify-center items-center text-sm">
               {" "}
               <FaClock className="inline text-sky-500 px-1" />
               {time}{" "}
@@ -110,7 +110,7 @@ const Post = ({
         {/* //post body */}
         <div className="flex px-1  h-auto">
           <Link to={`/post/${id}`}>
-            <p className="text-slate-900 text-sm text-justify font-bold">
+            <p className="text-slate-900 text-sm text-justify ">
               {post}
             </p>
           </Link>
@@ -121,7 +121,7 @@ const Post = ({
             <div className="flex justify-start text-gray-600 items-center">
               <FaComments className="text-sky-400 text-sm" />
 
-              <p className="text-sm  text-slate-900 font-bold"> {12}</p>
+              <p className="text-sm  text-slate-900 "> {12}</p>
             </div>
             <div
               onClick={() => likePost(id)}
@@ -130,7 +130,7 @@ const Post = ({
               <div className="flex items-center justify-start">
                 {" "}
                 <FaHeart className="text-sm " />
-                <p className="text-sm  text-slate-900 font-bold ">
+                <p className="text-sm  text-slate-900  ">
                   {" "}
                   {numberOfLikes}
                 </p>
@@ -142,7 +142,7 @@ const Post = ({
             >
               <div className="flex justify-start text-gray-600 items-center">
                 <FaFire className="text-yellow-600 text-sm" />
-                <p className="text-sm text-slate-900 font-bold">
+                <p className="text-sm text-slate-900 ">
                   {" "}
                   {fireNumber}
                 </p>
@@ -184,11 +184,11 @@ const Post = ({
               >
                 <div className="relative flex justify-start items-center">
                   <img width={"10px"} height={"10px"} alt="image" />
-                  <p className="text-slate-900 px-1 max-sm:text-sm font-bold">
+                  <p className="text-slate-900 px-1 max-sm:text-sm ">
                     {"Username"}
                   </p>
                 </div>
-                <p className="text-slate-900 max-sm:text-sm font-bold">
+                <p className="text-slate-900 max-sm:text-sm ">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>
