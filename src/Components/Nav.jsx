@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { gsap } from "gsap";
 import "./Nav.css";
 import {
   FaBars,
@@ -67,6 +68,7 @@ const Nav = () => {
     "se",
     "tw",
   ]);
+
   const [lang, showLang] = useState(false);
   const [ctry, showCountry] = useState(false);
 
@@ -246,6 +248,11 @@ const Nav = () => {
           {!showFeedBack && (
             <button
               onClick={() => {
+                gsap.fromTo(
+                  "post-form",
+                  { opacity: 0, duration: 2 },
+                  { opacity: 1, duration: 2 }
+                );
                 return setSHowFeedBack(!showFeedBack);
               }}
               className=" rounded-md h-18 text-sky-500 font-extrabold px-2 py-1"
@@ -255,12 +262,15 @@ const Nav = () => {
           )}
         </div>
         {showFeedBack && (
-          <div className="absolute">
+          <div
+            id="modal"
+            className=" absolute border border-gray-400 right-0 bg-gray-200  w-full py-3  flex justify-center items-center top-44 "
+          >
             <div
-              className="post-form rounded-md flex flex-col h-auto transition  max-sm:left-0 max-md:left-40 max-md:w-96 px-3.0 max-sm:w-auto  justify-start py-10 duration-500  bg-gray-100 max-md:top-32  border-2 border-sky-400 absolute  top-44  max-sm:top-36"
+              className="post-form rounded-md flex flex-col h-auto transition  max-md:left-40 max-md:w-96  justify-start  "
               style={{ transition: "0.9s" }}
             >
-              <p className="  text-slat-900 font-bold  inline ">
+              <p className="   font-bold  inline text-sky-600 py-2">
                 {" "}
                 Share your opinion today!
               </p>
@@ -271,7 +281,7 @@ const Nav = () => {
                   id=""
                   cols="30"
                   rows="10 "
-                  className="h-44 w-full outline outline-sky-300 bg-gray-200 border border-sky-400 rounded-md"
+                  className="h-44 w-full text-sky-600 outline outline-sky-600 bg-gray-200  rounded-md"
                   placeholder="Write your mind..."
                   style={{
                     height: "auto",
@@ -283,8 +293,7 @@ const Nav = () => {
               {/* <div className="flex justify-center m-1  ">
               
             </div> */}
-
-              <div className=" w-full flex justify-between items-center px-10  max-sm:px-10 max-md:px-20  h-10  m-1">
+              <div className=" w-full flex justify-between   max-sm:px-10 max-md:px-20  h-10  m-1">
                 <input
                   type="file"
                   id="imageFile"
@@ -296,14 +305,14 @@ const Nav = () => {
                   <FaImages className="text-sky-500   text-4xl m-0.5" />{" "}
                 </label>
 
-                <button className="bg-sky-500  rounded-md border-2 w-36 py-2  border-white font-bold text-white">
+                <button className="bg-sky-600  rounded-md border-2 w-36 py-2  border-white font-bold text-white">
                   {" "}
-                 Caprack
+                  Post it
                 </button>
               </div>
               <FaTimes
                 onClick={() => setSHowFeedBack(!showFeedBack)}
-                className="absolute top-4   rounded-lg text-xl text-sky-400 right-2"
+                className="absolute top-4   rounded-lg text-2xl text-sky-600 right-2"
               />
             </div>
           </div>
