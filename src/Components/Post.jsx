@@ -119,7 +119,7 @@ const Post = ({
         {!openComment && (
           <div className="flex px-2 py-1 justify-between items-center">
             <div className="flex justify-start text-gray-600 items-center">
-              <FaComments className="text-sky-400 text-xl" />
+              <FaComments className="text-sky-400 text-sm" />
 
               <p className="text-sm  text-slate-900 font-bold"> {12}</p>
             </div>
@@ -129,7 +129,7 @@ const Post = ({
             >
               <div className="flex items-center justify-start">
                 {" "}
-                <FaHeart className="text-xl " />
+                <FaHeart className="text-sm " />
                 <p className="text-sm  text-slate-900 font-bold ">
                   {" "}
                   {numberOfLikes}
@@ -141,7 +141,7 @@ const Post = ({
               className="flex text-yellow-600 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full"
             >
               <div className="flex justify-start text-gray-600 items-center">
-                <FaFire className="text-yellow-600 text-xl" />
+                <FaFire className="text-yellow-600 text-sm" />
                 <p className="text-sm text-slate-900 font-bold">
                   {" "}
                   {fireNumber}
@@ -150,7 +150,7 @@ const Post = ({
             </div>
             <div className="flex text-slate-400 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full">
               {" "}
-              <FaTag className="" />
+              <FaTag className="text-sm" />
             </div>
           </div>
         )}

@@ -86,7 +86,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/headlines" element={<News />} />
-        <Route path="/discussion" element={<Discussion />} />
+        <Route path="/discussion" element={<Discussion allPost={allPost} />} />
       </Routes>
     </>
   );
