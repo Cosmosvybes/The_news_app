@@ -16,6 +16,7 @@ const Topic = ({ allPost }) => {
     username: "",
     post: "",
     comments: [],
+    postedAt: new Date(),
     likes: 0,
     fire: 0,
   });
@@ -29,7 +30,7 @@ const Topic = ({ allPost }) => {
   };
   useEffect(() => {
     const post = getPost(id);
-    setPostDetails({ post: post?.post });
+    setPostDetails({ post: post?.post, postedAt: post?.postedAt });
   }, []);
 
   return (
@@ -46,7 +47,7 @@ const Topic = ({ allPost }) => {
           <div className="flex w-full  h-auto max-sm:flex-col">
             <Post
               commentOpen={true}
-              postedAt={getPost(id).postedAt}
+              postedAt={postDetails.postedAt}
               post={postDetails.post}
               firenumber={postDetails.fire}
               likes={postDetails.likes}
