@@ -154,6 +154,7 @@ const Post = ({
             </div>
           </div>
         )}
+
         {openComment && (
           <div className="grid h-auto gap-1 grid-cols-1 max-sm:grid-cols-1  max-sm:h-auto px-1 ">
             <textarea
