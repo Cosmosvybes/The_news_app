@@ -110,7 +110,7 @@ const Post = ({
 
           {/* //post body */}
           <div className="flex px-10  h-auto ">
-            <p className="text-slate-900 text-sm text-justify border-2 border-gray-400 px-2 rounded-md ">
+            <p className="text-slate-900 text-sm text-justify border border-gray-400 px-2 rounded-md ">
               {post}
             </p>
           </div>
@@ -152,7 +152,7 @@ const Post = ({
             <div className="grid h-auto gap-1 py-3 grid-cols-2 max-sm:grid-cols-1  max-sm:h-auto px-10 ">
               <textarea
                 name=""
-                className="h-14 max-sm:h-12 border-2 border-gray-300 rounded-md "
+                className="h-14 max-sm:h-12 border-1 border-gray-300 rounded-md "
                 id=""
                 cols="30"
                 rows="10"

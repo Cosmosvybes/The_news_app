@@ -264,7 +264,7 @@ const Nav = () => {
         {showFeedBack && (
           <div
             id="modal"
-            className=" absolute border border-gray-400 right-0 bg-gray-200  w-full py-3  flex justify-center items-center top-44 "
+            className=" absolute border border-gray-400 right-0 bg-gray-200  w-full py-3  flex justify-center items-center top-64"
           >
             <div
               className="post-form rounded-md flex flex-col h-auto transition  max-md:left-40 max-md:w-96  justify-start  "
@@ -305,14 +305,14 @@ const Nav = () => {
                   <FaImages className="text-sky-500   text-4xl m-0.5" />{" "}
                 </label>
 
-                <button className="bg-sky-600  rounded-md border-2 w-36 py-2  border-white font-bold text-white">
+                <button className="bg-sky-600  rounded-md border-2 w-36 py-2 px-1   border-white font-extrabold text-white">
                   {" "}
                   Post it
                 </button>
               </div>
               <FaTimes
                 onClick={() => setSHowFeedBack(!showFeedBack)}
-                className="absolute top-4   rounded-lg text-2xl text-sky-600 right-2"
+                className="absolute top-4   rounded-lg text-4xl text-sky-600 right-2"
               />
             </div>
           </div>
