@@ -21,7 +21,7 @@ function App() {
       likes: 0,
       fire: 0,
       fireMakers: [],
-      postedAt: new Date("2023-12-21 05:41:00"),
+      postedAt: new Date("2023-12-21 06:24:00"),
       post: `Hello capracks, tire for nigeria mateer , i no fit lie, na wetin fela and china talk, still dey happen`,
     },
     {

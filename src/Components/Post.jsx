@@ -76,10 +76,10 @@ const Post = ({
       let response = `${Math.ceil(hour / 24 - 1)}d`;
       setTime(response);
     } else if (hour > 1) {
-      let response = `${Math.ceil(hour) - 1}hr`;
+      let response = `${Math.ceil(hour) - 1}h`;
       setTime(response);
     } else {
-      let response = `${new Date().getMinutes()}min`;
+      let response = `${new Date().getMinutes()}m`;
       setTime(response);
     }
   };
@@ -97,7 +97,7 @@ const Post = ({
             </p>
             <FaAtom className="text-sm text-sky-800" />
             <p className="text-gray-400 text-sm m-0.5">{"@username"}</p>
-            <p className="font-bold m-2  text-gray-500 flex justify-center items-center">
+            <p className="font-bold m-2  text-gray-500 flex justify-center items-center text-sm">
               {" "}
               <FaClock className="inline text-sky-500 px-1" />
               {time}{" "}
