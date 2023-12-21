@@ -3,81 +3,8 @@ import Footer from "./Footer";
 import Post from "./Post";
 import { FaPlus } from "react-icons/fa";
 
-const Discussion = () => {
-  const [posts, setPosts] = useState([
-    {
-      id: 1,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus recusandae.`,
-    },
-    {
-      id: 2,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus.`,
-    },
-    {
-      id: 3,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus recusandae.`,
-    },
-    {
-      id: 4,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus recusandae.`,
-    },
-    {
-      id: 5,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus`,
-    },
-    {
-      id: 6,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus recusandae.`,
-    },
-  ]);
+const Discussion = ({ allPost }) => {
+  const [posts, setPosts] = useState(allPost);
 
   return (
     <>
@@ -92,6 +19,7 @@ const Discussion = () => {
             <div className="" key={post.id}>
               <Post
                 id={post.id}
+                postedAt={post.postedAt}
                 posts={posts}
                 likes={post.likes}
                 post={post.post}
@@ -105,6 +33,5 @@ const Discussion = () => {
     </>
   );
 };
-
 
 export default Discussion;

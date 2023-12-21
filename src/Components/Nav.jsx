@@ -257,7 +257,7 @@ const Nav = () => {
         {showFeedBack && (
           <div className="absolute">
             <div
-              className="post-form rounded-md flex flex-col h-auto transition  max-sm:left-3 max-md:left-40 max-md:w-96 px-2.5 max-sm:w-auto  justify-start py-10 duration-500  bg-gray-100 max-md:top-36  border border-sky-400    absolute  top-44  max-sm:top-44"
+              className="post-form rounded-md flex flex-col h-auto transition  max-sm:left-0 max-md:left-40 max-md:w-96 px-3.0 max-sm:w-auto  justify-start py-10 duration-500  bg-gray-100 max-md:top-32  border-2 border-sky-400 absolute  top-44  max-sm:top-36"
               style={{ transition: "0.9s" }}
             >
               <p className="  text-slat-900 font-bold  inline ">
@@ -271,7 +271,7 @@ const Nav = () => {
                   id=""
                   cols="30"
                   rows="10 "
-                  className="h-44 w-full outline outline-sky-300 bg-gray-200 border-2 border-sky-400 rounded-md"
+                  className="h-44 w-full outline outline-sky-300 bg-gray-200 border border-sky-400 rounded-md"
                   placeholder="Write your mind..."
                   style={{
                     height: "auto",

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaAtom,
   FaBookmark,
+  FaClock,
   FaComment,
   FaComments,
   FaEllipsisV,
@@ -11,7 +12,15 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
+const Post = ({
+  id,
+  posts,
+  likes,
+  firenumber,
+  post,
+  commentOpen,
+  postedAt,
+}) => {
   const [fireNumber, setFireNumber] = useState(firenumber);
   const [numberOfLikes, setLikes] = useState(likes);
 
@@ -56,10 +65,25 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
         })();
   };
   const [openComment, setOpenComment] = useState(commentOpen);
+  const [time, setTime] = useState("");
   const handleCommentSection = () => {
     setOpenComment(true);
   };
-
+  const handleTime = (time) => {
+    let timeDifference = Date.now() - time;
+    let hour = Math.ceil(timeDifference / (1000 * 60 * 60));
+    if (hour > 24 && hour >= 1) {
+      let response = `${Math.ceil(hour / 24 - 1)}d`;
+      setTime(response);
+    } else if (hour > 1) {
+      let response = `${Math.ceil(hour) - 1}hr`;
+      setTime(response);
+    } else {
+      let response = `${new Date().getMinutes()}min`;
+      setTime(response);
+    }
+  };
+  setInterval(() => handleTime(postedAt), 1000);
   return (
     <>
       <div className="flex flex-center flex-col   h-auto  px-2 rounded-sm  max-sm:w-full">
@@ -72,7 +96,12 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
               {"User Name"}
             </p>
             <FaAtom className="text-sm text-sky-800" />
-            <p className="text-gray-400 text-sm ">{"@username"}</p>
+            <p className="text-gray-400 text-sm m-0.5">{"@username"}</p>
+            <p className="font-bold m-2  text-gray-500 flex justify-center items-center">
+              {" "}
+              <FaClock className="inline text-sky-500 px-1" />
+              {time}{" "}
+            </p>
           </div>
 
           <FaEllipsisV className="text-slate-400 text-sm " />
@@ -88,14 +117,11 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
         </div>
 
         {!openComment && (
-          <div className="flex px-10 py-1 justify-between items-center">
+          <div className="flex px-2 py-1 justify-between items-center">
             <div className="flex justify-start text-gray-600 items-center">
               <FaComments className="text-sky-400 text-xl" />
 
-              <p className="text-sm  text-gray-300 font-bold">
-                {" "}
-                {12}
-              </p>
+              <p className="text-sm  text-slate-900 font-bold"> {12}</p>
             </div>
             <div
               onClick={() => likePost(id)}
@@ -104,7 +130,7 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
               <div className="flex items-center justify-start">
                 {" "}
                 <FaHeart className="text-xl " />
-                <p className="text-sm  text-gray-300 font-bold ">
+                <p className="text-sm  text-slate-900 font-bold ">
                   {" "}
                   {numberOfLikes}
                 </p>
@@ -116,7 +142,10 @@ const Post = ({ id, posts, likes, firenumber, post, commentOpen }) => {
             >
               <div className="flex justify-start text-gray-600 items-center">
                 <FaFire className="text-yellow-600 text-xl" />
-                <p className="text-sm text-gray-300 font-bold"> {fireNumber}</p>
+                <p className="text-sm text-slate-900 font-bold">
+                  {" "}
+                  {fireNumber}
+                </p>
               </div>
             </div>
             <div className="flex text-slate-400 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full">

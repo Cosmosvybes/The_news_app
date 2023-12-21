@@ -4,14 +4,14 @@ import { useParams } from "react-router-dom";
 import Footer from "./Footer";
 import Post from "./Post";
 
-const Topic = () => {
+const Topic = ({ allPost }) => {
   const scrollTop = () => {
     return window.scrollTo({ top: 0 });
   };
   useEffect(() => {
     scrollTop();
   }, []);
-  
+
   const [postDetails, setPostDetails] = useState({
     username: "",
     post: "",
@@ -19,85 +19,12 @@ const Topic = () => {
     likes: 0,
     fire: 0,
   });
-  const [posts, setPosts] = useState([
-    {
-      id: 1,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus recusandae.`,
-    },
-    {
-      id: 2,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accus.`,
-    },
-    {
-      id: 3,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste`,
-    },
-    {
-      id: 4,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus recusandae.`,
-    },
-    {
-      id: 5,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Loripsum dolor sit amet, consectetur adipisicing elit. Velit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusame.`,
-    },
-    {
-      id: 6,
-      isLiked: false,
-      likers: [],
-      likes: 0,
-      fire: 0,
-      fireMakers: [],
-      post: `Lorem ipsum dolorVelit
-            reprehenderit sequi eos assumenda nemo est veritatis commodi
-            doloribus dolores sint ratione, nostrum quidem, nihil blanditiis,
-            iste accusamus totam minus recusandae.`,
-    },
-  ]);
+  const [posts, setPosts] = useState(allPost);
   const { id } = useParams();
 
   const getPost = (id) => {
-    let getPost = posts.find((post) => post.id == id);
-    return getPost;
+    let post = posts.find((post) => post.id == id);
+    return post;
     // setPostDetails({ username: getPost.post });
   };
   useEffect(() => {
@@ -119,6 +46,7 @@ const Topic = () => {
           <div className="flex w-full  h-auto max-sm:flex-col">
             <Post
               commentOpen={true}
+              postedAt={getPost(id).postedAt}
               post={postDetails.post}
               firenumber={postDetails.fire}
               likes={postDetails.likes}
