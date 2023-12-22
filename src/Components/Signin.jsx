@@ -25,19 +25,22 @@ const Signin = () => {
               className="grid grid-cols-1 gap-1 max-sm:grid-cols-1 max-sm:gap-2 "
               onClick={handleSignin}
             >
-              {/* <h1 className="text-center text-xl">Create account</h1> */}
               <label className="flex flex-col flex-start">
-                <b>Email</b>
+                <b className="text-left max-sm:text-left text-gray-500">
+                  Email
+                </b>
                 <input
-                  className="w-72 px-2 py-5  outline outline-gray-200  max-sm:py-3 rounded-md"
-                  type="text"
+                  className="w-96  max-sm:w-72 px-2 py-5  outline border border-gray-400 outline-none  max-sm:py-3 "
+                  type="email"
                   placeholder="Email"
                 />
               </label>
               <label className="flex flex-col flex-start">
-                <b>Password</b>
+                <b className="text-right max-sm:text-left text-gray-500">
+                  Password
+                </b>
                 <input
-                  className="w-72 px-2 py-5  outline outline-gray-200  max-sm:py-3 rounded-md"
+                  className="w-96  max-sm:w-72 px-2 py-5  outline border border-gray-400 outline-none  max-sm:py-3 "
                   type="password"
                   placeholder="Password"
                 />
@@ -45,7 +48,7 @@ const Signin = () => {
 
               <input
                 type="submit"
-                className="border border-sky-500 w-full py-4 rounded-md hover:bg-sky-600 max-sm:py-2 text-white font-bold bg-sky-400"
+                className="border border-sky-500 w-full py-4 rounded-none hover:bg-sky-600 max-sm:py-2 text-white font-bold bg-sky-400"
               />
             </form>
           </div>

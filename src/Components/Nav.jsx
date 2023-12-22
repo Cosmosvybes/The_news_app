@@ -1,21 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import "./Nav.css";
-import {
-  FaBars,
-  FaCaretUp,
-  FaTwitter,
-  FaFacebook,
-  FaTimes,
-  FaDollarSign,
-  FaSignInAlt,
-  FaHackerNews,
-  FaUser,
-  FaInbox,
-  FaPlus,
-  FaFileImage,
-  FaImages,
-} from "react-icons/fa";
+import image from "../assets/cosmos.png";
+import { FaBars, FaCaretUp, FaTimes, FaPlus, FaImages } from "react-icons/fa";
 import News from "./News";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
@@ -110,10 +97,25 @@ const Nav = () => {
   useEffect(() => {}, []);
 
   const animate = () => {
-    gsap.fromTo(
-      "div",
-      { opacity: 0},
-      {  opacity: 1}
+    gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
+  };
+
+  const [imageUpload, setImageUpload] = useState(undefined);
+  //image upload
+  const handleUpload = async (e) => {
+    await imageUrl("#image");// use the image url package here to getb the image url
+    setImageUpload(e.target.files[0].name);
+  };
+
+  //create new post or upload new post
+  const handlePosting = (e) => {
+    const formData = new FormData();
+    formData.append("image", imageUpload);
+
+    console.log(
+      formData.get("image") == "undefined"
+        ? "uploading"
+        : `uploading ${formData.get("image")}`
     );
   };
 
@@ -232,18 +234,6 @@ const Nav = () => {
             </Link>
           </div>
 
-          {/* <input
-            style={{ display: openBar ? "block" : "none" }}
-            type="text"
-            placeholder="search news"
-            className=" rounded-md px-2 w-48 outline-none py-1 border border-none m-2"
-          />
-          <input
-            type="submit"
-            className="px-2 py-1 rounded-md w-48font-extrabold  hover:bg-sky-800 bg-sky-950 text-white border border-none"
-            style={{ display: openBar ? "block" : "none" }}
-          /> */}
-
           <FaCaretUp
             style={{ display: openBar ? "block" : "none" }}
             className="absolute  top-52 text-center text-4xl text-sky-500 shadow shadow-slate-400 z-10"
@@ -271,17 +261,19 @@ const Nav = () => {
           <div
             ref={modal}
             id="modal"
-            className="absolute  right-0   w-full py-3 px-4  flex justify-center items-center top-64"
+            className="absolute  right-0 w-full py-2 px-2  flex justify-center  items-center top-14"
           >
             <div
-              className="post-form rounded-md flex flex-col bg-gray-200 h-auto transition  max-md:left-40 max-md:w-96  justify-start px-2  "
+              className="post-form rounded-md flex flex-col bg-gray-200 h-auto transition  max-md:left-40 max-md:w-96  justify-start px-2"
               style={{ transition: "0.9s" }}
               id="post-form"
             >
-              <p className="para font-bold  inline text-sky-600 py-2">
-                {" "}
-                Share your opinion today!
-              </p>
+              <div className="grid grid-cols-1 h-auto py-3 ">
+                <img
+                  src={imageUpload}
+                  className="h-auto rounded-md -z-1 border-2 border-sky-400"
+                />
+              </div>
 
               <div className="flex justify-start flex-col items-center">
                 <textarea
@@ -307,13 +299,17 @@ const Nav = () => {
                   id="imageFile"
                   className="hidden"
                   accept="*/*"
+                  onChange={handleUpload}
                 />
                 <label htmlFor="imageFile">
                   {" "}
                   <FaImages className="text-sky-500   text-4xl m-0.5" />{" "}
                 </label>
 
-                <button className="bg-sky-600  rounded-md border-2 w-36 py-2 px-1   border-white font-extrabold text-white">
+                <button
+                  onClick={handlePosting}
+                  className="bg-sky-600  rounded-md border-2 w-36 py-2 px-1   border-white font-extrabold text-white"
+                >
                   {" "}
                   Post it
                 </button>
@@ -322,8 +318,9 @@ const Nav = () => {
                 onClick={() => {
                   gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
                   setSHowFeedBack(!showFeedBack);
+                  setImageUpload(undefined);
                 }}
-                className="absolute top-4   rounded-lg text-4xl text-sky-600 right-5"
+                className="absolute top-3   rounded-lg text-2xl text-sky-600 right-5 bg-gray-200"
               />
             </div>
           </div>
