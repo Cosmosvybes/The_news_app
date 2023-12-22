@@ -6,9 +6,14 @@ import {
   FaUserShield,
 } from "react-icons/fa";
 import Footer from "./Footer";
+import gsap from "gsap";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Earn = () => {
+  useEffect(() => {
+    gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
+  }, []);
   return (
     <>
       <div className="">
@@ -20,7 +25,7 @@ const Earn = () => {
         </h2>
         <p className="px-4 text-gray-600 underline ">Follow this steps</p>
 
-        <div className="flex px-5 justify-between items-center max-sm:flex-col h-72 max-sm:h-auto py-1 max-sm:px-0 ">
+        <div className="flex px-5 justify-between items-center max-sm:flex-col h-72 max-sm:h-auto py-1 max-sm:px-3 rounded-2xl ">
           <div className="flex justify-start items-center flex-col px-2 w-72 border py-3 border-x-gray-200 h-auto max-sm:h-auto max-sm:w-full m-0.5 rounded-sm bg-gray-200">
             <FaUser className="text-sky-500 text-4xl" />
             <h1 className="text-2xl text-sky-500 font-bold"> Sign up</h1>

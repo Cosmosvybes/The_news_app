@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Post from "./Post";
 import { FaPlus } from "react-icons/fa";
-
+import gsap from "gsap";
 const Discussion = ({ allPost }) => {
+  useEffect(() => {
+    gsap.fromTo("div", { opacity: 0, scale:0}, { opacity: 1, scale:1 });
+  }, []);
   const [posts, setPosts] = useState(allPost);
 
   return (
@@ -29,7 +32,7 @@ const Discussion = ({ allPost }) => {
           ))}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

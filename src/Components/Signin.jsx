@@ -1,25 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "./Footer";
-
+import gsap from "gsap";
 const Signin = () => {
   const handleSignin = (e) => {
     e.preventDefault();
   };
+  useEffect(() => {
+    gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
+  }, []);
 
   return (
     <>
       <div className="flex justify-center items-center h-96 px-44   max-sm:px-0 rounded-md bg-sky-100">
         <div className="flex h-auto  flex-col justify-between w-full px-24 max-sm:px-0 ">
           <div className="flex rounded-md justify-center">
-            <div className="flex justify-start bg-white rounded-md ">
-              {" "}
-              <h1 className="text-red-600  inline rounded-sm px-1  font-extrabold">
-                Sign <span className="text-sky-500 inline">in</span>
-              </h1>
-            </div>
+            <div className="flex justify-start bg-white rounded-md "> </div>
           </div>
 
-          <div className="flex justify-center items-center py-3 ">
+          <div className="flex justify-center items-center py-3 flex-col ">
+            <h1 className="text-red-600  inline rounded-sm px-1  font-extrabold">
+              Sign <span className="text-sky-500 inline">in</span>
+            </h1>
             <form
               className="grid grid-cols-1 gap-1 max-sm:grid-cols-1 max-sm:gap-2 "
               onClick={handleSignin}

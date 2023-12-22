@@ -104,9 +104,18 @@ const Nav = () => {
     const apiKey = "67a01c9e936b42440e55e5deedd2b567";
     const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=${argValue}&max=10&apikey=${apiKey}`;
   };
-  const postModal = useRef(null);
+
+  const modal = useRef(null);
   const [showFeedBack, setSHowFeedBack] = useState(false);
   useEffect(() => {}, []);
+
+  const animate = () => {
+    gsap.fromTo(
+      "div",
+      { opacity: 0},
+      {  opacity: 1}
+    );
+  };
 
   return (
     <>
@@ -116,7 +125,7 @@ const Nav = () => {
       >
         <div className="flex justify-start bg-white rounded-md border-2 shadow shadow-gray-200 z-10 border-dotted border-red-600">
           {" "}
-          <h1 className="text-red-600  inline rounded-sm px-1  font-extrabold">
+          <h1 className="text-red-600  inline rounded-sm px-2 text-center py-1  font-extrabold">
             Cap <span className="text-sky-500">Racks</span>
           </h1>
         </div>
@@ -249,7 +258,7 @@ const Nav = () => {
           {!showFeedBack && (
             <button
               onClick={() => {
-                gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
+                animate();
                 return setSHowFeedBack(!showFeedBack);
               }}
               className=" rounded-md h-18 text-sky-500 font-extrabold px-2 py-1"
@@ -260,7 +269,7 @@ const Nav = () => {
         </div>
         {showFeedBack && (
           <div
-            ref={postModal}
+            ref={modal}
             id="modal"
             className="absolute  right-0   w-full py-3 px-4  flex justify-center items-center top-64"
           >

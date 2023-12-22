@@ -86,17 +86,15 @@ const Post = ({
   setInterval(() => handleTime(postedAt), 1000);
   return (
     <>
-      <Link to={`/post/${id}`}>
-        
-         </Link>
-      
-      <div className="flex flex-center flex-col h-auto  px-2 rounded-sm  max-sm:w-full">
+      <Link to={`/post/${id}`}></Link>
+
+      <div className="flex flex-center flex-col h-auto border-b border-gray-400  px-2 rounded-sm  max-sm:w-full">
         <div className="flex justify-between items-center">
           <div className="flex justify-start items-center">
             <div className="w-10 h-10 rounded-full border border-gray-500 py-1 px-1 flex justify-start items-center">
               <img width="auto" height="auto" className="" />
             </div>
-            <p className="text-slate-900 rounded-xl text-sm  px-1">
+            <p className="text-black rounded-xl text-sm font-bold max-sm:font-normal px-1">
               {"User Name"}
             </p>
             <FaAtom className="text-sm text-sky-800" />
@@ -114,18 +112,18 @@ const Post = ({
         {/* //post body */}
         <Link to={`/post/${id}`}>
           <div className="flex px-10  h-auto ">
-            <p className="text-slate-900 text-sm text-justify border border-gray-400 px-2 rounded-md ">
+            <p className="text-black text-sm text-justify border border-gray-400 px-2 rounded-md font-bold max-sm:font-normal">
               {post}
             </p>
           </div>
         </Link>
 
         {!openComment && (
-          <div className="flex px-10 py-1 justify-between items-center">
-            <div className="flex justify-start text-gray-600 items-center">
+          <div className="flex px-10 py-5 justify-between items-center">
+            <div className="flex justify-start text-gray-600 items-baseline">
               <FaComments className="text-sky-400 text-sm" />
 
-              <p className="text-sm  text-slate-900 "> {12}</p>
+              <p className="text-sm  text-black  "> {12}</p>
             </div>
             <div
               onClick={() => likePost(id)}
@@ -134,7 +132,7 @@ const Post = ({
               <div className="flex items-center justify-start">
                 {" "}
                 <FaHeart className="text-sm " />
-                <p className="text-sm  text-slate-900  "> {numberOfLikes}</p>
+                <p className="text-sm  text-black  "> {numberOfLikes}</p>
               </div>
             </div>
             <div
@@ -143,7 +141,7 @@ const Post = ({
             >
               <div className="flex justify-start text-gray-600 items-center">
                 <FaFire className="text-yellow-600 text-sm" />
-                <p className="text-sm text-slate-900 "> {fireNumber}</p>
+                <p className="text-sm text-black "> {fireNumber}</p>
               </div>
             </div>
             <div className="flex text-slate-400 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full">
@@ -182,11 +180,11 @@ const Post = ({
               >
                 <div className="relative flex justify-start items-center">
                   <img width={"10px"} height={"10px"} alt="image" />
-                  <p className="text-slate-900 px-1 max-sm:text-sm ">
+                  <p className="text-black px-1 max-sm:text-sm ">
                     {"Username"}
                   </p>
                 </div>
-                <p className="text-slate-900 max-sm:text-sm ">
+                <p className="text-black max-sm:text-sm ">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>
