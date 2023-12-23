@@ -100,7 +100,6 @@ const Nav = ({ allPost, setAllPost }) => {
   const modal = useRef(null);
   const [showFeedBack, setSHowFeedBack] = useState(false);
 
-
   const animate = () => {
     gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
   };
@@ -232,10 +231,10 @@ const Nav = ({ allPost, setAllPost }) => {
             </Link>
             <Link
               onClick={() => setOpenBar(!openBar)}
-              to="/discussion"
+              to="/profile"
               className="block w-full hover:bg-sky-500  font-extrabold  hover:text-white px-3 py-2 text-sky-500"
             >
-              PROFILE
+          PROFILE
             </Link>
             <Link
               onClick={() => setOpenBar(!openBar)}
@@ -267,8 +266,6 @@ const Nav = ({ allPost, setAllPost }) => {
             onClick={() => setOpenBar(!openBar)}
           />
         </div>
-
-        
       </header>
     </>
   );

@@ -10,6 +10,7 @@ import {
   Signin,
   Signup,
   Topic,
+  Profile,
 } from "./Index";
 import { useEffect, useState } from "react";
 
@@ -87,10 +88,12 @@ function App() {
   }, [allPost]);
   return (
     <>
-      <Nav allPost={allPost} setAllPost={setAllPost} />
+      <Nav allPost={allPost} />
       <Routes>
-        {/* <Route path="/" element={<Discussion allPost={allPost} />} /> */}
+        <Route path="/" element={<Discussion allPost={allPost} />} />
+        <Route path="/" element={<Discussion allPost={allPost} />} />
         <Route path="/earn" element={<Earn />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/post/:id" element={<Topic allPost={allPost} />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<Signup />} />
