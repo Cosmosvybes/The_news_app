@@ -18,6 +18,7 @@ const Post = ({
   likes,
   firenumber,
   post,
+  username,
   commentOpen,
   postedAt,
 }) => {
@@ -27,38 +28,37 @@ const Post = ({
   // like post func
   const likePost = (id) => {
     const getPost = posts.find((post) => post.id == id);
-    let userLiked = getPost.likers.find((user) => user == "Ayomide");
+    let userLiked = getPost.likers.find((user) => user == username);
     return userLiked
       ? (() => {
-          let userIndex = getPost.likers.indexOf("Ayomide");
+          let userIndex = getPost.likers.indexOf(username);
           getPost.likers.splice(userIndex, 1);
           getPost.isLiked = false;
           getPost.likes -= 1;
           setLikes(getPost.likes);
         })()
       : (() => {
-          getPost.likers.push("Ayomide");
+          getPost.likers.push(username);
           getPost.likes += 1;
           getPost.isLiked = true;
-          console.log(getPost.likers, getPost.likes);
           setLikes(getPost.likes);
         })();
   };
 
   const firePost = (id) => {
     const getPost = posts.find((post) => post.id == id);
-    let userFired = getPost.fireMakers.find((user) => user == "Ayomide");
+    let userFired = getPost.fireMakers.find((user) => user == username);
 
     return userFired
       ? (() => {
-          let userIndex = getPost.fireMakers.indexOf("Ayomide");
+          let userIndex = getPost.fireMakers.indexOf(username);
           getPost.fireMakers.splice(userIndex, 1);
           getPost.isLiked = false;
           getPost.fire -= 1;
           setFireNumber(getPost.fire);
         })()
       : (() => {
-          getPost.fireMakers.push("Ayomide");
+          getPost.fireMakers.push(username);
           getPost.fire += 1;
           getPost.isLiked = true;
           setFireNumber(getPost.fire);
@@ -69,36 +69,37 @@ const Post = ({
   const handleCommentSection = () => {
     setOpenComment(true);
   };
-  const handleTime = (time) => {
-    let timeDifference = Date.now() - time;
+  const handleTime = (t) => {
+    let timeDifference = Date.now() - t;
     let hour = Math.ceil(timeDifference / (1000 * 60 * 60));
-    if (hour > 24 && hour >= 1) {
-      let response = `${Math.ceil(hour / 24 - 1)}d`;
-      setTime(response);
-    } else if (hour > 1) {
-      let response = `${Math.ceil(hour) - 1}h`;
-      setTime(response);
+    let response;
+    if (hour > 24) {
+      response = `${Math.ceil(hour / 24 - 1)}d`;
+    } else if (hour > 1 && hour < 24) {
+      response = `${Math.ceil(hour) - 1}h`;
     } else {
-      let response = `${new Date().getMinutes()}m`;
-      setTime(response);
+      response = `${new Date().getMinutes()}m`;
     }
+    return response;
   };
-  setInterval(() => handleTime(postedAt), 1000);
+
+  useEffect(() => {
+    setTime(handleTime(postedAt));
+  }, []);
+
   return (
     <>
-      <Link to={`/post/${id}`}></Link>
-
-      <div className="flex flex-center flex-col h-auto border-b border-gray-400  px-2 rounded-sm  max-sm:w-full">
+      <div className="flex flex-center flex-col h-auto border-b   px-2 rounded-sm  max-sm:w-full">
         <div className="flex justify-between items-center">
-          <div className="flex justify-start items-center">
+          <div className="flex justify-start items-center py-2">
             <div className="w-10 h-10 rounded-full border border-gray-500 py-1 px-1 flex justify-start items-center">
               <img width="auto" height="auto" className="" />
             </div>
             <p className="text-black rounded-xl text-sm font-bold max-sm:font-normal px-1">
-              {"User Name"}
+              {username}
             </p>
             <FaAtom className="text-sm text-sky-800" />
-            <p className="text-gray-400 text-sm m-0.5">{"@username"}</p>
+            <p className="text-gray-400 text-sm m-0.5">{username}</p>
             <p className=" m-2  text-gray-500 flex justify-center items-center text-sm">
               {" "}
               <FaClock className="inline text-sky-500 px-1" />
