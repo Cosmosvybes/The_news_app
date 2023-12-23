@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import getPhotoUrl from "get-photo-url";
 import Footer from "./Footer";
 import Post from "./Post";
 import gsap from "gsap";
@@ -9,7 +10,7 @@ import {
   FaLongArrowAltLeft,
   FaPencilAlt,
 } from "react-icons/fa";
-const Discussion = () => {
+const Discussion = ({ posts, updatePost }) => {
   useEffect(() => {
     gsap.fromTo("div", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 });
   }, []);
@@ -87,11 +88,13 @@ const Discussion = () => {
     gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
   };
 
-  const [imageUpload, setImageUpload] = useState(undefined);
+  const [imageUpload, setImageUpload] = useState("");
+
   //image upload
   const handleUpload = async (e) => {
-    // await imageUrl("#image");// use the image url package here to getb the image url
-    setImageUpload(e.target.files[0].name);
+    const imageFile = await getPhotoUrl("#imageFile"); // use the image url package here to get the image url
+    setImageUpload(imageFile);
+    console.log(imageFile);
   };
 
   //create new post or upload new post
@@ -99,7 +102,7 @@ const Discussion = () => {
   const handlePosting = (e) => {
     let objectData = {
       id: Date.now(),
-      username: "Username",
+      username: "Alexandaer",
       isLiked: false,
       likers: [],
       fireMakers: [],
@@ -116,6 +119,7 @@ const Discussion = () => {
       fire: 0,
     };
     setAllPost([...allPost, objectData]);
+    updatePost([...posts, objectData]);
 
     // const formData = new FormData();
     // formData.append("image", imageUpload);
@@ -142,16 +146,16 @@ const Discussion = () => {
 
       {showFeedBack && (
         <div
-          className="left-side z-10 sticky right-3 h-36 w-auto 
-         flex justify-start flex-col items-center py-2  bottom-0 max-sm:bottom-64"
+          className="left-side z-10 sticky right-3 h-auto w-auto 
+         flex justify-start flex-col items-center py-10 border border-sky-200 bg-gray-100  bottom-0 max-sm:bottom-52"
         >
-          <div className="flex w-full px-44 max-sm:w-full max-sm:px-2">
+          <div className="flex w-full  max-sm:w-full max-sm:px-2">
             <textarea
               name=""
               id=""
               cols="30"
               rows="10 "
-              className="h-52 w-full px-3 py-2 text-sky-600 outline outline-sky-600 bg-gray-200  rounded-md"
+              className="h-52 w-full px-3 py-2 text-sky-600 outline outline-sky-600 bg-gray-100  rounded-md"
               placeholder="Write your mind..."
               style={{
                 height: "auto",
@@ -161,7 +165,7 @@ const Discussion = () => {
               onChange={(e) => setPost(e.target.value)}
             ></textarea>
           </div>
-          <div className="flex justify-between max-sm:px-0 max-md:px-20  h-10  m-1">
+          <div className="flex justify-between max-sm:px-1 max-md:px-20 items-center">
             <input
               type="file"
               id="imageFile"
@@ -171,18 +175,21 @@ const Discussion = () => {
             />
             <label htmlFor="imageFile">
               {" "}
-              <FaImages className="text-sky-500   text-4xl m-0.5" />{" "}
+              <FaImages className="text-sky-500 text-5xl text-right m-1 " />{" "}
             </label>
 
             <button
               onClick={handlePosting}
-              className="bg-sky-600  rounded-md border-2 w-36 py-2 px-1   border-white font-extrabold text-white"
+              className="bg-sky-600 rounded-md border-2 w-36 py-2 px-1  border-white font-extrabold text-white"
             >
               {" "}
               Post it
             </button>
           </div>
-          <div className="absolute max-sm:top-1 flex justify-start items-center  rounded-lg max-sm:right-5   border-2 border-sky-400 bg-sky-600">
+          <div className="block w-full h-auto">
+            {<img src={imageUpload} alt="" className="w-full h-auto" />}
+          </div>
+          <div className="absolute max-sm:top-1 flex justify-start items-center  rounded-lg max-sm:right-2  px-2  border-2 border-sky-400 bg-sky-600">
             <p className="text-white text-sm font-bold">cancel</p>{" "}
             <FaLongArrowAltLeft
               onClick={() => {
@@ -196,8 +203,8 @@ const Discussion = () => {
         </div>
       )}
       <div
-        className="left-side sticky right-0 h-auto w-auto 
-         flex justify-end items-center py-2 bottom-64"
+        className="left-side sticky  px-10 h-auto w-auto 
+         flex justify-end items-center py-2 bottom-32"
       >
         {!showFeedBack && (
           <button

@@ -99,7 +99,7 @@ const Post = ({
               {username}
             </p>
             <FaAtom className="text-sm text-sky-800" />
-            <p className="text-gray-400 text-sm m-0.5">{username}</p>
+            <p className="text-gray-400 text-sm m-0.5">@{username}</p>
             <p className=" m-2  text-gray-500 flex justify-center items-center text-sm">
               {" "}
               <FaClock className="inline text-sky-500 px-1" />
@@ -124,7 +124,7 @@ const Post = ({
             <div className="flex justify-start text-gray-600 items-baseline">
               <FaComments className="text-sky-400 text-sm" />
 
-              <p className="text-sm  text-black  "> {12}</p>
+              <p className="text-sm  text-black  "> {6}</p>
             </div>
             <div
               onClick={() => likePost(id)}

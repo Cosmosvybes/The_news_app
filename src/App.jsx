@@ -89,14 +89,17 @@ function App() {
     <>
       <Nav allPost={allPost} setAllPost={setAllPost} />
       <Routes>
-        <Route path="/" element={<Discussion allPost={allPost} />} />
+        {/* <Route path="/" element={<Discussion allPost={allPost} />} /> */}
         <Route path="/earn" element={<Earn />} />
         <Route path="/post/:id" element={<Topic allPost={allPost} />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/headlines" element={<News />} />
-        <Route path="/discussion" element={<Discussion  />} />
+        <Route
+          path="/discussion"
+          element={<Discussion posts={allPost} updatePost={setAllPost} />}
+        />
       </Routes>
     </>
   );

@@ -6,33 +6,26 @@ import {
   FaComments,
   FaTag,
   FaHeart,
-  FaEllipsisV,
   FaLongArrowAltLeft,
 } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import Footer from "./Footer";
-import Post from "./Post";
 
 const Topic = ({ allPost }) => {
+  const { id } = useParams();
   const scrollTop = () => {
     return window.scrollTo({ top: 0 });
   };
   useEffect(() => {
+    const post = getPost(id);
+    setPost(post);
+    setTime(handleTime(post.postedAt));
     scrollTop();
   }, []);
 
-  const [postDetails, setPostDetails] = useState({
-    username: "",
-    post: "",
-    postedAt: new Date(),
-    comments: [],
-    likes: 0,
-    fire: 0,
-  });
   const [fireNumber, setFireNumber] = useState(0);
   const [numberOfLikes, setLikes] = useState(0);
   const [posts] = useState(allPost);
-  const { id } = useParams();
   const [singlePost, setPost] = useState({});
   const [time, setTime] = useState("");
 
@@ -55,6 +48,7 @@ const Topic = ({ allPost }) => {
     }
     return response;
   };
+
   const likePost = (id) => {
     const getPost = posts.find((post) => post.id == id);
     let userLiked = getPost.likers.find((user) => user == singlePost.username);
@@ -96,13 +90,6 @@ const Topic = ({ allPost }) => {
         })();
   };
 
-  useEffect(() => {
-    const post = getPost(id);
-    setPost(post);
-    // let time = handleTime(post.postedAt);
-    // setTime(time);
-  }, []);
-
   return (
     <>
       <div className="">
@@ -126,7 +113,7 @@ const Topic = ({ allPost }) => {
                 </p>
                 <FaAtom className="text-sm text-sky-800" />
                 <p className="text-gray-400 text-sm m-0.5">
-                  {singlePost.username}
+                  @{singlePost.username}
                 </p>
                 <p className=" m-2  text-gray-500 flex justify-center items-center text-sm">
                   {" "}
