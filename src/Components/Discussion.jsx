@@ -6,9 +6,12 @@ import gsap from "gsap";
 import {
   FaBars,
   FaCaretUp,
+  FaFolderPlus,
+  FaGlobe,
   FaImages,
   FaLongArrowAltLeft,
   FaPencilAlt,
+  FaPlus,
 } from "react-icons/fa";
 const Discussion = ({ posts, updatePost }) => {
   useEffect(() => {
@@ -203,7 +206,7 @@ const Discussion = ({ posts, updatePost }) => {
         </div>
       )}
       <div
-        className="left-side sticky  px-10 h-auto w-auto 
+        className="left-side sticky  px-3 h-auto w-auto 
          flex justify-end items-center py-2 bottom-32"
       >
         {!showFeedBack && (
@@ -214,7 +217,7 @@ const Discussion = ({ posts, updatePost }) => {
             }}
             className=" rounded-md h-18 text-sky-500  px-2 py-1"
           >
-            <FaPencilAlt className="text-sky-500 text-4xl" />
+            <FaPlus className="text-sky-500 text-5xl" />
           </button>
         )}
       </div>

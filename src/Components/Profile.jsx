@@ -44,12 +44,12 @@ const Profile = () => {
         <div className="flex flex-col justify-between">
           <input type="file" accept="*/*" id="profilePic" className="hidden" />
           <label htmlFor="profilePic">
-            <div className="  border border-gray-400 h-80 w-80 rounded-md">
+            <div className="border border-gray-400 h-80 w-80 rounded-md">
               <img src="" className="w-full h-full" />
             </div>
           </label>
         </div>
-        <div className="flex flex-col py-2">
+        <div className="flex flex-col py-5">
           {/* <FaUser className="text-4xl font-bold text-sky-400 " /> */}
           <h1 className="text-4xl font-bold text-gray-700 text-left px-5">
             {"Adewale Ayomide"}
@@ -70,7 +70,7 @@ const Profile = () => {
             <div className="flex justify-end px-6">
               <button
                 onClick={() => setEditForm(!editform)}
-                className="bg-sky-400 hover:bg-sky-500 px-2 py-2 m-1 font-extrabold text-white rounded-md"
+                className="bg-sky-400 hover:bg-sky-500 px-6 py-2 m-1 font-extrabold text-white rounded-md"
               >
                 {" "}
                 Edit profile

@@ -120,7 +120,7 @@ const Post = ({
         </Link>
 
         {!openComment && (
-          <div className="flex px-10 py-5 justify-between items-center">
+          <div className="flex px-10 py-1 justify-between items-center">
             <div className="flex justify-start text-gray-600 items-baseline">
               <FaComments className="text-sky-400 text-sm" />
 
