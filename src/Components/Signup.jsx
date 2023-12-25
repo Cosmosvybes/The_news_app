@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Footer from "./Footer";
 import gsap from "gsap";
 const Signup = () => {
   useEffect(() => {
     gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
   }, []);
+
   const handleSignup = (e) => {
     e.preventDefault();
   };
@@ -26,7 +27,7 @@ const Signup = () => {
                   Firstname
                 </b>
                 <input
-                  className="w-96  max-sm:w-72 px-2 py-5  outline border border-gray-400 outline-none  max-sm:py-3 "
+                  className="w-96  max-sm:w-72 px-2 py-5 bg-gray-300  outline border border-gray-200 outline-none  max-sm:py-3 "
                   type="text"
                   placeholder="Email"
                 />
@@ -36,7 +37,7 @@ const Signup = () => {
                   Lastname
                 </b>
                 <input
-                  className="w-96  max-sm:w-72 px-2 py-5  outline border border-gray-400 outline-none  max-sm:py-3 "
+                  className="w-96  max-sm:w-72 px-2 py-5  outline border border-gray-200 outline-none  max-sm:py-3 "
                   type="text"
                   placeholder="Lastname"
                 />
@@ -46,7 +47,7 @@ const Signup = () => {
                   Email
                 </b>
                 <input
-                  className="w-96  max-sm:w-72 px-2 py-5  outline border border-gray-400 outline-none  max-sm:py-3 "
+                  className="w-96  max-sm:w-72 px-2 py-5  outline border border-gray-200 outline-none  max-sm:py-3 "
                   type="email"
                   placeholder="Email"
                 />
@@ -56,7 +57,7 @@ const Signup = () => {
                   Password
                 </b>
                 <input
-                  className="w-96  max-sm:w-72 px-2 py-5  outline border border-gray-400 outline-none  max-sm:py-3 "
+                  className="w-96  max-sm:w-72 px-2 py-5  outline border border-gray-200 outline-none  max-sm:py-3 "
                   type="password"
                   placeholder="Password"
                 />
