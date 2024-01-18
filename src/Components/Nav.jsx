@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
 import "./Nav.css";
+import { useState, useRef } from "react";
 import image from "../assets/cosmos.png";
 import {
   FaBars,
@@ -144,10 +143,10 @@ const Nav = ({ allPost, setAllPost }) => {
         className="h-24 bg-sky-500  z-10 sticky top-0 flex
            justify-between items-center px-2 max-sm:px-3 max-sm:justify-between max-sm:h-14"
       >
-        <div className="flex justify-start bg-white rounded-md border-2 shadow shadow-gray-200 z-10 border-dotted border-red-600">
+        <div className="flex justify-start bg-white rounded-md border-2 shadow shadow-gray-300 z-10 border-dotted border-red-600">
           {" "}
           <h1 className="text-red-600  inline rounded-sm px-2 text-center py-1  font-extrabold">
-            Cap <span className="text-sky-500">Racks</span>
+            Country <span className="text-sky-500">Talks</span>
           </h1>
         </div>
 
@@ -234,7 +233,7 @@ const Nav = ({ allPost, setAllPost }) => {
               to="/profile"
               className="block w-full hover:bg-sky-500  font-extrabold  hover:text-white px-3 py-2 text-sky-500"
             >
-          PROFILE
+              PROFILE
             </Link>
             <Link
               onClick={() => setOpenBar(!openBar)}

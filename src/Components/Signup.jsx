@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Footer from "./Footer";
 import gsap from "gsap";
 const Signup = () => {
@@ -27,7 +26,7 @@ const Signup = () => {
                   Firstname
                 </b>
                 <input
-                  className="w-96  max-sm:w-72 px-2 py-5 bg-gray-300  outline border border-gray-200 outline-none  max-sm:py-3 "
+                  className="w-96  max-sm:w-72 px-2 py-5 bg-gray-100  outline border border-gray-200 outline-none  max-sm:py-3 "
                   type="text"
                   placeholder="Email"
                 />
