@@ -48,7 +48,6 @@ const Post = ({
   const firePost = (id) => {
     const getPost = posts.find((post) => post.id == id);
     let userFired = getPost.fireMakers.find((user) => user == username);
-
     return userFired
       ? (() => {
           let userIndex = getPost.fireMakers.indexOf(username);
@@ -64,6 +63,8 @@ const Post = ({
           setFireNumber(getPost.fire);
         })();
   };
+
+
   const [openComment, setOpenComment] = useState(commentOpen);
   const [time, setTime] = useState("");
   const handleCommentSection = () => {
