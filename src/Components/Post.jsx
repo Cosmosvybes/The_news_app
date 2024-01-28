@@ -16,6 +16,7 @@ const Post = ({
   id,
   posts,
   likes,
+  postedTime,
   firenumber,
   post,
   username,
@@ -24,7 +25,7 @@ const Post = ({
 }) => {
   const [fireNumber, setFireNumber] = useState(firenumber);
   const [numberOfLikes, setLikes] = useState(likes);
-
+// console.log(postedAt)
   // like post func
   const likePost = (id) => {
     const getPost = posts.find((post) => post.id == id);
@@ -70,30 +71,30 @@ const Post = ({
   const handleCommentSection = () => {
     setOpenComment(true);
   };
-  const handleTime = (t) => {
-    let timeDifference = Date.now() - t;
-    let hour = Math.ceil(timeDifference / (1000 * 60 * 60));
-    let response;
-    if (hour > 24) {
-      response = `${Math.ceil(hour / 24 - 1)}d`;
-    } else if (hour > 1 && hour < 24) {
-      response = `${Math.ceil(hour) - 1}h`;
-    } else {
-      response = `${new Date().getMinutes()}m`;
-    }
-    return response;
-  };
+  // const handleTime = (t) => {
+  //   let timeDifference = Date.now() - t;
+  //   let hour = Math.ceil(timeDifference / (1000 * 60 * 60));
+  //   let response;
+  //   if (hour > 24) {
+  //     response = `${Math.ceil(hour / 24 - 1)}d`;
+  //   } else if (hour > 1 && hour < 24) {
+  //     response = `${Math.ceil(hour) - 1}h`;
+  //   } else {
+  //     response = `${new Date().getMinutes()}m`;
+  //   }
+  //   return response;
+  // };
 
-  useEffect(() => {
-    setTime(handleTime(postedAt));
-  }, []);
+  // useEffect(() => {
+  //   setTime(handleTime(postedAt));
+  // }, []);
 
   return (
     <>
       <div className="flex flex-center flex-col h-auto border-b   px-2 rounded-sm  max-sm:w-full">
         <div className="flex justify-between items-center">
           <div className="flex justify-start items-center py-2">
-            <div className="w-10 h-10 rounded-full border border-gray-500 py-1 px-1 flex justify-start items-center">
+            <div className="w-10 h-10 rounded-full border border-gray-200 py-1 px-1 flex justify-start items-center">
               <img width="auto" height="auto" className="" />
             </div>
             <p className="text-black rounded-xl text-sm font-bold max-sm:font-normal px-1">
@@ -101,24 +102,28 @@ const Post = ({
             </p>
             <FaAtom className="text-sm text-sky-800" />
             <p className="text-gray-400 text-sm m-0.5">@{username}</p>
-            <p className=" m-2  text-gray-500 flex justify-center items-center text-sm">
-              {" "}
-              <FaClock className="inline text-sky-500 px-1" />
-              {time}{" "}
-            </p>
           </div>
-
           <FaEllipsisV className="text-slate-400 text-sm " />
         </div>
 
-        {/* //post body */}
+        <p className="  px-7 m-0.5  text-gray-500 flex justify-start items-center text-sm">
+              {" "}
+              {/* <FaClock className="inline text-sky-500 px-1" /> */}
+              {String(postedAt)}{" "}
+            </p>
+            <p className="  px-7 m-0.5  text-gray-500 flex justify-start items-center text-sm">
+              {" "}
+              {/* <FaClock className="inline text-sky-500 px-1" /> */}
+              {postedTime}{" "}
+            </p>
         <Link to={`/post/${id}`}>
-          <div className="flex px-10  h-auto ">
-            <p className="text-black text-sm text-justify border border-gray-400 px-2 rounded-md font-bold max-sm:font-normal">
+          <div className="flex px-7  h-auto ">
+            <p className="text-black text-sm text-justify border border-gray-200 px-1 rounded-md font-bold max-sm:font-normal">
               {post}
             </p>
           </div>
         </Link>
+       
 
         {!openComment && (
           <div className="flex px-10 py-1 justify-between items-center">

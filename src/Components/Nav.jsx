@@ -18,6 +18,7 @@ import {
   FaAngleDoubleRight,
   FaNewspaper,
   FaHackerNews,
+  FaRegNewspaper,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Nav = ({ allPost, setAllPost }) => {
@@ -222,13 +223,13 @@ const Nav = ({ allPost, setAllPost }) => {
           }}
         >
           <div
-            className="hidden max-sm:flex justify-center  max-sm:flex-col w-full m-1 "
+            className="hidden max-sm:flex  justify-start max-sm:flex-col w-full m-1 "
             style={{ display: openBar ? "block" : "none" }}
           >
             <Link
               onClick={() => setOpenBar(!openBar)}
               to="/signin"
-              className="block w-full hover:bg-sky-500  font-extrabold hover:text-white   px-3 py-2 text-sky-500"
+              className="block text-center w-full hover:bg-sky-500  font-extrabold hover:text-white   px-3 py-2 text-sky-500"
             >
               SIGN IN
             </Link>
@@ -236,7 +237,7 @@ const Nav = ({ allPost, setAllPost }) => {
             <Link
               onClick={() => setOpenBar(!openBar)}
               to="/signup"
-              className="block w-full  hover:bg-green-600 hover:text-white   px-3 py-2 text-green-500 font-extrabold"
+              className="block w-full text-center hover:bg-green-600 hover:text-white   px-3 py-2 text-green-500 font-extrabold"
             >
               REGISTER
             </Link>
@@ -248,8 +249,16 @@ const Nav = ({ allPost, setAllPost }) => {
             onClick={() => setOpenBar(!openBar)}
           />
         </div>
+
+
         {openTab ? (
-          <div className=" transition-opacity duration-600 fade-in  absolute left-0  border w-48 max-sm:w-12 max-sm:px-0 bg-gray-100 flex flex-col justify-start gap-0.5 border-gray-300  top-14 h-screen px-3 py-6">
+          <div
+            style={{
+              opacity: openTab ? "1" : "0",
+              transition: "0.2s ease-in-out",
+            }}
+            className=" transition duration-600 ease-in-out  absolute left-0  border w-48 max-sm:w-14 max-sm:px-0 bg-gray-100 flex flex-col justify-start gap-0.5 border-gray-300  top-14 h-screen px-4 py-6"
+          >
             <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2 ">
               <Link to="/">
                 <FaHome className="text-2xl  text-black " />
@@ -265,7 +274,7 @@ const Nav = ({ allPost, setAllPost }) => {
             <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2 ">
               <Link to="/headlines">
                 {" "}
-                <FaHackerNews className="text-2xl  text-black " />
+                <FaRegNewspaper className="text-2xl  text-black " />
               </Link>
               <Link
                 to="/headlines"
@@ -325,6 +334,10 @@ const Nav = ({ allPost, setAllPost }) => {
             </div>
             <div className="flex justify-center items-center    hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <FaAngleDoubleLeft
+               style={{
+                opacity: openTab ? "1" : "0",
+                transition: "0.2s ease-in-out",
+              }}
                 className=" text-xl text-gray-500"
                 onClick={() => {
                   setOpenTab(!openTab);
@@ -333,9 +346,9 @@ const Nav = ({ allPost, setAllPost }) => {
             </div>
           </div>
         ) : (
-          <div className=" absolute transition-opacity duration-700 ease-out z-10  left-1 top-72 flex justify-center items-center bg-gray-200 rounded-lg     hover:bg-gray-300 hover:text-slate-900  px-3 py-2">
-            <FaAngleDoubleRight
-              className="text-xl text-slate-900 "
+          <div className=" absolute transition-opacity duration-700 ease-out z-10  right-1 top-16 flex justify-center items-center bg-gray-200 rounded-lg     hover:bg-gray-300 hover:text-slate-900  px-3 py-2">
+            <FaAngleDoubleLeft
+              className="text-xl text-gray-500 "
               onClick={() => {
                 setOpenTab(!openTab);
               }}

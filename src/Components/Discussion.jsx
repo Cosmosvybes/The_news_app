@@ -15,7 +15,7 @@ import {
 } from "react-icons/fa";
 const Discussion = ({ posts, updatePost }) => {
   useEffect(() => {
-    gsap.fromTo("div", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 });
+    gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
   }, []);
 
   let [allPost, setAllPost] = useState([
@@ -27,7 +27,8 @@ const Discussion = ({ posts, updatePost }) => {
       likes: 0,
       fire: 0,
       fireMakers: [],
-      postedAt: new Date("2023-12-21 06:24:00"),
+      time: new Date().toLocaleTimeString(),
+      postedAt: new Date().toDateString(),
       post: `Hello capracks, tire for nigeria mateer , i no fit lie, na wetin fela and china talk, still dey happen`,
     },
     {
@@ -38,7 +39,8 @@ const Discussion = ({ posts, updatePost }) => {
       likes: 0,
       fire: 0,
       fireMakers: [],
-      postedAt: new Date("2023-12-22 17:00:00"),
+      time: new Date().toLocaleTimeString(),
+      postedAt: new Date().toDateString(),
       post: `Hey bobo, i taya for this country`,
     },
     {
@@ -49,7 +51,8 @@ const Discussion = ({ posts, updatePost }) => {
       likes: 0,
       fire: 0,
       fireMakers: [],
-      postedAt: new Date("2023-12-22 06:00:00"),
+      time: new Date().toLocaleTimeString(),
+      postedAt: new Date().toDateString(),
       post: `Idan, don post, make we see the number of poeple wey go like am `,
     },
     {
@@ -60,7 +63,8 @@ const Discussion = ({ posts, updatePost }) => {
       likes: 0,
       fire: 0,
       fireMakers: [],
-      postedAt: new Date("2023-12-22 06:00:00"),
+      time: new Date().toLocaleTimeString(),
+      postedAt: new Date().toDateString(),
       post: `Agbafian boys, Everyone is gonna be alright, trust`,
     },
     {
@@ -71,7 +75,8 @@ const Discussion = ({ posts, updatePost }) => {
       likes: 0,
       fire: 0,
       fireMakers: [],
-      postedAt: new Date("2023-12-22 06:00:00"),
+      time: new Date().toLocaleTimeString(),
+      postedAt: new Date().toDateString(),
       post: `How far, tell all final year student to get together at the 800 seater all`,
     },
     {
@@ -81,12 +86,14 @@ const Discussion = ({ posts, updatePost }) => {
       likers: [],
       likes: 0,
       fire: 0,
-      postedAt: new Date("2023-12-23, 09:00:00"),
+      time: new Date().toLocaleTimeString(),
+      postedAt: new Date().toDateString(),
       fireMakers: [],
       post: `Breaking news- Mohbad is dead, story from a very genuin source made it clear that we all gong to die too.!`,
     },
   ]);
   const [showFeedBack, setSHowFeedBack] = useState(false);
+
   const animate = () => {
     gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
   };
@@ -102,6 +109,7 @@ const Discussion = ({ posts, updatePost }) => {
 
   //create new post or upload new post
   const [post, setPost] = useState("");
+
   const handlePosting = (e) => {
     let objectData = {
       id: Date.now(),
@@ -109,7 +117,7 @@ const Discussion = ({ posts, updatePost }) => {
       isLiked: false,
       likers: [],
       fireMakers: [],
-      postedAt: new Date().toLocaleDateString("en-US", {
+      postedAt: new Date().toDateString("en-US", {
         year: "numeric",
         month: "numeric",
         day: "numeric",
@@ -132,15 +140,13 @@ const Discussion = ({ posts, updatePost }) => {
   return (
     <>
       <div className="">
-
-      
-
         <div className="max-sm:flex grid grid-cols-1 max-sm:flex-col-reverse px-48 border border-gray-200 max-sm:px-0 ">
           {/* <div className="border rounded-md  border-gray-300 w-full h-32"></div> */}
           {allPost.map((post) => (
             <div className="" key={post.id}>
               <Post
                 id={post.id}
+                postedTime={post.time}
                 username={post.username}
                 postedAt={post.postedAt}
                 posts={allPost}
@@ -151,8 +157,6 @@ const Discussion = ({ posts, updatePost }) => {
             </div>
           ))}
         </div>
-
-    
 
         {/* <Footer /> */}
       </div>
