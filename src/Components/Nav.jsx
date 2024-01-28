@@ -275,13 +275,13 @@ const Nav = ({ allPost, setAllPost }) => {
               <Link to="/headlines">
                 {" "}
                 <FaRegNewspaper className="text-2xl  text-black " />
-              </Link>
+              </Link> 
               <Link
                 to="/headlines"
                 className=" w-full font-bold  text-black  px-2 py-2 max-sm:hidden   "
               >
                 Headlines
-              </Link>
+              </Link>     
             </div>
             <div className="flex justify-center  items-center hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <Link to="/">
