@@ -16,6 +16,8 @@ import {
   FaGreaterThan,
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
+  FaNewspaper,
+  FaHackerNews,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Nav = ({ allPost, setAllPost }) => {
@@ -210,14 +212,6 @@ const Nav = ({ allPost, setAllPost }) => {
         >
           {!openBar && <FaBars className=" text-slate-900 text-2xl" />}
         </button>
-        <Link
-          to="/headlines"
-          className="text-white cursor-pointer hover:text-slate-200 underline py-2"
-          style={{ display: openBar ? "block" : "none" }}
-        >
-          {" "}
-          HEADLINES
-        </Link>
 
         <div
           className="sidebtn absolute right-0 top-12 transition  duration-200 w-full
@@ -231,27 +225,6 @@ const Nav = ({ allPost, setAllPost }) => {
             className="hidden max-sm:flex justify-center  max-sm:flex-col w-full m-1 "
             style={{ display: openBar ? "block" : "none" }}
           >
-            <Link
-              onClick={() => setOpenBar(!openBar)}
-              to="/discussion"
-              className="block w-full hover:bg-sky-500  font-extrabold  hover:text-white px-3 py-2 text-sky-500"
-            >
-              FEED
-            </Link>
-            <Link
-              onClick={() => setOpenBar(!openBar)}
-              to="/profile"
-              className="block w-full hover:bg-sky-500  font-extrabold  hover:text-white px-3 py-2 text-sky-500"
-            >
-              PROFILE
-            </Link>
-            <Link
-              onClick={() => setOpenBar(!openBar)}
-              to="/earn"
-              className="block w-full hover:bg-sky-500  font-extrabold hover:text-white  text-sky-500 px-3 py-2"
-            >
-              EARN
-            </Link>
             <Link
               onClick={() => setOpenBar(!openBar)}
               to="/signin"
@@ -276,9 +249,12 @@ const Nav = ({ allPost, setAllPost }) => {
           />
         </div>
         {openTab ? (
-          <div className=" transition-opacity duration-600 fade-in  absolute left-0  border w-48 max-sm:w-12 max-sm:px-0 bg-gray-100 flex flex-col justify-start gap-0.5 border-gray-300  top-14 h-screen px-3 py-8">
+          <div className=" transition-opacity duration-600 fade-in  absolute left-0  border w-48 max-sm:w-12 max-sm:px-0 bg-gray-100 flex flex-col justify-start gap-0.5 border-gray-300  top-14 h-screen px-3 py-6">
             <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2 ">
-              <FaHome className="text-2xl  text-black " />
+              <Link to="/">
+                <FaHome className="text-2xl  text-black " />
+              </Link>
+
               <Link
                 to="/link"
                 className=" w-full font-bold  text-black  px-2 py-2 max-sm:hidden   "
@@ -286,8 +262,23 @@ const Nav = ({ allPost, setAllPost }) => {
                 Blog Feed
               </Link>
             </div>
+            <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2 ">
+              <Link to="/headlines">
+                {" "}
+                <FaHackerNews className="text-2xl  text-black " />
+              </Link>
+              <Link
+                to="/headlines"
+                className=" w-full font-bold  text-black  px-2 py-2 max-sm:hidden   "
+              >
+                Headlines
+              </Link>
+            </div>
             <div className="flex justify-center  items-center hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
-              <FaBell className="text-2xl text-black " />
+              <Link to="/">
+                {" "}
+                <FaBell className="text-2xl text-black " />
+              </Link>
               <Link
                 to="/link"
                 className=" w-full font-bold  text-black  px-2 py-2  max-sm:hidden  "
@@ -296,7 +287,10 @@ const Nav = ({ allPost, setAllPost }) => {
               </Link>
             </div>
             <div className="flex justify-center  items-center hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
-              <FaPodcast className="text-2xl text-black " />
+              <Link to="/">
+                {" "}
+                <FaPodcast className="text-2xl text-black " />
+              </Link>
               <Link
                 to="/link"
                 className=" w-full font-bold  text-black  px-2 py-2  max-sm:hidden  "
@@ -305,7 +299,10 @@ const Nav = ({ allPost, setAllPost }) => {
               </Link>
             </div>
             <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
-              <FaUserCircle className="text-2xl text-black " />
+              <Link to="/profile">
+                {" "}
+                <FaUserCircle className="text-2xl text-black " />
+              </Link>
               <Link
                 to="/link"
                 className=" w-full font-bold  text-black  px-2 py-2  max-sm:hidden "
@@ -315,7 +312,10 @@ const Nav = ({ allPost, setAllPost }) => {
             </div>
 
             <div className="flex justify-center items-center    hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
-              <FaSignOutAlt className="text-2xl " />
+              <Link to="/">
+                {" "}
+                <FaSignOutAlt className="text-2xl " />
+              </Link>
               <Link
                 to="/link"
                 className=" w-full  px-2 py-2 font-bold  max-sm:hidden "
