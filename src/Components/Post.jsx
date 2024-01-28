@@ -118,7 +118,7 @@ const Post = ({
             </p>
         <Link to={`/post/${id}`}>
           <div className="flex px-7  h-auto ">
-            <p className="text-black text-sm text-justify border border-gray-200 px-1 rounded-md font-bold max-sm:font-normal">
+            <p className="text-black text-sm text-justify border border-gray-200 px-1 rounded-md  max-sm:font-normal">
               {post}
             </p>
           </div>
@@ -157,19 +157,21 @@ const Post = ({
             </div>
           </div>
         )}
-
+<div className="flex ">
+  
+</div>
         {openComment && (
-          <div className="grid h-auto gap-1 py-3 grid-cols-2 max-sm:grid-cols-1  max-sm:h-auto px-10 ">
+          <div className="grid h-auto gap-1 py-3 grid-cols-1 max-sm:grid-cols-1  max-sm:h-auto px-8 max-sm:px-8 ">
             <textarea
               name=""
-              className="h-14 max-sm:h-12 border-1 border-gray-300 rounded-md "
+              className="h-20 max-sm:h-20 border border-gray-200 outline outline-gray-100  rounded-md w-96 max-sm:w-auto"
               id=""
               cols="30"
               rows="10"
             ></textarea>
             <button
               onClick={() => setOpenComment(!openComment)}
-              className="bg-sky-500 w-18 py-1 rounded-md font-extrabold px-2 max-sm:px-1  text-white max-sm:text-sm"
+              className="bg-sky-500 w-18 py-3 rounded-md font-extrabold px-2 max-sm:px-1 w-96 max-sm:w-auto  text-white max-sm:text-sm"
             >
               {" "}
               comment
@@ -177,21 +179,22 @@ const Post = ({
           </div>
         )}
       </div>
+
       {openComment && (
-        <div className="comments w-full flex flex-col px-2 py-2 h-auto  border-b-2 border-slate-400 ">
-          {[1, 2, 3, 5, 6].map((comment) => {
+        <div className="comments w-full flex flex-col px-5 py-2 h-auto  border-b-2 border-gray-200">
+          {[1, 2, 3, 5, 6, 8, 9].map((comment) => {
             return (
               <div
-                className="flex flex-col justify-between bg-slate-200 px-1 py-2 m-0.2"
+                className="flex flex-col justify-between  px-1 py-2 m-0.2"
                 key={comment}
               >
-                <div className="relative flex justify-start items-center">
-                  <img width={"10px"} height={"10px"} alt="image" />
+                <div className="relative flex justify-start  items-center px-2 gap-1">
+                  <img width={"10px"} height={"10px"} alt="" />
                   <p className="text-black px-1 max-sm:text-sm ">
                     {"Username"}
                   </p>
                 </div>
-                <p className="text-black max-sm:text-sm ">
+                <p className="text-black max-sm:text-sm px-2 ">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>
