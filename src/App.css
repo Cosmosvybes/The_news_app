@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap')
+
+
 
 @tailwind base;
 @tailwind components;
@@ -6,8 +8,11 @@
 
 *,
 html {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
 p{
-  font-size: 14px;
+  font-size: 12px;
 }
