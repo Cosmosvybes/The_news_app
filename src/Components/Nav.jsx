@@ -19,6 +19,9 @@ import {
   FaNewspaper,
   FaHackerNews,
   FaRegNewspaper,
+  FaBlog,
+  FaBlogger,
+  FaPen,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Nav = ({ allPost, setAllPost }) => {
@@ -153,65 +156,21 @@ const Nav = ({ allPost, setAllPost }) => {
   return (
     <>
       <header
-        className="h-14 bg-gray-200 px-3  z-10 sticky top-0 flex
+        className="h-14  border bg-gray-100 bottom-3 px-72  z-10 sticky top-0 flex
            justify-between items-center  max-sm:px-3 max-sm:justify-between max-sm:h-14"
       >
-        <div className="flex justify-start bg-white rounded-md  shadow shadow-gray-300 z-10 border border-gray-300">
+        <div className="flex justify-start bg-white rounded-md  shadow shadow-gray-300 z-10 border border-green-600">
           {" "}
-          <h1 className="text-red-600  inline rounded-sm px-2 text-center py-1  font-extrabold">
-            i <span className="text-sky-500">-Blog</span>
+          <h1 className="text-red-600  text-2xl inline rounded-sm px-2 text-center py-1  font-extrabold">
+            i<span className="text-green-600 font-extrabold">Blogg</span>
           </h1>
         </div>
 
-        {/* <Link
-          to="/headlines"
-          className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
-        >
-          HEADLINES
-        </Link>
-        <Link
-          to="/"
-          className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
-        >
-          SPORTS
-        </Link>
-        <Link
-          to="/earn"
-          className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
-        >
-          EARN
-        </Link>
-        <Link
-          to="/discussion"
-          className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden"
-        >
-          FEED
-        </Link> */}
-        {/* <a className="text-white  rounded-sm px-1 py-1  hover:bg-sky-400 hover:text-white max-sm:hidden">
-          Opinions/Discussion
-        </a> */}
-        <div className="flex justify-between">
-          <Link
-            to="/signin"
-            className="text-white border font-bold border-white rounded-sm cursor-pointer px-1 py-0.5  shadow shadow-slate-400  m-0.5 hover:bg-sky-400 hover:text-white max-sm:hidden"
-          >
-            Sign in
-          </Link>
-          {/* <a className="text-white cursor-pointer px-1 py-1  hover:bg-sky-900 hover:text-white max-sm:hidden">
-            Sign in <FaSignInAlt className="inline" />
-          </a> */}
-          <Link
-            to="/signup"
-            className="text-white cursor-pointer px-1 border border-white py-0.5 rounded-sm font-bold bg-sky-900 shadow-slate-400  m-0.5 hover:bg-sky-400 hover:text-white max-sm:hidden"
-          >
-            Sign up
-          </Link>
-        </div>
         <button
           className="hidden max-sm:inline"
           onClick={() => setOpenBar(!openBar)}
         >
-          {!openBar && <FaBars className=" text-slate-900 text-2xl" />}
+          {!openBar && <FaBars className=" text-green-600 text-2xl" />}
         </button>
 
         <div
@@ -250,18 +209,17 @@ const Nav = ({ allPost, setAllPost }) => {
           />
         </div>
 
-
         {openTab ? (
           <div
             style={{
               opacity: openTab ? "1" : "0",
               transition: "0.2s ease-in-out",
             }}
-            className=" transition duration-600 ease-in-out  absolute left-0  border w-48 max-sm:w-14 max-sm:px-0 bg-gray-100 flex flex-col justify-start gap-0.5 border-gray-300  top-14 h-screen px-4 py-6"
+            className=" transition duration-600 ease-in-out  absolute left-0  border w-72 max-sm:w-14 max-sm:px-0 bg-gray-100 flex flex-col justify-start  border-gray-300  top-14 h-screen px-4 py-6"
           >
             <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2 ">
               <Link to="/">
-                <FaHome className="text-2xl  text-black " />
+                <FaBlog className="text-2xl  text-green-500  " />
               </Link>
 
               <Link
@@ -271,22 +229,36 @@ const Nav = ({ allPost, setAllPost }) => {
                 Blog Feed
               </Link>
             </div>
+
             <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2 ">
               <Link to="/headlines">
                 {" "}
-                <FaRegNewspaper className="text-2xl  text-black " />
-              </Link> 
+                <FaRegNewspaper className="text-2xl  text-green-500  " />
+              </Link>
               <Link
                 to="/headlines"
                 className=" w-full font-bold  text-black  px-2 py-2 max-sm:hidden   "
               >
                 Headlines
-              </Link>     
+              </Link>
             </div>
+            <div className="flex justify-center  items-center hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
+              <Link to="/create">
+                {" "}
+                <FaPen className="text-2xl text-green-500  " />
+              </Link>
+              <Link
+                to="/create"
+                className=" w-full font-bold  text-black  px-2 py-2  max-sm:hidden  "
+              >
+                Create Post
+              </Link>
+            </div>
+
             <div className="flex justify-center  items-center hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <Link to="/">
                 {" "}
-                <FaBell className="text-2xl text-black " />
+                <FaBell className="text-2xl text-green-500  " />
               </Link>
               <Link
                 to="/link"
@@ -298,7 +270,7 @@ const Nav = ({ allPost, setAllPost }) => {
             <div className="flex justify-center  items-center hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <Link to="/">
                 {" "}
-                <FaPodcast className="text-2xl text-black " />
+                <FaBlogger className="text-2xl text-green-500 " />
               </Link>
               <Link
                 to="/link"
@@ -310,7 +282,7 @@ const Nav = ({ allPost, setAllPost }) => {
             <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <Link to="/profile">
                 {" "}
-                <FaUserCircle className="text-2xl text-black " />
+                <FaUserCircle className="text-2xl k text-green-500 " />
               </Link>
               <Link
                 to="/link"
@@ -323,7 +295,7 @@ const Nav = ({ allPost, setAllPost }) => {
             <div className="flex justify-center items-center    hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <Link to="/">
                 {" "}
-                <FaSignOutAlt className="text-2xl " />
+                <FaSignOutAlt className="text-2xl text-red-500" />
               </Link>
               <Link
                 to="/link"
@@ -332,12 +304,13 @@ const Nav = ({ allPost, setAllPost }) => {
                 Log out
               </Link>
             </div>
-            <div className="flex justify-center items-center    hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
+            <div className="flex justify-start items-center    hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
+              <h1 className="max-sm:hidden">Close tab</h1>{" "}
               <FaAngleDoubleLeft
-               style={{
-                opacity: openTab ? "1" : "0",
-                transition: "0.2s ease-in-out",
-              }}
+                style={{
+                  opacity: openTab ? "1" : "0",
+                  transition: "0.2s ease-in-out",
+                }}
                 className=" text-xl text-gray-500"
                 onClick={() => {
                   setOpenTab(!openTab);
@@ -346,9 +319,9 @@ const Nav = ({ allPost, setAllPost }) => {
             </div>
           </div>
         ) : (
-          <div className=" absolute transition-opacity duration-700 ease-out z-10  right-1 top-16 flex justify-center items-center bg-gray-200 rounded-lg     hover:bg-gray-300 hover:text-slate-900  px-3 py-2">
+          <div className=" border-2  border-green-600 absolute transition-opacity duration-700 ease-out z-10  right-1 top-16 flex justify-center items-center bg-white rounded-md    hover:bg-gray-300 hover:text-slate-900  px-2 py-1">
             <FaAngleDoubleLeft
-              className="text-xl text-gray-500 "
+              className="text-2xl text-green-600 "
               onClick={() => {
                 setOpenTab(!openTab);
               }}

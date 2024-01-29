@@ -40,15 +40,16 @@ const Topic = ({ allPost }) => {
       <div className="relative py-2 px-52 max-sm:px-2 flex flex-start items-center ">
         <FaLongArrowAltLeft
           onClick={() => history.back()}
-          className="text-gray-400 text-2xl "
+          className="text-green-600 text-2xl "
         />
-        <h1 className="text-sky-500 text-2xl px-2 font-bold">Post</h1>
+        <h1 className="text-green-600 text-2xl px-2 font-bold">Post</h1>
       </div>
       <div className="relative px-52 max-sm:px-0">
       <Post
         username={singlePost.username}
         commentOpen={true}
         post={singlePost.post}
+        title={singlePost.title}
         fire={singlePost.fire}
         postedTime={singlePost.time}
         postedAt={singlePost.postedAt}

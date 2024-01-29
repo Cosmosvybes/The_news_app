@@ -16,6 +16,7 @@ const Post = ({
   id,
   posts,
   likes,
+  title,
   postedTime,
   firenumber,
   post,
@@ -25,7 +26,7 @@ const Post = ({
 }) => {
   const [fireNumber, setFireNumber] = useState(firenumber);
   const [numberOfLikes, setLikes] = useState(likes);
-// console.log(postedAt)
+  // console.log(postedAt)
   // like post func
   const likePost = (id) => {
     const getPost = posts.find((post) => post.id == id);
@@ -65,33 +66,15 @@ const Post = ({
         })();
   };
 
-
   const [openComment, setOpenComment] = useState(commentOpen);
   const [time, setTime] = useState("");
   const handleCommentSection = () => {
     setOpenComment(true);
   };
-  // const handleTime = (t) => {
-  //   let timeDifference = Date.now() - t;
-  //   let hour = Math.ceil(timeDifference / (1000 * 60 * 60));
-  //   let response;
-  //   if (hour > 24) {
-  //     response = `${Math.ceil(hour / 24 - 1)}d`;
-  //   } else if (hour > 1 && hour < 24) {
-  //     response = `${Math.ceil(hour) - 1}h`;
-  //   } else {
-  //     response = `${new Date().getMinutes()}m`;
-  //   }
-  //   return response;
-  // };
-
-  // useEffect(() => {
-  //   setTime(handleTime(postedAt));
-  // }, []);
 
   return (
     <>
-      <div className="flex flex-center flex-col h-auto border-b   px-2 rounded-sm  max-sm:w-full">
+      <div className="flex flex-center flex-col h-auto border border-gray-200   px-2 rounded-sm  max-sm:w-full">
         <div className="flex justify-between items-center">
           <div className="flex justify-start items-center py-2">
             <div className="w-10 h-10 rounded-full border border-gray-200 py-1 px-1 flex justify-start items-center">
@@ -105,25 +88,25 @@ const Post = ({
           </div>
           <FaEllipsisV className="text-slate-400 text-sm " />
         </div>
+        <h1 className="px-8">{title}</h1>
 
         <p className="  px-7 m-0.5  text-gray-500 flex justify-start items-center text-sm">
-              {" "}
-              {/* <FaClock className="inline text-sky-500 px-1" /> */}
-              {String(postedAt)}{" "}
-            </p>
-            <p className="  px-7 m-0.5  text-gray-500 flex justify-start items-center text-sm">
-              {" "}
-              {/* <FaClock className="inline text-sky-500 px-1" /> */}
-              {postedTime}{" "}
-            </p>
+          {" "}
+          {/* <FaClock className="inline text-sky-500 px-1" /> */}
+          {String(postedAt)}{" "}
+        </p>
+        <p className="  px-7 m-0.5  text-gray-500 flex justify-start items-center text-sm">
+          {" "}
+          {/* <FaClock className="inline text-sky-500 px-1" /> */}
+          {postedTime}{" "}
+        </p>
         <Link to={`/post/${id}`}>
           <div className="flex px-7  h-auto ">
-            <p className="text-black text-sm text-justify border border-gray-200 px-1 rounded-md  max-sm:font-normal">
+            <pre className="text-black text-sm  border whitespace-pre-wrap border-gray-200 px-1 rounded-md  max-sm:font-normal">
               {post}
-            </p>
+            </pre>
           </div>
         </Link>
-       
 
         {!openComment && (
           <div className="flex px-10 py-1 justify-between items-center">
@@ -157,9 +140,7 @@ const Post = ({
             </div>
           </div>
         )}
-<div className="flex ">
-  
-</div>
+        <div className="flex "></div>
         {openComment && (
           <div className="grid h-auto gap-1 py-3 grid-cols-1 max-sm:grid-cols-1  max-sm:h-auto px-8 max-sm:px-8 ">
             <textarea
@@ -171,7 +152,7 @@ const Post = ({
             ></textarea>
             <button
               onClick={() => setOpenComment(!openComment)}
-              className="bg-sky-500 w-18 py-3 rounded-md font-extrabold px-2 max-sm:px-1 w-96 max-sm:w-auto  text-white max-sm:text-sm"
+              className="bg-green-500 w-18 py-3 rounded-md font-extrabold px-2 max-sm:px-1 w-96 max-sm:w-auto  text-white max-sm:text-sm"
             >
               {" "}
               comment
