@@ -80,7 +80,7 @@ const Post = ({
             <div className="w-10 h-10 rounded-full border border-gray-200 py-1 px-1 flex justify-start items-center">
               <img width="auto" height="auto" className="" />
             </div>
-            <p className="text-black rounded-xl text-sm font-bold max-sm:font-normal px-1">
+            <p className="text-black rounded-xl text-sm font-extrabold max-sm:font-extrabold px-1">
               {username}
             </p>
             <FaAtom className="text-sm text-sky-800" />
@@ -102,7 +102,7 @@ const Post = ({
         </p>
         <Link to={`/post/${id}`}>
           <div className="flex px-7  h-auto ">
-            <pre className="text-gray-500 text-xs  font-extrabold  whitespace-pre-wrap  px-1 rounded-md  max-sm:font-extrabold">
+            <pre className="text-gray-500 text-sm  font-extrabold  whitespace-pre-wrap  px-1 rounded-md  max-sm:font-extrabold">
               {post}
             </pre>
           </div>
@@ -171,11 +171,11 @@ const Post = ({
               >
                 <div className="relative flex justify-start  items-center px-2 gap-1">
                   <img width={"10px"} height={"10px"} alt="" />
-                  <p className="text-black px-1 max-sm:text-xs ">
+                  <p className="text-black px-1 max-sm:text-sm font-extrabold">
                     {"Username"}
                   </p>
                 </div>
-                <p className="text-gray-500 font-extrabold max-sm:text-xs px-2 ">
+                <p className="text-gray-500 font-extrabold max-sm:text-sm px-2 ">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>
