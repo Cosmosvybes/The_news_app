@@ -88,7 +88,7 @@ const Post = ({
           </div>
           <FaEllipsisV className="text-slate-400 text-sm " />
         </div>
-        <h1 className="px-8 font-extrabold">{title}</h1>
+        <h1 className="px-8 font-extrabold text-gray-500">{title}</h1>
 
         <p className="  px-7 m-0.5  text-gray-500 flex justify-start items-center text-sm">
           {" "}
@@ -102,7 +102,7 @@ const Post = ({
         </p>
         <Link to={`/post/${id}`}>
           <div className="flex px-7  h-auto ">
-            <pre className="text-black text-xs  font-extrabold  whitespace-pre-wrap  px-1 rounded-md  max-sm:font-extrabold">
+            <pre className="text-gray-500 text-xs  font-extrabold  whitespace-pre-wrap  px-1 rounded-md  max-sm:font-extrabold">
               {post}
             </pre>
           </div>
@@ -175,7 +175,7 @@ const Post = ({
                     {"Username"}
                   </p>
                 </div>
-                <p className="text-black font-extrabold max-sm:text-xs px-2 ">
+                <p className="text-gray-500 font-extrabold max-sm:text-xs px-2 ">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>
