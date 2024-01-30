@@ -23,7 +23,7 @@ const Create = () => {
       <div className="flex justify-start px-60 py-2 max-sm:px-2">
         {image && <img src={image} className="w-60 h-60 rounded-md max-sm:w-full max-sm:h-auto"  />}
       </div>
-      <div className="flex justify-end gap-2  items-center py-1 px-1 max-sm:py-10">
+      <div className="flex justify-end gap-1 items-center py-1 px-1 max-sm:py-10">
             <input
               type="file"
               id="picture"
@@ -31,18 +31,18 @@ const Create = () => {
               onChange={handleImageUpload}
             />
             <label htmlFor="picture">
-              <FaImage className="text-2xl text-green-500 " />
+              <FaImage className="text-2xl w-10 text-green-500 shadow-md shadow-gray-100 " />
             </label>
             <button
-              className="border border-white  rounded-lg text-white bg-green-500 px-5 "
+              className="border border-white  rounded-lg text-white w-24  shadow-md shadow-gray-400 font-bold bg-green-500 px-3 "
               onClick={handlePosting}
             >
               Post
             </button>
           </div>
-      <div className="flex h-auto max-sm:h-screen justify-center flex-col items-center px-52 max-sm:px-2 max-sm:py-4">
+      <div className="flex h-auto max-sm:h-screen justify-center flex-col items-center px-52 max-sm:px-2 max-sm:py-2">
         
-        <div className="flex flex-col w-full  h-full px-1 py-2">
+        <div className="flex flex-col w-full  h-full px-1 py-1">
           <textarea
             type="text"
             placeholder="What's on your mind ?"
