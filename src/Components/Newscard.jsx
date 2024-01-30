@@ -24,24 +24,7 @@ const Newscard = ({
   // const firstPhoto = newsImg.slice(firstSlideIndex, lastSlideIndex);
   let [count, setCount] = useState(1);
 
-  // const navigateNextPhoto = () => {
-  //   const readCount = () => {
-  //     if (newsImg.length > count) {
-  //       setCount((count += 1));
-  //       setSlideNumber(count);
-  //     }
-  //   };
-  //   return readCount();
-  // };
-  // const navigatePrevPhoto = () => {
-  //   const readCount = () => {
-  //     if (count > 1) {
-  //       setCount((count -= 1));
-  //       setSlideNumber(count);
-  //     }
-  //   };
-  //   return readCount();
-  // };
+  
   const getTimeDifference = (timePublished) => {
     const currentTime = Date.now();
     const publishedTime = new Date(timePublished);
@@ -66,34 +49,11 @@ const Newscard = ({
             />
           </a>
 
-          {/* <p className="px-1 absolute right-0 font-extrabold text-sky-400 top-2 ">
-            {" "}
-            {slideNumber} / {newsImg.length}
-          </p> */}
-          {/* {firstPhoto.map((img) => (
-            <div className="flex" key={img}>
-              <img
-                src={img}
-                alt="image"
-                className="transition duration-100 px-1 py-1"
-              />
-            </div>
-          ))} */}
         </div>
         <h1 className="py-2 px-1 text-3xl font-bold text-black">{headline}</h1>
         <h3 className="py-2 px-1 font-bold text-black">{desc}</h3>
 
-        {/* <div className="flex justify-between absolute top-28 max-sm:top-20  max-md:top-20 px-4  w-full  max-sm:px-2">
-          {" "}
-          <FaArrowCircleLeft
-            // onClick={navigatePrevPhoto}
-            className=" text-sky-700  hover: m-2 rounded-md hover:text-slate-300 text-2xl"
-          />
-          <FaArrowCircleRight
-            // onClick={navigateNextPhoto}
-            className=" text-sky-700   hover: m-2 rounded-md hover:text-slate-300 text-2xl"
-          />
-        </div> */}
+       
 
         <p className="px-2 text-black">{body}</p>
         <div className="btns flex justify-center border-sky-300 py-1 px-2">

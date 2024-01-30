@@ -19,7 +19,6 @@ const Create = () => {
     // const formData = new FormData();
     // formData.append("image", imageFile);
 
-    // console.log(images);
   };
   const [image, setImage] = useState("");
   return (

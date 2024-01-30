@@ -4,20 +4,10 @@ import image from "../assets/cosmos.png";
 import {
   FaBars,
   FaCaretUp,
-  FaHome,
-  FaImages,
-  FaLongArrowAltLeft,
-  FaPencilAlt,
   FaBell,
   FaSignOutAlt,
   FaUserCircle,
-  FaPodcast,
-  FaClosedCaptioning,
-  FaGreaterThan,
   FaAngleDoubleLeft,
-  FaAngleDoubleRight,
-  FaNewspaper,
-  FaHackerNews,
   FaRegNewspaper,
   FaBlog,
   FaBlogger,
@@ -292,7 +282,7 @@ const Nav = ({ allPost, setAllPost }) => {
               </Link>
             </div>
 
-            <div className="flex justify-center items-center    hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
+            <div className="flex justify-center items-center  shadow-md shadow-gray-300  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <Link to="/">
                 {" "}
                 <FaSignOutAlt className="text-2xl text-red-500" />
@@ -311,7 +301,7 @@ const Nav = ({ allPost, setAllPost }) => {
                   opacity: openTab ? "1" : "0",
                   transition: "0.2s ease-in-out",
                 }}
-                className=" text-xl text-gray-500"
+                className=" text-4xl  text-gray-500"
                 onClick={() => {
                   setOpenTab(!openTab);
                 }}
