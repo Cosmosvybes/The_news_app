@@ -171,11 +171,11 @@ const Post = ({
               >
                 <div className="relative flex justify-start  items-center px-2 gap-1">
                   <img width={"10px"} height={"10px"} alt="" />
-                  <p className="text-black px-1 max-sm:text-sm font-extrabold">
+                  <p className="text-black px-1 max-sm:text-sm ">
                     {"Username"}
                   </p>
                 </div>
-                <p className="text-black font-extrabold max-sm:text-sm px-2 ">
+                <p className="text-black  max-sm:text-sm px-2 ">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>
