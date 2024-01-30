@@ -80,11 +80,11 @@ const Post = ({
             <div className="w-10 h-10 rounded-full border border-gray-200 py-1 px-1 flex justify-start items-center">
               <img width="auto" height="auto" className="" />
             </div>
-            <p className="text-black rounded-xl text-sm font-extrabold max-sm:font-extrabold px-1">
+            <p className="text-black rounded-xl text-xs font-extrabold max-sm:font-extrabold px-1">
               {username}
             </p>
             <FaAtom className="text-sm text-sky-800" />
-            <p className="text-gray-400 text-sm m-0.5">@{username}</p>
+            <p className="text-black text-xs m-0.5">@{username}</p>
           </div>
           <FaEllipsisV className="text-slate-400 text-sm " />
         </div>
@@ -145,7 +145,8 @@ const Post = ({
           <div className="grid h-auto gap-1 py-3 grid-cols-1 max-sm:grid-cols-1  max-sm:h-auto px-8 max-sm:px-8 ">
             <textarea
               name=""
-              className="h-20 max-sm:h-20 border border-gray-200 outline outline-gray-100  rounded-md w-96 max-sm:w-auto"
+              placeholder="write comment"
+              className="h-20 max-sm:h-20  outline outline-gray-100  rounded-md w-96 max-sm:w-auto"
               id=""
               cols="30"
               rows="10"
@@ -175,7 +176,7 @@ const Post = ({
                     {"Username"}
                   </p>
                 </div>
-                <p className="text-black  max-sm:text-sm px-2 ">
+                <p className="text-black  max-sm:text-xs px-2 ">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>
