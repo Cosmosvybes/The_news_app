@@ -88,7 +88,7 @@ const Post = ({
           </div>
           <FaEllipsisV className="text-slate-400 text-sm " />
         </div>
-        <h1 className="px-8">{title}</h1>
+        <h1 className="px-8 font-extrabold">{title}</h1>
 
         <p className="  px-7 m-0.5  text-gray-500 flex justify-start items-center text-sm">
           {" "}
@@ -102,7 +102,7 @@ const Post = ({
         </p>
         <Link to={`/post/${id}`}>
           <div className="flex px-7  h-auto ">
-            <pre className="text-black text-sm  border whitespace-pre-wrap border-gray-200 px-1 rounded-md  max-sm:font-normal">
+            <pre className="text-black text-xs  font-extrabold  whitespace-pre-wrap  px-1 rounded-md  max-sm:font-extrabold">
               {post}
             </pre>
           </div>
@@ -166,16 +166,16 @@ const Post = ({
           {[1, 2, 3, 5, 6, 8, 9].map((comment) => {
             return (
               <div
-                className="flex flex-col justify-between  px-1 py-2 m-0.2"
+                className="flex flex-col  border border-gray-100 justify-between  px-1 py-2 m-0.2"
                 key={comment}
               >
                 <div className="relative flex justify-start  items-center px-2 gap-1">
                   <img width={"10px"} height={"10px"} alt="" />
-                  <p className="text-black px-1 max-sm:text-sm ">
+                  <p className="text-black px-1 max-sm:text-xs ">
                     {"Username"}
                   </p>
                 </div>
-                <p className="text-black max-sm:text-sm px-2 ">
+                <p className="text-black font-extrabold max-sm:text-xs px-2 ">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>

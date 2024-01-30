@@ -319,9 +319,9 @@ const Nav = ({ allPost, setAllPost }) => {
             </div>
           </div>
         ) : (
-          <div className=" border-2  border-green-600 absolute transition-opacity duration-700 ease-out z-10  right-1 top-16 flex justify-center items-center bg-white rounded-md    hover:bg-gray-300 hover:text-slate-900  px-2 py-1">
+          <div className="absolute shadow-md shadow-gray-300 transition-opacity duration-700 ease-out z-10  right-1 top-16 flex justify-center items-center bg-green-500 rounded-md    hover:bg-gray-300 hover:text-slate-900  px-2 py-1">
             <FaAngleDoubleLeft
-              className="text-2xl text-green-600 "
+              className="text-2xl text-white "
               onClick={() => {
                 setOpenTab(!openTab);
               }}

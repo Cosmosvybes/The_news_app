@@ -13,6 +13,6 @@ html {
   font-weight: 300;
   font-style: normal;
 }
-p{
+p, pre{
   font-size: 12px;
 }
