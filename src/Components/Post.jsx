@@ -88,7 +88,7 @@ const Post = ({
           </div>
           <FaEllipsisV className="text-slate-400 text-sm " />
         </div>
-        <h1 className="px-8 font-extrabold text-gray-700">{title}</h1>
+        <h1 className="px-8 font-extrabold text-black">{title}</h1>
 
         <p className="  px-7 m-0.5  text-gray-500 flex justify-start items-center text-sm">
           {" "}
@@ -102,8 +102,8 @@ const Post = ({
         </p>
         <Link to={`/post/${id}`}>
           <div className="flex px-7  h-auto ">
-            <pre className="text-gray-700 text-sm  font-extrabold  whitespace-pre-wrap  px-1 rounded-md  max-sm:font-extrabold">
-              {post}
+            <pre className="text-black text-sm  font-extrabold  whitespace-pre-wrap  px-1 rounded-md  max-sm:font-extrabold">
+            <p>{post} </p>  
             </pre>
           </div>
         </Link>
@@ -171,11 +171,11 @@ const Post = ({
               >
                 <div className="relative flex justify-start  items-center px-2 gap-1">
                   <img width={"10px"} height={"10px"} alt="" />
-                  <p className="text-gray-700 px-1 max-sm:text-sm font-extrabold">
+                  <p className="text-black px-1 max-sm:text-sm font-extrabold">
                     {"Username"}
                   </p>
                 </div>
-                <p className="text-gray-700 font-extrabold max-sm:text-sm px-2 ">
+                <p className="text-black font-extrabold max-sm:text-sm px-2 ">
                   {"The reponse from the mr ABsc "}
                 </p>
               </div>

@@ -103,11 +103,7 @@ const Newscard = ({
           >
             Read more
           </button>{" "}
-          {/* <FaMousePointer
-            onClick={() => window.open(url)}
-            className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl"
-          /> */}
-          {/* <FaShareAlt className="border border-sky-300 text-slate-200 bg-sky-700 px-1 py-1 hover:bg-sky-600 m-2 rounded-md hover:text-slate-300 text-4xl" /> */}
+        
         </div>
         <strong className="text-black px-2">
           Source {":"} {sourceName}{" "}
