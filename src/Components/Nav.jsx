@@ -160,46 +160,51 @@ const Nav = ({ allPost, setAllPost }) => {
           className="hidden max-sm:inline"
           onClick={() => setOpenBar(!openBar)}
         >
-          {!openBar && <FaBars className=" text-green-600 text-2xl" />}
+          {!openBar && (
+            <FaAngleDoubleLeft
+              onClick={() => setOpenTab(!openTab)}
+              className=" text-green-600 text-4xl"
+            />
+          )}
         </button>
 
-        <div
+        {/* <div
           className="sidebtn absolute right-0 top-12 transition  duration-200 w-full
              hidden
          max-sm:flex bg-gray-100 flex-col max-sm:justify-center items-center px-2  py-0 rounded-sm z-10"
           style={{
             height: openBar ? "220px" : "0px",
           }}
-        >
-          <div
+        > */}
+          {/* <div
             className="hidden max-sm:flex  justify-start max-sm:flex-col w-full m-1 "
             style={{ display: openBar ? "block" : "none" }}
-          >
-            <Link
+          > */}
+            {/* <Link
               onClick={() => setOpenBar(!openBar)}
               to="/signin"
               className="block text-center w-full hover:bg-sky-500  font-extrabold hover:text-white   px-3 py-2 text-sky-500"
             >
               SIGN IN
-            </Link>
+            </Link> */}
 
-            <Link
+            {/* <Link
               onClick={() => setOpenBar(!openBar)}
               to="/signup"
               className="block w-full text-center hover:bg-green-600 hover:text-white   px-3 py-2 text-green-500 font-extrabold"
             >
               REGISTER
-            </Link>
-          </div>
+            </Link> */}
+          {/* </div> */}
 
-          <FaCaretUp
+          {/* <FaCaretUp
             style={{ display: openBar ? "block" : "none" }}
             className="absolute  top-44  text-right text-4xl text-sky-500 shadow shadow-slate-400 z-10"
             onClick={() => setOpenBar(!openBar)}
           />
-        </div>
+        </div> */}
 
-        {openTab ? (
+        {openTab && (
           <div
             style={{
               opacity: openTab ? "1" : "0",
@@ -304,18 +309,10 @@ const Nav = ({ allPost, setAllPost }) => {
                 className=" text-4xl  text-gray-500"
                 onClick={() => {
                   setOpenTab(!openTab);
+                  setOpenBar(!openBar)
                 }}
               />
             </div>
-          </div>
-        ) : (
-          <div className="absolute shadow-md shadow-gray-300 transition-opacity duration-700 ease-out z-10  right-1 top-16 flex justify-center items-center bg-green-500 rounded-md    hover:bg-gray-300 hover:text-slate-900  px-2 py-1">
-            <FaAngleDoubleLeft
-              className="text-3xl text-white "
-              onClick={() => {
-                setOpenTab(!openTab);
-              }}
-            />
           </div>
         )}
       </header>
