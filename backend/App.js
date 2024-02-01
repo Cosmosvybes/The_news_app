@@ -1,10 +1,13 @@
 const express = require("express");
+const fileUpload = require("express-fileupload");
 const port = process.env.PORT || 1818;
 const app = express();
 const bodyParser = require("body-parser");
 const { createPost } = require("./Routes/Api");
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static("files"));
 app.use(express.json());
+app.use(fileUpload());
 
 app.post("/api/create", createPost);
 

@@ -9,7 +9,6 @@ const Create = () => {
     let imageFile = e.target.files[0];
     let imageUrl = URL.createObjectURL(imageFile);
 
-    // setImage(imageUrl);
     let imageData = { url: imageUrl };
     setImages([...images, imageData]);
     const formData = new FormData();

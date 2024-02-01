@@ -1,5 +1,6 @@
 const createPost = async (req, res) => {
-//   const { image } = req.file;
-  console.log(req.file);
+  if (req.files) {
+    console.log(req.files);
+  }
 };
 module.exports = { createPost };
