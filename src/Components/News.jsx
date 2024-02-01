@@ -166,7 +166,32 @@ const News = () => {
                   ))}
                 </div>
 
+
                 {/* <div className="grid grid-cols-1 gap-2 max-sm:grid-cols-1">
+
+        <div className="news-container  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-white relative">
+          {!isLoading ? (
+            <p className="text-center">{response} </p>
+          ) : (
+            <div className="relative">
+              <div className="h-auto relative block">
+                {post.slice(0, 1).map((obj) => (
+                  <div className="block" key={obj.title}>
+                    <Newscard
+                      headline={obj.title}
+                      desc={obj.description}
+                      url={obj.source.url}
+                      newsImg={obj.image}
+                      body={obj.content}
+                      sourceName={obj.source.name}
+                      publishedAt={obj.publishedAt}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 gap-2 max-sm:grid-cols-1">
+
                 {postsToShow?.map((news) => (
                   <div
                     className="div-container flex justify-around "
