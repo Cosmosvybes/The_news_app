@@ -149,15 +149,15 @@ const Nav = ({ allPost, setAllPost }) => {
         className="h-14  border bg-gray-100 bottom-3 px-18  z-10 sticky top-0 flex
            justify-between items-center  max-sm:px-3 max-sm:justify-between max-sm:h-14"
       >
-        <div className="flex justify-start bg-white rounded-md  shadow shadow-gray-300 z-10 border border-green-600">
+        <div className="flex justify-start bg-green-500 rounded-lg   shadow-inner z-10 border-2 border-green-600">
           {" "}
-          <h1 className="text-red-600  text-2xl inline rounded-sm px-2 text-center py-1  font-extrabold">
-            i<span className="text-green-600 font-extrabold">Blogg</span>
+          <h1 className="text-black  text-3xl inline rounded-sm px-2 text-center py-0  font-extrabold">
+            Afri <span className="text-gray-100 font-extrabold">Talk</span>
           </h1>
         </div>
 
         <button
-          className="hidden max-sm:inline"
+          className="hidden max-sm:inline bg-gray-200 shadow-inner rounded-md px-3"
           onClick={() => setOpenBar(!openBar)}
         >
           {!openBar && (
@@ -176,11 +176,11 @@ const Nav = ({ allPost, setAllPost }) => {
             height: openBar ? "220px" : "0px",
           }}
         > */}
-          {/* <div
+        {/* <div
             className="hidden max-sm:flex  justify-start max-sm:flex-col w-full m-1 "
             style={{ display: openBar ? "block" : "none" }}
           > */}
-            {/* <Link
+        {/* <Link
               onClick={() => setOpenBar(!openBar)}
               to="/signin"
               className="block text-center w-full hover:bg-sky-500  font-extrabold hover:text-white   px-3 py-2 text-sky-500"
@@ -188,16 +188,16 @@ const Nav = ({ allPost, setAllPost }) => {
               SIGN IN
             </Link> */}
 
-            {/* <Link
+        {/* <Link
               onClick={() => setOpenBar(!openBar)}
               to="/signup"
               className="block w-full text-center hover:bg-green-600 hover:text-white   px-3 py-2 text-green-500 font-extrabold"
             >
               REGISTER
             </Link> */}
-          {/* </div> */}
+        {/* </div> */}
 
-          {/* <FaCaretUp
+        {/* <FaCaretUp
             style={{ display: openBar ? "block" : "none" }}
             className="absolute  top-44  text-right text-4xl text-sky-500 shadow shadow-slate-400 z-10"
             onClick={() => setOpenBar(!openBar)}
@@ -309,7 +309,7 @@ const Nav = ({ allPost, setAllPost }) => {
                 className=" text-4xl  text-gray-500"
                 onClick={() => {
                   setOpenTab(!openTab);
-                  setOpenBar(!openBar)
+                  setOpenBar(!openBar);
                 }}
               />
             </div>

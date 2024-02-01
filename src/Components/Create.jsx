@@ -72,14 +72,14 @@ const Create = () => {
             </a>
           )}
         </div>
-        <div className="flex flex-col w-full  h-full px-1 py-1">
+        <div className="flex flex-col w-full  h-full px-1 py-1  rounded-lg shrink shadow-inner ">
           <textarea
             type="text"
             placeholder="What's on your mind ?"
             value={post}
             name="post"
             onChange={(e) => setPost(e.target.value)}
-            className=" h-96 text-xl max-sm:text-xs max-sm:h-96 w-full  rounded-md shadow-md shadow-gray-200  outline-gray-200 px-2 overscroll-y-contain overflow-y-auto"
+            className=" h-96 text-xl max-sm:text-xs max-sm:h-96 w-full  rounded-md shadow-inner  border-4 border-gray-100 outline-gray-200 px-2 overscroll-y-contain overflow-y-auto"
           ></textarea>
         </div>
       </div>

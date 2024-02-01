@@ -128,7 +128,7 @@ const News = () => {
                 ))}
               </div>
 
-              <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
+              <div className="grid grid-cols-1 gap-2 max-sm:grid-cols-1">
                 {postsToShow?.map((news) => (
                   <div
                     className="div-container flex justify-around "
@@ -151,14 +151,14 @@ const News = () => {
         </div>
 
         <div className="pg-btns flex  bg-white w-full justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 ">
-          <FaArrowLeft
+         <button>LOAD MORE NEWS</button> {/* <FaArrowLeft
             onClick={prevPost}
             className=" border-4 rounded-md border-gray-300 px-1 text-gray-500 py-2 w-20 text-4xl hover:bg-gray-300 hover:text-white  m-1"
           />{" "}
           <FaArrowRight
             onClick={nextPost}
             className=" border-4 rounded-md border-gray-300 px-1 text-gray-500 py-2 w-20 text-4xl hover:bg-gray-300 hover:text-white  m-1"
-          />
+          /> */}
         </div>
       </section>
       <Footer />
