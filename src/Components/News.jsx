@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import gsap from "gsap";
 import Newscard from "./Newscard";
 
 import { FaArrowLeft, FaArrowRight, FaClock, FaFilter } from "react-icons/fa";
@@ -101,12 +102,12 @@ const News = () => {
             />
             <input
               type="submit"
-              className="w-28 max-sm:inline max-sm:w-full border-2 m-0.5 hover:bg-sky-300 max-sm:py-2 bg-sky-400 text-white font-bold "
+              className="w-28 max-sm:inline max-sm:w-full border-2 m-0.5 hover:bg-green-600 max-sm:py-2 bg-green-500 text-white font-bold "
             />
           </div>
         </div>
 
-        <div className="news-container  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-slate-100 relative">
+        <div className="news-container  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-white relative">
           {isLoading ? (
             <p className="text-center">{response} </p>
           ) : (
@@ -149,14 +150,14 @@ const News = () => {
           )}
         </div>
 
-        <div className="pg-btns flex  bg-sky-100 w-full justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 ">
+        <div className="pg-btns flex  bg-white w-full justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 ">
           <FaArrowLeft
             onClick={prevPost}
-            className=" border border-sky-400 px-1 text-sky-400 py-2 w-20 text-4xl hover:bg-slate-500 hover:text-white  m-1"
+            className=" border-4 rounded-md border-gray-300 px-1 text-gray-500 py-2 w-20 text-4xl hover:bg-gray-300 hover:text-white  m-1"
           />{" "}
           <FaArrowRight
             onClick={nextPost}
-            className=" border border-sky-400 px-1 text-sky-400 py-2 w-20 text-4xl hover:bg-slate-500 hover:text-white  m-1"
+            className=" border-4 rounded-md border-gray-300 px-1 text-gray-500 py-2 w-20 text-4xl hover:bg-gray-300 hover:text-white  m-1"
           />
         </div>
       </section>

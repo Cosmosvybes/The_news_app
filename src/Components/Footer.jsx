@@ -13,7 +13,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <div className="flex h-60 max-sm:py-2 bg-slate-950 items-center max-sm:items-start justify-between  max-sm:px-6 py-2 max-sm:flex-col max-sm:h-auto">
+      <div className="flex text-xs h-60 max-sm:py-2 bg-slate-950 items-center max-sm:items-start justify-between  max-sm:px-6 py-2 max-sm:flex-col max-sm:h-auto">
         <div className="flex m-1  max-sm:w-auto flex-col">
           <h1 className="underline text-white font-bold max-sm:text-sm">
             Quick Links{" "}

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import gsap from "gsap";
 import { FaImage } from "react-icons/fa";
 
 const Create = () => {
@@ -7,6 +8,10 @@ const Create = () => {
   const [imageData, setImageData] = useState(null);
 
   const handleImageUpload = (e) => {
+    useEffect(() => {
+      gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
+    }, []);
+
     let imageFile = e.target.files[0];
     let imageUrl = URL.createObjectURL(imageFile);
     let imageData = { url: imageUrl };
@@ -74,7 +79,7 @@ const Create = () => {
             value={post}
             name="post"
             onChange={(e) => setPost(e.target.value)}
-            className=" h-96 text-xl max-sm:text-xl max-sm:h-96 w-full  rounded-md shadow-md shadow-gray-200  outline-gray-200 px-2 overscroll-y-contain overflow-y-auto"
+            className=" h-96 text-xl max-sm:text-xs max-sm:h-96 w-full  rounded-md shadow-md shadow-gray-200  outline-gray-200 px-2 overscroll-y-contain overflow-y-auto"
           ></textarea>
         </div>
       </div>

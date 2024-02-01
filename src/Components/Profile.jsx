@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import gsap from "gsap";
 import { FaBirthdayCake } from "react-icons/fa";
 
 const Profile = () => {
+  useEffect(() => {
+    gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
+  }, []);
   const [editform, setEditForm] = useState(false);
   const editForm = (
     <div className="flex flex-col ">

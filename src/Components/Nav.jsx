@@ -146,7 +146,7 @@ const Nav = ({ allPost, setAllPost }) => {
   return (
     <>
       <header
-        className="h-14  border bg-gray-100 bottom-3 px-72  z-10 sticky top-0 flex
+        className="h-14  border bg-gray-100 bottom-3 px-18  z-10 sticky top-0 flex
            justify-between items-center  max-sm:px-3 max-sm:justify-between max-sm:h-14"
       >
         <div className="flex justify-start bg-white rounded-md  shadow shadow-gray-300 z-10 border border-green-600">

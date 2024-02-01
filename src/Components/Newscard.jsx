@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import gsap from "gsap";
 import {
   FaShareAlt,
   FaArrowCircleLeft,
@@ -17,6 +18,9 @@ const Newscard = ({
   desc,
   publishedAt,
 }) => {
+  useEffect(() => {
+    gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
+  }, []);
   const [slideNumber, setSlideNumber] = useState(1);
   const [photoPerLSide] = useState(1);
   const lastSlideIndex = slideNumber * photoPerLSide;
@@ -24,7 +28,6 @@ const Newscard = ({
   // const firstPhoto = newsImg.slice(firstSlideIndex, lastSlideIndex);
   let [count, setCount] = useState(1);
 
-  
   const getTimeDifference = (timePublished) => {
     const currentTime = Date.now();
     const publishedTime = new Date(timePublished);
@@ -48,22 +51,18 @@ const Newscard = ({
               className="transition duration-100  border border-inherit w-full"
             />
           </a>
-
         </div>
         <h1 className="py-2 px-1 text-3xl font-bold text-black">{headline}</h1>
         <h3 className="py-2 px-1 font-bold text-black">{desc}</h3>
-
-       
 
         <p className="px-2 text-black">{body}</p>
         <div className="btns flex justify-center border-sky-300 py-1 px-2">
           <button
             onClick={() => window.open(url)}
-            className="w-full py-1 text-sky-700 font-bold border border-none px-1"
+            className="w-full py-1 text-green-600 font-bold border border-none px-1"
           >
             Read more
           </button>{" "}
-        
         </div>
         <strong className="text-black px-2">
           Source {":"} {sourceName}{" "}
