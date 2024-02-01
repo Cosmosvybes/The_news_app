@@ -108,7 +108,7 @@ const News = () => {
         </div>
 
         <div className="news-container  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-white relative">
-          {isLoading ? (
+          {!isLoading ? (
             <p className="text-center">{response} </p>
           ) : (
             <div className="relative">
