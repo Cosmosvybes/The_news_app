@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import gsap from "gsap";
-import { FaImage } from "react-icons/fa";
+import { FaCloudUploadAlt, FaImage, FaUpload } from "react-icons/fa";
 
 const Create = () => {
   const [post, setPost] = useState("");
@@ -8,10 +8,6 @@ const Create = () => {
   const [imageData, setImageData] = useState(null);
 
   const handleImageUpload = (e) => {
-    useEffect(() => {
-      gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
-    }, []);
-
     let imageFile = e.target.files[0];
     let imageUrl = URL.createObjectURL(imageFile);
     let imageData = { url: imageUrl };
@@ -53,7 +49,7 @@ const Create = () => {
           </form>
 
           <label htmlFor="picture">
-            <FaImage className="text-6xl w-10 text-green-500 shadow-md shadow-gray-50" />
+            <FaCloudUploadAlt className="text-6xl w-10 text-green-500 z-10 shadow-gray-400" />
           </label>
           <button
             className="border border-green-500  rounded-lg text-white w-24 font-extrabold  shadow-md shadow-gray-400  bg-green-500 px-3 py-1"
@@ -62,12 +58,12 @@ const Create = () => {
             Post
           </button>
         </div>
-        <div className="flex justify-start  max-sm:justify-start items-center  rounded-md border-gray-300  py-1  w-96 max-sm:w-full">
+        <div className="flex justify-start   max-sm:justify-start items-center  rounded-md border-gray-300  py-1  w-96 max-sm:w-full">
           {image && (
             <a href={image}>
               <img
                 src={image}
-                className="w-30 h-30 rounded-md max-sm:w-full border-4  border-gray-200 max-sm:h-64"
+                className="w-30 h-30 shadow-inner rounded-md max-sm:w-full border-4  border-gray-50 max-sm:h-64"
               />
             </a>
           )}
@@ -79,7 +75,7 @@ const Create = () => {
             value={post}
             name="post"
             onChange={(e) => setPost(e.target.value)}
-            className=" h-96 text-xl max-sm:text-xs max-sm:h-96 w-full  rounded-md shadow-inner  border-4 border-gray-100 outline-gray-200 px-2 overscroll-y-contain overflow-y-auto"
+            className=" h-96 text-xl max-sm:text-xs max-sm:h-96 w-full  rounded-md shadow-inner  border bo outline-gray-200 px-2 overscroll-y-contain overflow-y-auto"
           ></textarea>
         </div>
       </div>

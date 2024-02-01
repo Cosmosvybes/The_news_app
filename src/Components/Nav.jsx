@@ -210,9 +210,9 @@ const Nav = ({ allPost, setAllPost }) => {
               opacity: openTab ? "1" : "0",
               transition: "0.2s ease-in-out",
             }}
-            className=" transition duration-600 ease-in-out  absolute left-0  border w-72 max-sm:w-14 max-sm:px-0 bg-gray-100 flex flex-col justify-start  border-gray-300  top-14 h-screen px-4 py-6"
+            className=" transition duration-600 ease-in-out  absolute left-0  border w-72 max-sm:w-14 max-sm:px-0 bg-gray-100 flex flex-col justify-start  border-gray-300  top-14 h-screen px-4 py-4"
           >
-            <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2 ">
+            <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <Link to="/">
                 <FaBlog className="text-2xl  text-green-500  " />
               </Link>
@@ -287,7 +287,7 @@ const Nav = ({ allPost, setAllPost }) => {
               </Link>
             </div>
 
-            <div className="flex justify-center items-center  shadow-md shadow-gray-300  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
+            <div className="flex justify-center items-center  shadow-md  shadow-gray-300  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <Link to="/">
                 {" "}
                 <FaSignOutAlt className="text-2xl text-red-500" />
