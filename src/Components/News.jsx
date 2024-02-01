@@ -5,7 +5,6 @@ import Newscard from "./Newscard";
 import { FaFilter } from "react-icons/fa";
 import Footer from "./Footer";
 const News = () => {
-  
   const [post, setPost] = useState([
     {
       id: 1,
@@ -149,7 +148,7 @@ const News = () => {
             ) : (
               <div className="relative">
                 <div className="h-auto relative block px-60 max-sm:px-0">
-                  {post.slice(0, `${1}`).map((obj) => (
+                  {post.slice(0, `${3}`).map((obj) => (
                     <div className="block" key={obj.id}>
                       <Newscard
                         headline={obj.title}

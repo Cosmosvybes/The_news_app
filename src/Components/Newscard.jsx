@@ -36,7 +36,10 @@ const Newscard = ({
        border-gray-300 px-0 py-0 max-sm:px-0 
        max-sm:py-0  border-2 max-sm:items-start relative rounded-sm m-1"
       >
-        <div className="flex  w-full h-92 flex-col relative ">
+        <h1>
+          Hello
+        </h1>
+        {/* <div className="flex  w-full h-92 flex-col relative ">
           <a href={newsImg}>
             <img
               src={newsImg}
@@ -66,7 +69,7 @@ const Newscard = ({
         <p className="text-black px-2 inline">
           <FaClock className="inline" /> {getTimeDifference(publishedAt)}{" "}
           {"h ago. "}
-        </p>
+        </p> */}
       </div>
     </>
   );
