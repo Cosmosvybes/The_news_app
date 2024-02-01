@@ -57,12 +57,12 @@ const Create = () => {
             Post
           </button>
         </div>
-        <div className="flex justify-start  max-sm:justify-center  rounded-md border-gray-300  py-1 max-sm:px-1 w-96 max-sm:w-full">
+        <div className="flex justify-start  max-sm:justify-center items-center  rounded-md border-gray-300  py-1  w-96 max-sm:w-full">
           {image && (
             <a href={image}>
               <img
                 src={image}
-                className="w-30 h-30 rounded-md max-sm:w-full border-4 border-gray-100 max-sm:h-64"
+                className="w-30 h-30 rounded-md max-sm:w-full border-4  border-gray-200 max-sm:h-64"
               />
             </a>
           )}
