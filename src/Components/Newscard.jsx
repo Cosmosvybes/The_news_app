@@ -1,13 +1,6 @@
 import { useState, useEffect } from "react";
 import gsap from "gsap";
-import {
-  FaShareAlt,
-  FaArrowCircleLeft,
-  FaArrowCircleRight,
-  FaLink,
-  FaClock,
-  FaMousePointer,
-} from "react-icons/fa";
+import { FaClock } from "react-icons/fa";
 const Newscard = ({
   headline,
   body,
@@ -70,10 +63,10 @@ const Newscard = ({
         <a className="text-black px-2" href={url}>
           url {":"} {url}{" "}
         </a>
-        <strong className="text-black px-2 inline">
+        <p className="text-black px-2 inline">
           <FaClock className="inline" /> {getTimeDifference(publishedAt)}{" "}
-          {"Hr ago. "}
-        </strong>
+          {"h ago. "}
+        </p>
       </div>
     </>
   );

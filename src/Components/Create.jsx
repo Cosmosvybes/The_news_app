@@ -49,10 +49,10 @@ const Create = () => {
           </form>
 
           <label htmlFor="picture">
-            <FaCloudUploadAlt className="text-6xl w-10 text-green-500 z-10 shadow-gray-400" />
+            <FaCloudUploadAlt className="text-6xl w-10 text-green-500 z-10 " />
           </label>
           <button
-            className="border border-green-500  rounded-lg text-white w-24 font-extrabold  shadow-md shadow-gray-400  bg-green-500 px-3 py-1"
+            className="border-4 shadow-inner     border-gray-100  rounded-lg text-white w-24 font-extrabold     bg-green-500 px-3 py-1"
             onClick={handlePosting}
           >
             Post

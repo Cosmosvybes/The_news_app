@@ -149,7 +149,7 @@ const Nav = ({ allPost, setAllPost }) => {
         className="h-14  border bg-gray-100 bottom-3 px-18  z-10 sticky top-0 flex
            justify-between items-center  max-sm:px-3 max-sm:justify-between max-sm:h-14"
       >
-        <div className="flex justify-start bg-green-500 rounded-lg   shadow-inner z-10 border-2 border-green-600">
+        <div className="flex justify-start bg-green-500 rounded-md   shadow-inner z-10 border-2 border-green-600">
           {" "}
           <h1 className="text-black  text-3xl inline rounded-sm px-2 text-center py-0  font-extrabold">
             Afri <span className="text-gray-100 font-extrabold">Talk</span>
@@ -157,13 +157,13 @@ const Nav = ({ allPost, setAllPost }) => {
         </div>
 
         <button
-          className="hidden max-sm:inline bg-gray-200 shadow-inner rounded-md px-3"
+          className="hidden max-sm:inline border-1 border-green-500 bg-gray-200 shadow-inner rounded-md px-2"
           onClick={() => setOpenBar(!openBar)}
         >
           {!openBar && (
             <FaAngleDoubleLeft
               onClick={() => setOpenTab(!openTab)}
-              className=" text-green-600 text-4xl"
+              className=" text-green-500 text-4xl"
             />
           )}
         </button>
