@@ -36,7 +36,7 @@ const Create = () => {
   return (
     <>
       <div className="flex h-auto max-sm:h-screen justify-start flex-col  px-52 max-sm:px-2 max-sm:py-0">
-        <div className="flex justify-end gap-1 items-center py-0 px-1 max-sm:py-2">
+        <div className="flex justify-start gap-1 items-center py-0 px-1 max-sm:py-2">
           <form encType="multipart/form-data" method="post">
             <input
               type="file"
@@ -57,7 +57,7 @@ const Create = () => {
             Post
           </button>
         </div>
-        <div className="flex justify-start  max-sm:justify-center items-center  rounded-md border-gray-300  py-1  w-96 max-sm:w-full">
+        <div className="flex justify-start  max-sm:justify-start items-center  rounded-md border-gray-300  py-1  w-96 max-sm:w-full">
           {image && (
             <a href={image}>
               <img
