@@ -57,26 +57,26 @@ const News = () => {
   const apiKey = "67a01c9e936b42440e55e5deedd2b567";
   const category = "general";
 
-  // useEffect(() => {
-  //   const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${apiKey}`;
-  //   const fetchNews = async () => {
-  //     setIsLoading(true);
-  //     setResponse("loading");
-  //     try {
-  //       const news = await fetch(url);
-  //       const newsData = await news.json();
-  //       if (!news.ok) {
-  //         throw new Error("..news headlines engine under maintenanace");
-  //       }
-  //       setPost(newsData.articles);
-  //       setIsLoading(false);
-  //     } catch (error) {
-  //       setResponse(error.message);
-  //       // console.log(error.message);
-  //     }
-  //   };
-  //   fetchNews();
-  // }, []);
+  useEffect(() => {
+    const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${apiKey}`;
+    const fetchNews = async () => {
+      setIsLoading(!true);
+      setResponse("loading");
+      try {
+        const news = await fetch(url);
+        const newsData = await news.json();
+        if (!news.ok) {
+          throw new Error("..news headlines engine under maintenanace");
+        }
+        setPost(newsData.articles);
+        setIsLoading(false);
+      } catch (error) {
+        setResponse(error.message);
+        // console.log(error.message);
+      }
+    };
+    fetchNews();
+  }, []);
 
   let [count, setCount] = useState(1);
   let [btnSwitch, setSwitch] = useState(false);
@@ -101,11 +101,11 @@ const News = () => {
 
     return (
       <>
-        <section className="bg-white ">
+        <section className="bg-white  text-black">
           <div className="flex justify-between max-sm:flex-col">
             <div className="flex-col">
               <div className="flex justify-start  items-center px-2 py-2">
-                <p className="px-2"> Filter By </p>
+                <p className="px-2 text-black"> Filter By </p>
                 <FaFilter className="text-gray-400" />
               </div>
               <div className="flex max-sm:flex-col justify-start">
@@ -144,7 +144,7 @@ const News = () => {
 
           <div className="news-container  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-white relative">
             {!isLoading ? (
-              <p className="text-center">{response} </p>
+              <p className="text-center">{"not loading"} </p>
             ) : (
               <div className="relative">
                 <div className="h-auto relative block px-60 max-sm:px-0">
@@ -213,8 +213,8 @@ const News = () => {
             )}
           </div>
 
-          <div className="pg-btns flex  bg-white w-full justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 ">
-            <button onClick={loadMorePost}>LOAD MORE NEWS</button>{" "}
+          {/* <div className="pg-btns flex  bg-white w-full justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 ">
+            <button onClick={loadMorePost}>LOAD MORE NEWS</button>{" "} */}
             {/* <FaArrowLeft
             onClick={prevPost}
             className=" border-4 rounded-md border-gray-300 px-1 text-gray-500 py-2 w-20 text-4xl hover:bg-gray-300 hover:text-white  m-1"
@@ -223,7 +223,7 @@ const News = () => {
             onClick={nextPost}
             className=" border-4 rounded-md border-gray-300 px-1 text-gray-500 py-2 w-20 text-4xl hover:bg-gray-300 hover:text-white  m-1"
           /> */}
-          </div>
+          {/* </div> */}
         </section>
         <Footer />
       </>
