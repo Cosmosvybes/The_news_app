@@ -8,6 +8,7 @@ import {
   FaEllipsisV,
   FaFire,
   FaHeart,
+  FaShareAlt,
   FaTag,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -136,7 +137,7 @@ const Post = ({
             </div>
             <div className="flex text-slate-400 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full">
               {" "}
-              <FaTag className="text-sm" />
+              <FaShareAlt className="text-sm" />
             </div>
           </div>
         )}
