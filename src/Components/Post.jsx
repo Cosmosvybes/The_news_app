@@ -27,8 +27,7 @@ const Post = ({
 }) => {
   const [fireNumber, setFireNumber] = useState(firenumber);
   const [numberOfLikes, setLikes] = useState(likes);
-  // console.log(postedAt)
-  // like post func
+
 
   useEffect(() => {
     function animateIcons() {
