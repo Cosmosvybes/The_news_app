@@ -5,40 +5,40 @@ import Footer from "./Footer";
 
 const News = () => {
   const [post, setPost] = useState([
-    {
-      id: 1,
-      headline: "The headline of the post",
-      body: "Hello world",
-      url: "http://localhost:1990",
-      sourceName: "The Source",
-      sourceUrl: "http://localhost:1990",
-      newsImg: "",
-      desc: "",
-      publishedAt: new Date("2023-12-25"),
-    },
-    {
-      id: 2,
-      headline: "The headline of the post",
-      body: "Hello world",
-      url: "http://localhost:1990",
-      sourceName: "The Source",
-      sourceUrl: "http://localhost:1990",
-      newsImg: "",
-      desc: "",
-      publishedAt: new Date("2023-12-25"),
-    },
+    // {
+    //   id: 1,
+    //   headline: "The headline of the post",
+    //   body: "Hello world",
+    //   url: "http://localhost:1990",
+    //   sourceName: "The Source",
+    //   sourceUrl: "http://localhost:1990",
+    //   newsImg: "",
+    //   desc: "",
+    //   publishedAt: new Date("2023-12-25"),
+    // },
+    // {
+    //   id: 2,
+    //   headline: "The headline of the post",
+    //   body: "Hello world",
+    //   url: "http://localhost:1990",
+    //   sourceName: "The Source",
+    //   sourceUrl: "http://localhost:1990",
+    //   newsImg: "",
+    //   desc: "",
+    //   publishedAt: new Date("2023-12-25"),
+    // },
 
-    {
-      id: 13,
-      headline: "The headline of the post",
-      body: "Hello world",
-      url: "http://localhost:1990",
-      sourceName: "The Source",
-      sourceUrl: "http://localhost:1990",
-      newsImg: "",
-      desc: "",
-      publishedAt: new Date("2023-12-25"),
-    },
+    // {
+    //   id: 13,
+    //   headline: "The headline of the post",
+    //   body: "Hello world",
+    //   url: "http://localhost:1990",
+    //   sourceName: "The Source",
+    //   sourceUrl: "http://localhost:1990",
+    //   newsImg: "",
+    //   desc: "",
+    //   publishedAt: new Date("2023-12-25"),
+    // }
   ]);
 
   var [pageNumber, setPageNumber] = useState(1);
@@ -61,6 +61,7 @@ const News = () => {
         }
         setPost(newsData.articles);
         setIsLoading(false);
+        console.log(newsData.articles)
       } catch (error) {
         setResponse(error.message);
         // console.log(error.message);
@@ -133,7 +134,7 @@ const News = () => {
         </div>
 
         <div className="news-container  px-2 py-2 max-md:grid-cols-2 max-sm:grid-cols-1 bg-white relative">
-          {!isLoading ? (
+          {isLoading ? (
             <p className="text-center">{response} </p>
           ) : (
             <div className="relative">
@@ -143,13 +144,13 @@ const News = () => {
                     <Newscard
                       headline={obj.title}
                       desc={obj.description}
-                      url={obj.url}
-                      // url={obj.source.url}
+                      // url={obj.url}
+                      url={obj.source.url}
                       newsImg={obj.image}
-                      // body={obj.content}
-                      body={obj.body}
-                      // sourceName={obj.source.name}
-                      sourceName={obj.url}
+                      body={obj.content}
+                      // body={obj.body}
+                      sourceName={obj.source.name}
+                      // sourceName={obj.url}
                       publishedAt={obj.publishedAt}
                     />
                   </div>
@@ -159,7 +160,7 @@ const News = () => {
           )}
         </div>
 
-        {isLoading && (
+        {!isLoading && (
           <div className="pg-btns flex  py-1 bg-white w-full justify-center items-center max-sm:flex max-sm:justify-center max-sm:px-2 max-sm:py-2 ">
             {btnSwitch ? (
               <button
