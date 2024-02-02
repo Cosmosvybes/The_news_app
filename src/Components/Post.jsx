@@ -12,7 +12,7 @@ import {
   FaTag,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import gsap from "gsap";
 const Post = ({
   id,
   posts,
@@ -29,6 +29,13 @@ const Post = ({
   const [numberOfLikes, setLikes] = useState(likes);
   // console.log(postedAt)
   // like post func
+
+  useEffect(() => {
+    function animateIcons() {
+      gsap.fromTo(".icon", { scale: 0, rotate:"+360" }, { scale: 1 , rotate:"-360" });
+    }
+    animateIcons();
+  }, []);
   const likePost = (id) => {
     const getPost = posts.find((post) => post.id == id);
     let userLiked = getPost.likers.find((user) => user == username);
@@ -84,10 +91,10 @@ const Post = ({
             <p className="text-black rounded-xl text-xs font-extrabold max-sm:font-extrabold px-1">
               {username}
             </p>
-            <FaAtom className="text-sm text-sky-800" />
+            <FaAtom className="icon text-sm text-sky-800" />
             <p className="text-black text-xs m-0.5">@{username}</p>
           </div>
-          <FaEllipsisV className="text-slate-400 text-sm " />
+          <FaEllipsisV className="icon text-slate-400 text-sm " />
         </div>
         <h1 className="px-8 font-extrabold text-black">{title}</h1>
 
@@ -104,7 +111,7 @@ const Post = ({
         <Link to={`/post/${id}`}>
           <div className="flex px-7  h-auto ">
             <pre className="text-black text-sm  font-extrabold  whitespace-pre-wrap  px-1 rounded-md  max-sm:font-extrabold">
-            <p>{post} </p>  
+              <p>{post} </p>
             </pre>
           </div>
         </Link>
@@ -112,7 +119,7 @@ const Post = ({
         {!openComment && (
           <div className="flex px-10 py-1 justify-between items-center">
             <div className="flex justify-start text-gray-600 items-baseline">
-              <FaComments className="text-sky-400 text-sm" />
+              <FaComments className="icon text-sky-400 text-sm" />
 
               <p className="text-sm  text-black  "> {6}</p>
             </div>
@@ -122,7 +129,7 @@ const Post = ({
             >
               <div className="flex items-center justify-start">
                 {" "}
-                <FaHeart className="text-sm " />
+                <FaHeart className="text-sm  icon " />
                 <p className="text-sm  text-black  "> {numberOfLikes}</p>
               </div>
             </div>
@@ -131,13 +138,13 @@ const Post = ({
               className="flex text-yellow-600 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full"
             >
               <div className="flex justify-start text-gray-600 items-center">
-                <FaFire className="text-yellow-600 text-sm" />
+                <FaFire className="text-yellow-600 text-sm  icon" />
                 <p className="text-sm text-black "> {fireNumber}</p>
               </div>
             </div>
-            <div className="flex text-slate-400 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full">
+            <div className=" icon flex text-slate-400 justify-start items-center hover:bg-slate-200 px-1 py-1 rounded-full">
               {" "}
-              <FaShareAlt className="text-sm" />
+              <FaShareAlt className="text-sm  icon" />
             </div>
           </div>
         )}

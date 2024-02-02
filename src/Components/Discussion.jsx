@@ -5,9 +5,9 @@ import Post from "./Post";
 import gsap from "gsap";
 
 const Discussion = ({ posts, updatePost }) => {
-  useEffect(() => {
-    gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
-  }, []);
+  // useEffect(() => {
+  //   gsap.fromTo("div", { opacity: 0 }, { opacity: 1 });
+  // }, []);
 
   let [allPost, setAllPost] = useState([
     {
