@@ -43,9 +43,7 @@ const News = () => {
 
   var [pageNumber, setPageNumber] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-
   const [response, setResponse] = useState("");
-
   let [postItem, setPostItem] = useState(1);
 
   useEffect(() => {
