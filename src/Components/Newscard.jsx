@@ -18,7 +18,6 @@ const Newscard = ({
   const [photoPerLSide] = useState(1);
   const lastSlideIndex = slideNumber * photoPerLSide;
   const firstSlideIndex = lastSlideIndex - photoPerLSide;
-  // const firstPhoto = newsImg.slice(firstSlideIndex, lastSlideIndex);
   let [count, setCount] = useState(1);
 
   const getTimeDifference = (timePublished) => {
@@ -33,13 +32,11 @@ const Newscard = ({
     <>
       <div
         className="card h-auto  flex flex-col  justify-between items-start
-       border-gray-300 px-0 py-0 max-sm:px-0 
-       max-sm:py-0  border-2 max-sm:items-start relative rounded-sm m-1"
+       border-gray-100 px-0 py-0 max-sm:px-0 
+       max-sm:py-0  border-2 max-sm:items-start relative rounded-sm m-0.5"
       >
-        <h1>
-          Hello
-        </h1>
-        {/* <div className="flex  w-full h-92 flex-col relative ">
+    
+        <div className="flex  w-full h-92 flex-col relative ">
           <a href={newsImg}>
             <img
               src={newsImg}
@@ -69,7 +66,7 @@ const Newscard = ({
         <p className="text-black px-2 inline">
           <FaClock className="inline" /> {getTimeDifference(publishedAt)}{" "}
           {"h ago. "}
-        </p> */}
+        </p>
       </div>
     </>
   );

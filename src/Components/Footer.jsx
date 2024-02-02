@@ -13,7 +13,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <div className="flex text-black text-xs h-60 max-sm:py-2 bg-gray-100 items-center max-sm:items-start justify-between  max-sm:px-6 py-2 max-sm:flex-col max-sm:h-auto">
+      <div className="flex px-60 text-black text-xs h-60 max-sm:py-2 bg-gray-50 items-center max-sm:items-start justify-between  max-sm:px-6 py-2 max-sm:flex-col max-sm:h-auto">
         <div className="flex m-1  max-sm:w-auto flex-col">
           <h1 className="underline text-black font-bold max-sm:text-sm">
             Quick Links{" "}
@@ -58,7 +58,7 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <footer className="text-slate-800max-sm:text-xs max-sm:px-5 ">
+      <footer className="text-slate-800max-sm:text-xs max-sm:px-5 bg-gray-100 ">
         Afri-talk &copy; {new Date().getFullYear()} All rights reserved.
       </footer>
     </>
