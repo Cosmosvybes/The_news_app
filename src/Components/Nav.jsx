@@ -147,14 +147,14 @@ const Nav = ({ allPost, setAllPost }) => {
     <>
       <header
         className="h-14  border bg-gray-100 bottom-3 px-18  z-10 sticky top-0 flex
-           justify-between items-center  max-sm:px-3 max-sm:justify-between max-sm:h-14"
+           justify-between items-center  shadow-md shadow-gray-400 max-sm:px-3 max-sm:justify-between max-sm:h-14"
       >
         <div className="flex justify-start bg-green-500 rounded-md   shadow-inner z-10 border-2 border-green-600">
           {" "}
           <h1 className="text-black  text-3xl inline rounded-sm px-2 text-center py-0  font-extrabold">
             Afri<span className="text-gray-100 font-extrabold">Buzz</span>
           </h1>
-          
+
         </div>
 
         <button
