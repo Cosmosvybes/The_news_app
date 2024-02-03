@@ -11,6 +11,7 @@ import {
   Signup,
   Topic,
   Profile,
+  Mynotification,
 } from "./Index";
 import { useEffect, useState } from "react";
 
@@ -105,7 +106,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Discussion allPost={allPost} />} />
         <Route path="/" element={<Discussion allPost={allPost} />} />
-        <Route path="/earn" element={<Earn />} />
+        <Route path="/notification" element={<Mynotification/>} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/post/:id" element={<Topic allPost={allPost} />} />
         <Route path="/signup" element={<Signup />} />

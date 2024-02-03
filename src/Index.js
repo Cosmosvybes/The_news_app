@@ -9,3 +9,4 @@ export { default as Topic } from "./Components/Topic";
 export { default as Discussion } from "./Components/Discussion";
 export { default as Profile } from "./Components/Profile";
 export { default as Create } from "./Components/Create";
+export { default as Mynotification } from "./Components/Mynotifictions";

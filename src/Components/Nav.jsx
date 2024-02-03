@@ -152,8 +152,9 @@ const Nav = ({ allPost, setAllPost }) => {
         <div className="flex justify-start bg-green-500 rounded-md   shadow-inner z-10 border-2 border-green-600">
           {" "}
           <h1 className="text-black  text-3xl inline rounded-sm px-2 text-center py-0  font-extrabold">
-            Afri <span className="text-gray-100 font-extrabold">Talk</span>
+            Afri<span className="text-gray-100 font-extrabold">Buzz</span>
           </h1>
+          
         </div>
 
         <button
@@ -251,29 +252,18 @@ const Nav = ({ allPost, setAllPost }) => {
             </div>
 
             <div className="flex justify-center  items-center hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
-              <Link to="/">
+              <Link to="/notification">
                 {" "}
                 <FaBell className="text-2xl text-green-500  " />
               </Link>
               <Link
-                to="/link"
+                to="/notification"
                 className=" w-full font-bold  text-black  px-2 py-2  max-sm:hidden  "
               >
                 Notification
               </Link>
             </div>
-            <div className="flex justify-center  items-center hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
-              <Link to="/">
-                {" "}
-                <FaBlogger className="text-2xl text-green-500 " />
-              </Link>
-              <Link
-                to="/link"
-                className=" w-full font-bold  text-black  px-2 py-2  max-sm:hidden  "
-              >
-                My Posts
-              </Link>
-            </div>
+        
             <div className="flex justify-center items-center  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <Link to="/profile">
                 {" "}
@@ -286,6 +276,7 @@ const Nav = ({ allPost, setAllPost }) => {
                 Profile
               </Link>
             </div>
+              
 
             <div className="flex justify-center items-center  shadow-md  shadow-gray-300  hover:bg-gray-300 hover:text-slate-900 rounded-md px-3 py-2">
               <Link to="/">
